@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+<!-- template from url=(0063)https://developer.ibm.com/technologies/artificial-intelligence/ -->
+<html lang="en-US"><!-- InstanceBegin template="/Templates/DAIL_Template.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="stylesheet" href="css/style.css" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;">
+	<noscript>
+		<link rel="stylesheet" href="css/style.css?cb=12">
+	</noscript>
+<!--	<script type="text/javascript" async="" src="../src/analytics.js.download"></script>
+	<script id="loadedViaBxAnalytics-HU3dbkAG5wE0F1IkRf9S1RexlAqo3jby" src="../src/analytics.min.js.download" type="text/javascript" async=""></script>
+	<script async="" src="../src/ia.js.download"></script>
+
+	<script type="text/javascript" async="" charset="utf-8" id="utag_21" src="../src/bat.js.download"></script>
+	<script type="text/javascript" async="" charset="utf-8" id="utag_19" src="../src/hotjar-42920.js.download"></script><script type="text/javascript" async="" charset="utf-8" id="utag_16" src="../src/f.txt"></script>
+	<script async="" src="../src/1474.js.download"></script>
+	<script type="text/javascript" async="" charset="utf-8" id="utag_53" src="../src/js"></script>
+	<script type="text/javascript" async="" charset="utf-8" id="utag_162" src="../src/js(1)"></script>
+	<script type="text/javascript" async="" charset="utf-8" id="tealium_cormetrics2" src="../src/eluminate.js.download"></script>
+	<script src="../src/bluemix-analytics.min.js.download" type="application/javascript" async=""></script>
+	<script type="text/javascript" async="" charset="utf-8" id="dle_api_efaddbc6b5f457b55aecd70a033f1fecc2fdfb1af518e282066e739efd677f71" src="../src/p_efaddbc6b5f457b55aecd70a033f1fecc2fdfb1af518e282066e739efd677f71.js.download"></script>
+	<script src="../src/utag.js.download" type="application/javascript" async=""></script>
+	<script src="../src/p_efaddbc6b5f457b55aecd70a033f1fecc2fdfb1af518e282066e739efd677f71.js.download" type="application/javascript" async=""></script>
+
+	<script>
+	/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+	/* This file is meant as a standalone workflow for
+	- testing support for link[rel=preload]
+	- enabling async CSS loading in browsers that do not support rel=preload
+	- applying rel preload css once loaded, whether supported or not.
+	*/
+	(function( w ){
+		"use strict";
+		// rel=preload support test
+		if( !w.loadCSS ){
+			w.loadCSS = function(){};
+		}
+		// define on the loadCSS obj
+		var rp = loadCSS.relpreload = {};
+		// rel=preload feature support test
+		// runs once and returns a function for compat purposes
+		rp.support = (function(){
+			var ret;
+			try {
+				ret = w.document.createElement( "link" ).relList.supports( "preload" );
+			} catch (e) {
+				ret = false;
+			}
+			return function(){
+				return ret;
+			};
+		})();
+
+		// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+		// then change that media back to its intended value on load
+		rp.bindMediaToggle = function( link ){
+			// remember existing media attr for ultimate state, or default to 'all'
+			var finalMedia = link.media || "all";
+
+			function enableStylesheet(){
+				// unbind listeners
+				if( link.addEventListener ){
+					link.removeEventListener( "load", enableStylesheet );
+				} else if( link.attachEvent ){
+					link.detachEvent( "onload", enableStylesheet );
+				}
+				link.setAttribute( "onload", null );
+				link.media = finalMedia;
+			}
+
+			// bind load handlers to enable media
+			if( link.addEventListener ){
+				link.addEventListener( "load", enableStylesheet );
+			} else if( link.attachEvent ){
+				link.attachEvent( "onload", enableStylesheet );
+			}
+
+			// Set rel and non-applicable media type to start an async request
+			// note: timeout allows this to happen async to let rendering continue in IE
+			setTimeout(function(){
+				link.rel = "stylesheet";
+				link.media = "only x";
+			});
+			// also enable media after 3 seconds,
+			// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+			setTimeout( enableStylesheet, 3000 );
+		};
+
+		// loop through link elements in DOM
+		rp.poly = function(){
+			// double check this to prevent external calls from running
+			if( rp.support() ){
+				return;
+			}
+			var links = w.document.getElementsByTagName( "link" );
+			for( var i = 0; i < links.length; i++ ){
+				var link = links[ i ];
+				// qualify links to those with rel=preload and as=style attrs
+				if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+					// prevent rerunning on link
+					link.setAttribute( "data-loadcss", true );
+					// bind listeners to toggle media back
+					rp.bindMediaToggle( link );
+				}
+			}
+		};
+
+		// if unsupported, run the polyfill
+		if( !rp.support() ){
+			// run once at least
+			rp.poly();
+
+			// rerun poly on an interval until onload
+			var run = w.setInterval( rp.poly, 500 );
+			if( w.addEventListener ){
+				w.addEventListener( "load", function(){
+					rp.poly();
+					w.clearInterval( run );
+				} );
+			} else if( w.attachEvent ){
+				w.attachEvent( "onload", function(){
+					rp.poly();
+					w.clearInterval( run );
+				} );
+			}
+		}
+
+
+		// commonjs
+		if( typeof exports !== "undefined" ){
+			exports.loadCSS = loadCSS;
+		}
+		else {
+			w.loadCSS = loadCSS;
+		}
+	}( typeof global !== "undefined" ? global : this ) );
+	</script>
+-->
+	<!-- InstanceBeginEditable name="doctitle" -->
+	<title>Data and AI Learning</title>
+	<!-- InstanceEndEditable -->
+	<link rel="dns-prefetch" href="https://1.www.s81c.com/">
+	<link rel="dns-prefetch" href="https://s.w.org/">
+<!--	<link rel="alternate" type="application/rss+xml" title="IBM Developer » Feed" href="https://developer.ibm.com/feed/">-->
+<!--	<link rel="alternate" type="application/rss+xml" title="IBM Developer » Comments Feed" href="https://developer.ibm.com/comments/feed/">-->
+<!--    <link rel="canonical" href="https://developer.ibm.com/technologies/artificial-intelligence/">-->
+    <meta name="description" content="Learn how to build and train models, and create apps, with a trusted AI-infused platform.">
+    <meta name="keywords" content="artificial intelligence, machine learning, vision, speech, empathy, natural language processing, knowledge discovery, virtual reality, deep learning, data, AI, IA,">
+    <meta property="og:title" content="Data and AI Learning">
+    <meta property="og:description" content="Learn how to build and train models, and create apps, with a trusted AI-infused platform.">
+    <meta property="og:type" content="Hub">
+    <meta property="og:site_name" content="IBM Data and AI Learning">
+<!--    <meta property="og:url" content="https://developer.ibm.com/technologies/artificial-intelligence/">-->
+<!--    <meta property="og:image" content="https://s3.us.cloud-object-storage.appdomain.cloud/ibmdevwp/icons/social/social.jpg">-->
+<!--    <meta property="twitter:account_id" content="16362921">-->
+<!--    <meta name="twitter:card" content="summary">    -->
+<!--	<meta name="twitter:url" content="https://developer.ibm.com/technologies/artificial-intelligence/">-->
+<!--    <meta name="twitter:title" content="Artificial intelligence">-->
+<!--    <meta name="twitter:description" content="Build and train models, and create apps, with a trusted AI-infused platform.">-->
+<!--    <meta name="twitter:image" content="https://s3.us.cloud-object-storage.appdomain.cloud/ibmdevwp/icons/social/social.jpg">-->
+<!--    <meta property="twitter:image:src" content="https://s3.us.cloud-object-storage.appdomain.cloud/ibmdevwp/icons/social/social.jpg">-->
+<!--    <meta name="twitter:site" content="https://developer.ibm.com">-->
+<!--    <meta name="twitter:creator" content="@ibmdeveloper">-->
+
+    
+    <!-- BEGIN: Use this section to set page specific variables for the Page Tag -->
+<!--  	<script language="JavaScript">var NTPT_PGEXTRA="ibmCmaId=&ibmContentAreas=Artificial intelligence";</script>-->
+  	<!--END -->
+<!--
+    <script>
+  		digitalData = {
+  				"page": {
+  					"category": {
+  						"primaryCategory": "SOFDCACLZZ"
+  					},
+  					"pageInfo": {
+  						"effectiveDate": "",
+  						"language": "en",
+  						"publishDate": "",
+  						"expiryDate": "",
+  						"publisher": "IBM Corporation",
+  						"version": "v18",
+  						"ibm": {
+  							"contentDelivery": "IBM Developer template",
+  							"contentProducer": "IBM Data and AI Learning",
+  							"country": "ZZ",
+                "contentArea": "IBM Data and AI Learning",
+  							"owner": "developerWorks Content/Raleigh/IBM",
+  							"siteID": "",
+  							"subject": "ZZ000",
+  							"type": "CT300",
+  							"contentId": "",
+  						},
+  						"keywords": "artificial intelligence, machine learning, vision, speech, empathy, natural language processing, knowledge discovery, virtual reality, deep learning",
+  						"description": "Learn how to build and train models, and create apps, with a trusted AI-infused platform."
+  					}
+  				}
+  			};
+
+        window._analytics = {
+          "coremetrics": false,
+          "optimizely": false,
+          "googleAddServices": false,
+          "addRoll": false,
+          "intercom": false,
+          "fullStory": false,
+          "hotjar": false,
+          "tealeaf": false,
+          "nps": false,
+          "segment_key": 'HU3dbkAG5wE0F1IkRf9S1RexlAqo3jby'
+        };
+  	</script>
+-->
+  	<!-- Segment meta tag -->
+<!--  	<meta name="segment" property="developerWorks (developerWorks)" producttitle="developerWorks" value="Home English (developerWorks)">-->
+
+
+<!--    <link rel="alternate" type="application/rss+xml" title="IBM Developer » Artificial intelligence Category Feed" href="https://developer.ibm.com/technologies/artificial-intelligence/feed/">-->
+
+<!--
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/developer.ibm.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.2"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+-->
+
+<!--	<script src="../src/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>-->
+<!--
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+-->
+	<script type="text/javascript" src="src/jquery.js.download"></script>
+	<script type="text/javascript" src="src/jquery-migrate.min.js.download"></script>
+<!--
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var authLinkAction = {"ajax_url":"https:\/\/developer.ibm.com\/wp-admin\/admin-ajax.php","nonce":"1b6a63b90d"};
+		/* ]]> */
+	</script>
+-->
+	<script type="text/javascript" src="src/authPageAccess.js.download"></script>
+	<script defer="" type="text/javascript" src="src/ibmcode.js.download"></script>
+	<script async="" type="text/javascript" src="src/carbon-components.min.js.download"></script>
+<!--	<script async="" type="text/javascript" src="../src/ida_stats.js.download"></script>-->
+
+<!--	<link rel="https://api.w.org/" href="https://developer.ibm.com/developerapi/">
+<!--	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/xmlrpc.php?rsd">-->
+<!--	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://developer.ibm.com/wp-includes/wlwmanifest.xml"> -->
+
+	
+<!--	<meta name="generator" content="WordPress 5.3.2">-->
+	<link rel="icon" href="images/bee_128.png" sizes="32x32">
+	<link rel="icon" href="images/bee_128.png" sizes="192x192">
+	<link rel="apple-touch-icon-precomposed" href="images/bee_128.png">
+	<meta name="msapplication-TileImage" content="../images/bee_128.png">
+	<meta property="og:locale" content="en-US">
+	<!-- InstanceBeginEditable name="head" -->
+	<!-- InstanceEndEditable -->
+<img width="1" height="1" src="src/genp=pageinit" alt="Page Initialize">
+<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_53" src="../src/utag.53.js.download"></script>-->
+<!--	<script type="text/javascript" async="" charset="utf-8" id="LOTCC_10026" src="../src/cc.js.download"></script>-->
+<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_45" src="../src/utag.45.js.download"></script>-->
+<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_16" src="../src/utag.16.js.download"></script>-->
+<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_19" src="../src/utag.19.js.download"></script>-->
+<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_21" src="../src/utag.21.js.download"></script>-->
+	
+	<style type="text/css">
+		@media only screen and (max-width:480px){.truste_box_overlay{width: 100%!important;margin: 0px!important;max-width: 100%!important;box-shadow: rgb(0,0,0,0.2) 0px 0px 16px 2px!important;}}@media only screen and (min-width:481px){.truste_box_overlay{width: 80%!important;margin: 20px auto!important;max-width: 800px!important;box-shadow: rgb(0,0,0,0.2) 0px 0px 16px 2px!important;}}
+	</style>
+	
+<!--
+	<script language="javascript" type="text/javascript" src="../src/50200000.js.download"></script>
+	<script language="javascript" type="text/javascript" src="../src/52640000.js.download"></script>
+	<script language="javascript" type="text/javascript" src="../src/rules_50200000.js.download"></script>
+	<script language="javascript" type="text/javascript" src="../src/rules_52640000.js.download"></script>
+	<script language="javascript" type="text/javascript" src="../src/dispatcher-v3.js.download"></script>
+	<script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_45main" src="../src/016568942310001294ec944f086d0307300e606b00978"></script>
+	<script src="../src/yahoo-min.js.download" type="text/javascript"></script>
+	<script src="../src/cp-v3.js.download" type="text/javascript"></script>
+	<script src="../src/json-min.js.download" type="text/javascript"></script>
+	<script async="" src="../src/modules.9ad849c74ae56ab50f63.js.download" charset="utf-8"></script>
+-->
+	
+	<style type="text/css">
+		iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}
+	</style>
+	
+<!--	<script src="../src/f(1).txt"></script>-->
+	<style type="text/css">.truste_cookie_prefs,#teconsent{display:none !important}</style>
+</head>
+
+<!--               -->
+<!-- Website Start -->
+<!--               -->
+	
+<body id="ibm-com" class="archive category category-artificial-intelligence category-687 no-fixed-menu hfeed no-sidebar hubpage">
+	<div class="bx--header--website-wrap">
+		<div class="code_content__wrap">
+			<header aria-label="IBM Platform Name" class="bx--header" role="banner">
+				<a class="bx--skip-to-content" href="https://developer.ibm.com/technologies/artificial-intelligence/#main-content" tabindex="0">Skip to main content</a>
+				<button aria-label="Open menu" id="developer-burger" class="bx--header__action--menu bx--header__action bx--header__menu-trigger bx--header__menu-toggle" title="Open menu" type="button">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="will-change: transform;">
+						<path d="M2 14.8h16V16H2zm0-3.6h16v1.2H2zm0-3.6h16v1.2H2zM2 4h16v1.2H2z">
+						</path>
+					</svg>
+				</button>
+				<a class="bx--header__name-old" href="https://ibm.com/ai"><span class="bx--header__name--prefix">IBM</span>&nbsp;Data and AI Learning
+				</a>
+				
+				<div class="bx--header__name">
+<!--					IBM 3 bar menu start-->
+					<a class="bx--header__ibm" href="https://www.ibm.com/">
+						<svg class="Footer-module--logo--3otJM" width="47" height="30" viewBox="0 -10 85 35" xmlns="http://www.w3.org/2000/svg">
+							<g fill-rule="evenodd">
+								<path d="M0 32h15.689v-2.038H0zM0 27.721h15.689v-2.038H0zM4.483 23.442h6.724v-2.037H4.483zM4.483 19.164h6.724v-2.038H4.483zM4.483 14.885h6.724v-2.037H4.483zM4.482 10.606h6.724V8.568H4.482zM0 6.327h15.689V4.29H0zM0 2.049h15.689V.011H0zM17.93 29.963V32h16.504a8.521 8.521 0 0 0 5.54-2.037H17.93zM17.93 25.683v2.038h23.914a8.535 8.535 0 0 0 .85-2.038H17.93zM22.412 23.442h6.724v-2.037h-6.724zM40.124 17.126H22.412v2.038H41.77a8.62 8.62 0 0 0-1.645-2.038M22.413 12.848v2.036h17.786a8.612 8.612 0 0 0 1.644-2.037h-19.43zM42.693 6.327a8.447 8.447 0 0 0-.85-2.037H17.93v2.037h24.763zM39.974 2.049a8.521 8.521 0 0 0-5.54-2.037H17.93v2.037h22.044zM22.412 10.606h6.724V8.568h-6.724zM35.453 10.606h7.29a8.603 8.603 0 0 0 .248-2.038h-7.538v2.038zM35.453 21.405v2.037h7.538c0-.703-.09-1.384-.248-2.037h-7.29zM57.457 0H44.825v2.038h13.34zM44.826 32h11.21v-2.038h-11.21zM44.826 27.72h11.21v-2.038h-11.21zM49.309 23.439h6.727v-2.038h-6.727zM49.309 19.159h6.727v-2.038h-6.727zM69.488 32h11.21v-2.038h-11.21zM69.488 27.72h11.21v-2.038h-11.21zM69.488 23.439h6.726v-2.038h-6.726zM69.487 19.159h6.726v-2.038h-6.726zM69.488 14.879h6.726V12.84H63.606l-.707 2.038h5.903l.686-1.94zM61.916 12.84H49.31v2.039h6.726v-1.94l.686 1.94h5.903zM76.213 8.56H65.091l-.707 2.038h11.83zM68.06 0l-.706 2.038h13.344V0zM62.757 32l.72-2.038h-1.432zM61.254 27.72h3.015l.72-2.038h-4.455zM59.743 23.44h6.037l.72-2.039h-7.476zM58.232 19.159h9.06l.719-2.038h-10.5zM49.309 10.598h11.83l-.707-2.038H49.309zM65.868 6.318h14.83V4.28H66.576zM58.947 4.28H44.826v2.038h14.828z">
+								</path>
+							</g>
+						</svg>
+					</a>
+					<a href="https://ibm.com/ai" class="bx--header__ibmdeveloper">
+						<b>Data and AI Learning</b>
+					</a>
+				</div>
+				
+				<nav aria-label="IBM [Platform]" class="bx--header__nav">
+<!--				Top Menu Bar-->
+				<ul class="bx--header__menu-bar" role="menubar">
+
+		<!--			Topics Menu-->
+				<!--
+					<li id="topics" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item menu-item-type-custom menu-item-object-custom menu-item-has-mega">
+						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="https://developer.ibm.com/technologies/artificial-intelligence/#">Topics
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" class="bx--header__menu-arrow">
+								<path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z">
+								</path>
+							</svg>
+						</a>
+						<div class="mega-menu bx--header__menu sub-menu" role="menu">
+							<div class="mega-menu-inner">
+								<div class="code_content__wrap">
+									<ul>
+									  <li><h4>Technologies</h4></li>
+									  <li><a href="https://developer.ibm.com/technologies/analytics/">Analytics</a></li>
+									  <li><a href="https://developer.ibm.com/technologies/artificial-intelligence/">Artificial Intelligence</a></li>
+									  <li><a href="https://developer.ibm.com/technologies/blockchain/">Blockchain</a></li>
+									  <li><a href="https://developer.ibm.com/technologies/containers/">Containers</a></li>
+									  <li><a href="https://developer.ibm.com/technologies/java/">Java</a></li>
+									  <li><a href="https://developer.ibm.com/technologies/">See all</a></li>
+									</ul>
+									<ul>
+									  <li><h4>Industries</h4></li>
+									  <li><a href="https://developer.ibm.com/industries/gaming/">Gaming</a></li>
+									  <li><a href="https://developer.ibm.com/industries/finance/">Finance</a></li>
+									  <li><a href="https://developer.ibm.com/industries/retail/">Retail</a></li>
+									  <li><a href="https://developer.ibm.com/industries/">See all</a></li>
+									</ul>
+									<ul>
+									  <li><h4>Deployment Models</h4></li>
+									  <li><a href="https://developer.ibm.com/depmodels/cloud/">Cloud</a></li>
+									  <li><a href="https://developer.ibm.com/depmodels/hybrid/">Hybrid Cloud</a></li>
+									  <li><a href="https://developer.ibm.com/depmodels/edge-computing/">Edge Computing</a></li>
+									  <li><a href="https://developer.ibm.com/depmodels/offline/">Offline</a></li>
+									  <li><a href="https://developer.ibm.com/depmodels/on-prem/">On Premises</a></li>
+									  <li><a href="https://developer.ibm.com/depmodels/">See all</a></li>
+									</ul>
+									<ul>
+									  <li><h4>Solutions</h4></li>
+									  <li><a href="https://developer.ibm.com/solutions/ai-development/">Artificial Intelligence</a></li>
+									  <li><a href="https://developer.ibm.com/solutions/blockchain-app-development/">Blockchain</a></li>
+									  <li><a href="https://developer.ibm.com/solutions/container-orchestration-and-deployment/">Containers &amp; Microservices</a></li>
+									  <li><a href="https://developer.ibm.com/solutions/mobile-app-development/">Mobile Development</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+-->
+		<!--			Products and Services Menu-->
+					<li id="products_&amp;_services" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item menu-item-type-custom menu-item-object-custom menu-item-has-mega">
+						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="https://developer.ibm.com/technologies/artificial-intelligence/#">Products &amp; Services
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" class="bx--header__menu-arrow">
+								<path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z">
+								</path>
+							</svg>
+						</a>
+						<div class="mega-menu bx--header__menu sub-menu" role="menu">
+							<div class="mega-menu-inner">
+								<div class="code_content__wrap">
+									<ul>
+									  <li><h4>Learning Offerings</h4></li>
+									  <li><a href="http://ibm.biz/ai_skills_advisory" target="_blank">Advisory Services</a></li>
+									  <li><a href="http://ibm.biz/ai-foundations-datasheet" target="_blank">AI Foundations</a></li>
+									  <li><a href="http://ibm.biz/AI-Leadership-School-Summary" target="_blank">AI Leadership School</a></li>
+									  <li><a href="" target="_blank">Rapid Prototyping</a></li>
+									  <li><a href="" target="_blank">Cloud Pak for Data Certification</a></li>
+									  <li><a href="" target="_blank">AI Certification</a></li>
+									</ul>
+									<ul>
+									  <li><h4>Digital Subscriptions</h4></li>
+									  <li><a href="http://ibm.biz/Enterprise_Digital_Subscription" target="_blank">Enterprise Digital Subscription</a></li>
+									  <li><a href="http://ibm.biz/Individual_Digital_Subscription" target="_blank">Individual Digital Subscription</a></li>
+									  
+									  <li><a href="http://ibm.biz/Coursera_Enterprise" target="_blank">IBM + Coursera Enterprise</a></li>
+									  <li><a href="https://www.coursera.org/ibm" target="_blank">IBM + Coursera Consumer</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+		<!--			Community Menu-->
+					<li id="community" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item menu-item-type-custom menu-item-object-custom menu-item-has-mega">
+						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="https://developer.ibm.com/technologies/artificial-intelligence/#">Community
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" class="bx--header__menu-arrow">
+								<path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z">
+								</path>
+							</svg>
+						</a>
+						<div class="mega-menu bx--header__menu sub-menu" role="menu">
+							<div class="mega-menu-inner">
+								<div class="code_content__wrap">
+									<ul>
+									  <li><a href="https://community.ibm.com/community/user/ailearning/home">Home</a></li>
+									  <li><a href="https://community.ibm.com/community/user/ailearning/browse/allrecentposts">Discussion posts</a></li>
+									  <li><a href="https://community.ibm.com/community/user/ailearning/all-events">Events</a></li>
+									  <li><a href="https://community.ibm.com/community/user/ailearning/news">News</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+		<!--			Open Source Menu-->
+		<!--
+					<li id="open_source_at_ibm" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item menu-item-type-custom menu-item-object-custom menu-item-has-mega">
+						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="https://developer.ibm.com/technologies/artificial-intelligence/#">Open source at IBM
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" class="bx--header__menu-arrow">
+								<path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z">
+								</path>
+							</svg>
+						</a>
+-->
+<!--
+						<div class="mega-menu bx--header__menu sub-menu" role="menu">
+							<div class="mega-menu-inner">
+								<div class="code_content__wrap">
+									<ul>
+									  <li><a href="https://developer.ibm.com/open/">Home</a></li>
+									  <li><a href="https://developer.ibm.com/open/code/">Code</a></li>
+									  <li><a href="https://developer.ibm.com/open/community/">Communities</a></li>
+									  <li><a href="https://developer.ibm.com/open/culture/">Open enterprise</a></li>
+									  <li><a href="https://developer.ibm.com/open/projects/">Open projects</a></li>
+									  <li><a href="https://developer.ibm.com/collections/open-stories/">Open stories</a></li>
+									  <li><a href="https://developer.ibm.com/exchanges/models/">Model Asset eXchange</a></li>
+									  <li><a href="https://developer.ibm.com/exchanges/data/">Data Asset eXchange</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</li>
+-->
+				</ul>
+				</nav>
+				<div class="bx--header__global">
+<!--					Search Menu Option-->
+<!--					Disabled Search--
+					<div id="header-search-module" class="GlobalSearch-module--container GlobalSearch-module--hidden" role="search">
+						<label for="search-input" id="search-label" class="GlobalSearch-module--label">Search
+						</label>
+						<form action="https://developer.ibm.com/" method="GET" class="GlobalSearch-module--inputWrapper" role="combobox" aria-owns="search-menu" aria-haspopup="menu" aria-expanded="false">
+						<button tabindex="0" class="GlobalSearch-module--searchButton GlobalSearch-module--search-button--search" type="button" aria-label="Open search">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change:transform" description="Open search" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+								<path d="M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9 9 9 0 0 1-9-9z">
+								</path>
+							</svg>
+						</button>
+						<input type="text" autocomplete="off" tabindex="-1" aria-autocomplete="list" aria-controls="search-menu" aria-activedescendant="menu-item-0" class="GlobalSearch-module--input GlobalSearch-module--hidden" id="search-input-header" placeholder="Search IBM Developer" value="" name="s">
+							<button tabindex="-1" class="GlobalSearch-module--searchButton GlobalSearch-module--search-button--close GlobalSearch-module--hidden" type="button" aria-label="Clear search">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change:transform" description="Clear search" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+									<path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z">
+									</path>
+								</svg>
+							</button>
+						</form>
+						<ul aria-labelledby="search-label" role="menu" id="search-menu" class="GlobalSearch-module--list GlobalSearch-module--hidden">
+						</ul>
+					</div>
+					
+<!--					MyIBM Menu-->
+<!--					Disable MyIBM Menu--
+					<div id="header-login-module" aria-expanded="false" class="GlobalLogin-module--container GlobalLogin-module--hidden" role="login">
+						<button aria-label="Open menu" class="bx--header__action--login bx--header__action" title="Open menu" type="button">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+								<path d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z">
+								</path>
+								<path d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"></path>
+							</svg>
+						</button>
+						<ul id="ibm-signin-minimenu-container" role="menu" aria-label="Profile" class="bx--header__submenu">
+							<li class="menu-item"><a class="bx--header__menu-item" role="menuitem" href="https://myibm.ibm.com/?lnk=mmi" tabindex="0">My IBM</a>
+							</li>
+							<li class="menu-item">
+								<a class="bx--header__menu-item" role="menuitem" href="https://developer.ibm.com/sso/login?d=https://developer.ibm.com/technologies/artificial-intelligence/&amp;lang=us_EN" tabindex="-1">Log in
+								</a>
+							</li>
+						</ul> <!-- End of ibm-signin-minimenu-container --
+					</div> <!-- End of header-login-module -->
+				</div> <!-- End of bx--header__global -->
+			</header> <!-- End of header IBM Platform Name -->
+		</div> <!-- End of code_content__wrap -->
+	</div> <!-- End of bx--header--website-wrap -->
+	
+	<div class="side-nav-click-to-close side-nav-click-to-close__closed" id="code--side-nav-cover">
+	</div>
+	<!-- Navigation wrapper for accessibility -->
+	<nav class="bx--side-nav__navigation bx--side-nav bx--side-nav--expanded bx--side-nav--website bx--side-nav--website--dark bx--side-nav--ux" aria-label="Side navigation" id="code--side-nav-old">
+	<!--nav class="bx--side-nav__navigation bx--side-nav bx--side-nav--ux bx--side-nav--website--dark" role="navigation" aria-label="Navigation" id="code--side-nav"-->
+  	<!-- <header class="bx--side-nav__header"></header> -->
+  	<!-- Renders all of our navigation items -->
+	<ul class="bx--side-nav__items" id="developerNavTriggersMobile">
+		<li data-level="0" class="bx--side-nav__item ">
+			<a href="https://developer.ibm.com/" class="bx--side-nav__link" role="menuitem">
+				<span class="bx--side-nav__link-text">Home</span>
+			</a>
+		</li>
+		<hr class="bx--side-nav__divider">
+<!--		Topics Menu-->
+		<li data-level="0" class="megasection bx--side-nav__item">
+			<button aria-haspopup="true" aria-expanded="true" class="noclick bx--side-nav__submenu" type="button">
+				<span class="bx--side-nav__submenu-title">Topics</span>
+			</button>
+			<ul class="bx--side-nav__menu" role="menu">
+				<li data-level="1" class="bx--side-nav__menu-item">
+					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
+						<span class="bx--side-nav__submenu-title">Technologies</span>
+						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z">
+								</path>
+							</svg>
+						</div>
+					</button>
+					<ul class="bx--side-nav__menu" role="menu">
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/technologies/analytics" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Analytics</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/technologies/artificial-intelligence" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Artificial Intelligence</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/technologies/blockchain" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Blockchain</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/technologies/containers" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Containers</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/technologies/java" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Java</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/technologies/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">See all</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li data-level="1" class="bx--side-nav__menu-item">
+					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
+						<span class="bx--side-nav__submenu-title">Industries</span>
+						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+								 <path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
+							</svg>
+						</div>
+					</button>
+					<ul class="bx--side-nav__menu" role="menu">
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/industries/gaming/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Gaming</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/industries/finance/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Finance</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/industries/retail/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Retail</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/industries/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">See all</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li data-level="1" class="bx--side-nav__menu-item">
+					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
+						<span class="bx--side-nav__submenu-title">Deployment models</span>
+						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
+							</svg>
+						</div>
+					</button>
+					<ul class="bx--side-nav__menu" role="menu">
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/depmodels/cloud/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Cloud</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/depmodels/hybrid/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Hybrid</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/depmodels/edge-computing/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Edge computing</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/depmodels/offline/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Offline</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/depmodels/on-prem/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">On Premises</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/depmodels/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">See all</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li data-level="1" class="bx--side-nav__menu-item">
+					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
+						<span class="bx--side-nav__submenu-title">Solutions</span>
+						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
+							</svg>
+						</div>
+					</button>
+					<ul class="bx--side-nav__menu" role="menu">
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/solutions/ai-development/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Artificial Intelligence</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/solutions/blockchain-app-development/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Blockchain</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/solutions/container-orchestration-and-deployment/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Containers &amp; Microservices</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/solutions/mobile-app-development/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Mobile Development</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<hr class="bx--side-nav__divider">
+<!--		Product and Services Menu-->
+		<li data-level="0" class="megasection bx--side-nav__item">
+			<button aria-haspopup="true" aria-expanded="true" class="noclick bx--side-nav__submenu" type="button">
+				<span class="bx--side-nav__submenu-title">Products &amp; Services</span>
+            </button>
+			<ul class="bx--side-nav__menu" role="menu">
+				<li data-level="1" class="bx--side-nav__menu-item">
+					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
+						<span class="bx--side-nav__submenu-title">Open Source</span>
+						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
+							</svg>
+						</div>
+					</button>
+					<ul class="bx--side-nav__menu" role="menu">
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/kubernetes/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Kubernetes</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/node-red/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Node-RED</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/istio/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Istio</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/tensorflow/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">TensorFlow</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/open-liberty/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Open Liberty</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">See all</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li data-level="1" class="bx--side-nav__menu-item">
+					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
+						<span class="bx--side-nav__submenu-title">IBM Product &amp; Services</span>
+						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
+							</svg>
+						</div>
+					</button>
+					<ul class="bx--side-nav__menu" role="menu">
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/cloud-pak-for-applications/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">IBM Cloud Pak for Applications</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/cloud-pak-for-data/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">IBM Cloud Pak for Data</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/redhat-openshift-ibm-cloud/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">Red Hat OpenShift on IBM Cloud</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/cloud-pak-for-data/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">IBM Cloud Pak for Data</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/sterling/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">IBM Sterling</span>
+							</a>
+						</li>
+						<li data-level="2" class="bx--side-nav__menu-item">
+							<a href="https://developer.ibm.com/components/" class="bx--side-nav__link" role="menuitem">
+								<span class="bx--side-nav__link-text">See all</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<hr class="bx--side-nav__divider">
+<!--		Community Menu-->
+		<li data-level="0" class="megasection bx--side-nav__item">
+			<button aria-haspopup="true" aria-expanded="true" class="noclick bx--side-nav__submenu" type="button">
+				<span class="bx--side-nav__submenu-title">Community</span>
+			</button>
+			<ul class="bx--side-nav__menu" role="menu">
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/community/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Home</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/blogs/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Blog posts</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/events/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Events</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/cities/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Cities</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/newsletters/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Newsletters</span>
+					</a>
+				</li>
+			</ul>
+		</li>
+		<hr class="bx--side-nav__divider">
+<!--		Opensource at IBM Menu-->
+		<li data-level="0" class="megasection bx--side-nav__item">
+			<button aria-haspopup="true" aria-expanded="true" class="noclick bx--side-nav__submenu" type="button">
+				<span class="bx--side-nav__submenu-title">Opensource at IBM</span>
+			</button>
+			<ul class="bx--side-nav__menu" role="menu">
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/open/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Home</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/open/code/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Code</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/open/community" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Community</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/open/culture/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Open enterprise</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/open/projects/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Projects</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/collections/open-stories" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Open stories</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/exchanges/models/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Model asset exchange</span>
+					</a>
+				</li>
+				<li data-level="2" class="bx--side-nav__menu-item">
+					<a href="https://developer.ibm.com/exchanges/data/" class="bx--side-nav__link" role="menuitem">
+						<span class="bx--side-nav__link-text">Data asset exchange</span>
+					</a>
+				</li>
+			</ul>
+		</li>
+		
+		<hr class="bx--side-nav__divider">
+		
+	</ul>  <!-- Renders the button to collapse or expand the side nav -->
+  <!-- <footer class="bx--side-nav__footer"></footer> -->
+	</nav>
+
+<!--	Banner below menu, above content-->
+	<div class="code--taxonomy__banner">
+		<div class="inner">
+			<div class="mobilewrap">
+				<h2 class="taxonomy__hero-heading">
+					<img alt="Featured Icon" src="images/artificial-intelligence-icon.svg" height="40" scale="0" class="developer--card__icon">
+					<span>Data and AI Learning</span>
+				</h2>
+				<div class="taxonomy__hero-description">Build and train models, and create apps, with a trusted AI-infused platform.</div>
+			</div>
+			<button id="code_aside__navtoggle_open">
+				<span>Menu</span>
+				<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+					<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
+				</svg>
+			</button>
+		</div>
+	</div><!-- totally new layout -->
+	<div class="ibm-developer" style="display:none;">
+		<div class="bx--grid">
+			<div class="bx--row">
+				<div class="bx--col-lg-12 ibmd-leftnav">max-content width
+				</div>
+			</div>
+		</div> <!-- End of bx--grid -->
+	</div> <!-- End of ibm-developer -->
+
+
+
+	<!-- begin new layout -->
+	<div id="content" class="container ">
+		
+<!--		Left Master Menu		-->
+		<div id="code_aside__navwrap" class="code_aside__navwrap">
+			<div id="code_leftnav" class="code_leftnav">
+				<div class="mobile_wrap">
+					<div class="inner">
+						<div class="code_leftnav_header">
+							<h3><a href="https://developer.ibm.com/technologies/artificial-intelligence/">Artificial intelligence</a></h3>
+						</div>
+						<nav role="navigation" aria-label="Content portlet">
+							<ul id="menu-content-nav" class="">
+								<li><a href="index.html"><strong>Data and AI Learning: Home</strong></a></li>
+							</ul>
+						</nav>
+						<nav role="navigation" aria-label="Content portlet">
+							<ul id="menu-content-catalog" class="">
+								<li><h4>Data and AI Learning Catalog:</h4></li>
+								<li><a href="fullcatalog_function.html">By Product/Function</a></li>
+								<li><a href="fullcatalog_role.html">By Role</a></li>
+								<li><a href="fullcatalog_badges.html">Badges</a></li>
+							</ul>
+						</nav>
+						<nav role="navigation" aria-label="Community portlet">
+							<h4>For Developers:</h4>
+							<ul id="menu-content-developerlinks" class="">
+								<li><a href="https://developer.ibm.com/technologies/artificial-intelligence/data/" target="_blank">Datasets</a></li>
+								<li><a href="https://developer.ibm.com/technologies/artificial-intelligence/models/" target="_blank">Models</a></li>
+								<li><a href="https://developer.ibm.com/technologies/artificial-intelligence/patterns/" target="_blank">Code Patterns</a></li>
+								<li><a href="https://developer.ibm.com/technologies/artificial-intelligence/series/" target="_blank">Series</a></li>
+								<li><a href="https://developer.ibm.com/technologies/artificial-intelligence/tutorials/" target="_blank">Tutorials</a></li>
+							</ul>
+						</nav>
+							
+						<nav role="navigation" aria-label="Community portlet">
+							<h4>Community:</h4>
+							<ul id="menu-community-nav" class="">
+								<li><a href="https://community.ibm.com/community/user/ailearning/home" target="_blank">Blog Posts</a></li>
+								<li><a href="https://community.ibm.com/community/user/ailearning/all-events" target="_blank">Events</a></li>
+							</ul>
+						</nav>
+						
+						<nav role="navigation" aria-label="Community portlet">
+							<h4>For IBMers:</h4>
+							<ul id="menu-ibmers-nav" class="">
+								<li><a href="https://w3.ibm.com/w3publisher/daell-enablement/enablement" target="_blank">Internal Enablement (W3 required)</a></li>
+							</ul>
+						</nav>
+<!-- Disable unused menuitems
+						<nav> 
+							<h4>Related topics:</h4>
+							<ul>
+								<li><a href="https://developer.ibm.com/technologies/conversation/">Conversation</a></li>
+								<li><a href="https://developer.ibm.com/technologies/data-science/">Data science</a></li>
+								<li><a href="https://developer.ibm.com/technologies/deep-learning/">Deep learning</a></li>
+								<li><a href="https://developer.ibm.com/technologies/machine-learning/">Machine learning</a></li>
+								
+								<ul>
+									<li><a href="https://developer.ibm.com/technologies/natural-language-processing/">Natural language processing</a></li>
+									<li><a href="https://developer.ibm.com/technologies/speech-and-empathy/">Speech &amp; empathy</a></li>
+									<li><a href="https://developer.ibm.com/technologies/vision/">Visual recognition</a></li>
+								</ul>
+							</ul>
+						</nav>
+
+							
+						<nav>
+							<h4>More resources:</h4>
+							<ul>
+								<li><a href="https://www.ibm.com/cloud/garage/architectures/dataAnalyticsArchitecture" target="_blank">Data and analytics architecture</a></li>
+								<li><a href="https://www.ibm.com/cloud/garage/architectures/dataAnalyticsArchitecture/alldataanalyticssolutions" target="_blank">Data and analytics solutions</a></li>
+								<li><a href="https://www.ibm.com/artificial-intelligence">IBM AI</a></li>
+								<li><a href="https://developer.ibm.com/newsletters/artificial-intelligence/">Newsletter</a></li>
+							</ul>
+						</nav>
+-->						
+						<div class="code_aside_mobilenav_close">
+							<button id="code_aside__navtoggle_close">
+								<i>Close</i>
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
+									<path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"></path>
+									<title>Close</title>
+								</svg>
+							</button>
+						</div>
+					</div> <!-- End of inner -->
+				</div> <!-- End of mobile_wrap -->
+			</div> <!-- End of code_leftnav -->
+		</div> <!-- End of code_aside__navwrap -->
+
+<!-- InstanceBeginEditable name="MainContentArea" -->
+	<div class="page_content">
+		<div class="page_content_wrap">
+			<div class="hub--header adjusted" id="hubHeader" style="background: -webkit-linear-gradient(bottom, rgb(243, 243, 243) 28.1088%, rgb(23, 23, 23) 28.1088%, rgb(23, 23, 23) 100%);">
+				<div class="restrictContentWrap">
+					<div class="bx--grid hub-featured_blocks" id="hubFeatured">
+						<div class="bx--row bx--no-gutter--right">
+							<div class="bx--col-md-12 bx--col-lg-8" id="f1">
+								<div class="developer--card developer--bgcard bx--tile ibmcode_marketing hasimage isfeatured" style="background: transparent url('images/AI_ladder_card.jpg') no-repeat 0 0 / cover">
+									<a class="developer--card__block_link" href="https://www.oreilly.com/online-learning/report/The-AI-Ladder.pdf" target="_blank">
+										<h5 class="developer--card__type">Featured</h5>
+										<div class="developer--card__body">
+											<h3 class="developer--card__title"><span>IBM + O'Reilly - The AI Ladder: Demystifying AI Challenges </span></h3>
+											<p class="developer--card__excerpt">The AI Ladder has been developed by IBM to provide organizations with an understanding of where they are in their AI journey as well as a framework for helping them determine where they need to focus. </p>
+										</div>
+										<div class="developer--card__bottom"><span class="developer--card__date"></span>
+											<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="bx--col-md-12 bx--col-lg-4" id="f2">
+								<div class="developer--card bx--tile ibmcode_getstarted">
+									<a class="developer--card__block_link" href="http://ibmtvdemo.edgesuite.net/software/DAELL/Subscriptions/DAELL_Digital_Self_Paced_Learning_Catalog.pdf" target="_blank">
+										<div class="developer--card__body">
+											<h3 class="developer--card__title"><span>Digital Learning:<br><br>Data and AI Catalog<br> - Fee Based Offerings</span></h3>
+										</div>
+										<div class="developer--card__bottom"><span></span>
+											<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="bx--row bx--no-gutter--right" id="featuredSecondRow">
+							<div class="bx--col-md-12 bx--col-lg-4" id="f3">
+								<div class="developer--card bx--tile ibmcode_series developer--featuredcard hasimage isfeatured">
+									<a class="developer--card__block_link" href="https://community.ibm.com/community/user/ailearning/home" target="_blank">
+										<div class="developer--card__image" style="background: transparent url('images/discussion.png') no-repeat 0 0 / cover;"></div>
+										<h5 class="developer--card__type">Featured | Discussions</h5>
+										<div class="developer--card__body">
+											<h3 class="developer--card__title"><span>Hot Topics Under Discussion Today</span></h3>
+										</div>
+										<div class="developer--card__bottom">
+											<p><span class="developer--card__date">October 15, 2019</span></p>
+											<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="bx--col-md-12 bx--col-lg-4" id="f4">
+								<div class="developer--card bx--tile post developer--featuredcard hasimage isfeatured">
+									<a class="developer--card__block_link" href="https://www.coursera.org/specializations/ibm-ai-workflow" target="_blank">
+										<div class="developer--card__image" style="background: transparent url('images/coursera.png') no-repeat 0 0 / cover;"></div>
+										<h5 class="developer--card__type">Featured | Content</h5>
+										<div class="developer--card__body">
+											<h3 class="developer--card__title"><span>IBM AI Enterprise Workflow is a comprehensive, end-to-end process that enables data scientists to build AI solutions, starting with business priorities and working through to taking AI into production.</span></h3>
+										</div>
+										<div class="developer--card__bottom">
+											<p><span class="developer--card__date">Feb 4, 2020</span></p>
+											<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="bx--col-md-12 bx--col-lg-4" id="f5">
+								<div class="developer--card bx--tile ibmcode_upcomingevents">
+									<span class="developer--card__block_link">
+										<div class="developer--card__body">
+											<h5 class="developer--card__type">Upcoming Events</h5>
+											<a class="developer--card__block_link" href="https://ibm-deployai.bemyapp.com/" target="_blank">
+												<h3 class="developer--card__title">Virtual Community Day: Deploy AI</h3>
+												<p class="developer--card__location"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;"><path d="M16 24l-6.09-8.6A8.14 8.14 0 0 1 16 2a8.08 8.08 0 0 1 8 8.13 8.2 8.2 0 0 1-1.8 5.13zm0-20a6.07 6.07 0 0 0-6 6.13 6.19 6.19 0 0 0 1.49 4L16 20.52 20.63 14A6.24 6.24 0 0 0 22 10.13 6.07 6.07 0 0 0 16 4z"></path><circle cx="16" cy="9" r="2"></circle><path d="M28 12h-2v2h2v14H4V14h2v-2H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V14a2 2 0 0 0-2-2z"></path></svg>Online</p>
+												<p class="developer--card__date"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;"><path d="M26 4.03h-4v-2h-2v2h-8v-2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-20a2 2 0 0 0-2-2zm0 22H6v-14h20zm0-16H6v-4h4v2h2v-2h8v2h2v-2h4z"></path></svg>March 10, 2020</p>
+											</a>
+											<a class="developer--card__block_link" href="https://community.ibm.com/community/user/businessanalytics/events/event-description?CalendarEventKey=0744a64e-541c-4188-9e7d-3ab777a36d27&CommunityKey=6b10df83-0b3c-4f92-8b1f-1fd80d0e7e58&Home=%2fcommunity%2fuser%2fbusinessanalytics%2fcommunities%2fcommunity-home%2frecent-community-events" target="_blank">
+												<h3 class="developer--card__title">Data and AI Forum 2020</h3>
+												<p class="developer--card__location">
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;"><path d="M16 24l-6.09-8.6A8.14 8.14 0 0 1 16 2a8.08 8.08 0 0 1 8 8.13 8.2 8.2 0 0 1-1.8 5.13zm0-20a6.07 6.07 0 0 0-6 6.13 6.19 6.19 0 0 0 1.49 4L16 20.52 20.63 14A6.24 6.24 0 0 0 22 10.13 6.07 6.07 0 0 0 16 4z"></path><circle cx="16" cy="9" r="2"></circle><path d="M28 12h-2v2h2v14H4V14h2v-2H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V14a2 2 0 0 0-2-2z"></path></svg>Miami, Fl</p>
+												<p class="developer--card__date"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;"><path d="M26 4.03h-4v-2h-2v2h-8v-2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-20a2 2 0 0 0-2-2zm0 22H6v-14h20zm0-16H6v-4h4v2h2v-2h8v2h2v-2h4z"></path></svg>October 13-16, 2020</p>
+											</a>
+										</div>
+										<div class="developer--card__bottom"><span></span>
+											<a href="https://community.ibm.com/community/user/ailearning/all-events" target="_blank">More 
+												<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+											</a>
+										</div>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+<!--                  -->
+<!--START CONTENT HERE-->
+<!--                  -->
+
+			
+<div class="hub--content">
+  <!--	Featured Course (Top of page)-->
+  <div class="code--section hub-getting-started">
+		<div class="restrictContentWrap">
+			<div class="bx--grid devContentGrid">
+				<div class="bx--row">
+					<div class="bx--col-md-4 bx--col-lg-4"><h2>Featured Course:</h2>
+						<h3 class="code--taxonomy__section-header">Artificial Intelligence Concepts</h3>
+						<p><a href="https://learn.ibm.com/course/view.php?id=4327" target="_blank">Access course »</a></p>
+					</div>
+					<div class="bx--col-md-8 bx--col-lg-8">
+						<p>Terms and concepts related to artificial intelligence (AI), including augmented intelligence, machine learning, deep learning, neural networks, and natural language processing, can be confusing at first glance. This course explains common AI concepts used at IBM and how these concepts relate to Watson technologies. This course is <strong>free</strong>. (Requires login using IBM id)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!--	START CATALOG HERE-->
+	
+	<div class="hub-solutions-for">
+		<div class="restrictContentWrap">
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col-md-12 bx--col-lg-12 bx--no-gutter--right">
+						<h3 class="code--taxonomy__section-header">Data and AI Learning Catalog</h3>
+						<ul data-accordion="" class="bx--accordion">
+							
+							<li data-accordion-item="" class="bx--accordion__item ">
+								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane2">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">Cloud Pak for Data</div>
+								</button>
+								
+<!--								Cloud Pak for Data Content-->
+								<div id="pane2" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
+											<p style="padding-left: 1rem;">Accelerate your journey to AI to transform how your business operates with an open, extensible data and AI platform that runs on any cloud.</p><p style="padding-left: 1rem; color:red; font-size: 125%;">Cloud Pak for Data learning journey v2.5 coming in February 2020</p>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/6X136G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Cloud Pak for Data - Foundations (V2.1.x)</span></h3>
+														
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/6X235G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Cloud Pak for Data (V2.5.x): Data Virtualization</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/6X240G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Watson OpenScale on IBM Cloud Pak for Data (V2.5.x)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/6X241G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Watson Knowledge Catalog on IBM Cloud Pak for Data (V2.5.x)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/6X137G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Cognos Analytics on IBM Cloud Pak for Data (V2.1.x): Dashboarding and Reporting</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/6X140G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM SPSS Modeler Foundations on IBM Cloud Pak for Data (V2.1.X)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/6X139G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Decision Optimization on IBM Cloud Pak for Data (V2.1.x)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+							</li>
+							
+							<li data-accordion-item="" class="bx--accordion__item "> <!-- Add bx--accordion__item--active to auto-open the dropdown -->
+								<button class="bx--accordion__heading" aria-expanded="true" aria-controls="pane1">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+										<path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">Data Science (Cognos, SPSS, etc)</div>
+								</button>
+								
+<!--								Data Science Content-->
+								<div id="pane1" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
+											<p style="padding-left: 1rem;">Unlock the value of your data in new ways and accelerate your journey to AI</p>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/B6255G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Cognos Analytics: Enterprise Administration (V11.1.x)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/B6252G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Cognos Framework Manager: Design Metadata Models (v11.1.x)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/ites.wss/zz-en?pageType=course_description&cc=&courseCode=P8357G" target="_blank">
+												<h5 class="developer--card__type">Classroom</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Planning Analytics: Analyze Data and Create Reports (V2.0.x) - P8357G</span></h3>
+													
+												</div>
+            									<div class="developer--card__bottom">
+              										<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/B6259G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Cognos Analytics: Author Reports Advanced (V11.1.x)</span></h3>
+													
+												</div>
+            									<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+              										<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/B6289G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Cognos Analytics: Dashboard Essentials (V11.1.x)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/B6258G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Cognos Analytics: Author Reports Fundamentals (V11.1.x)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/P8362G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Planning Analytics: Design and Develop Models in Planning Analytics Workspace (V2.0.x)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/P8357G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Planning Analytics: Analyze Data and Create Reports (V2.0.x)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/0G09BG" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Advanced Statistical Analysis Using IBM SPSS Statistics (V26)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/0G53BG" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM SPSS Statistics Essentials (V26)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/0G51BG" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Statistical Analysis Using IBM SPSS Statistics (V26)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/0A039G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Advanced Machine Learning Models Using IBM SPSS Modeler (V18.2)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/0A079G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Introduction to Machine Learning Models Using IBM SPSS Modeler (V18.2)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+												<a class="developer--card__block_link" href="https://www.ibm.com/services/learning/course/0A069G" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM SPSS Modeler Foundations (V18.2)</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</li>
+							
+							<li data-accordion-item="" class="bx--accordion__item ">
+								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane3">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">IBM Watson (Product training)</div>
+								</button>
+								
+<!--								IBM Watson Product Training Content-->
+								<div id="pane3" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
+											<p style="padding-left: 1rem;">Powered by the latest innovations in machine learning, Watson is the open, multicloud platform that lets you automate the AI lifecycle. Build powerful models from scratch, or speed time-to-value with pre-built enterprise apps.</p>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4726" target="_blank">     
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Watson Discovery Foundations</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+										
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4480" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Data Refinery Essentials</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4481" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Watson Knowledge Catalog Essentials</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4482" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Watson Machine Learning Essentials</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4483" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Watson Studio Dashboard Essentials</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4484" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Watson Studio Streams Flows Essentials</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4485" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>IBM Watson Studio Visual Recognition Essentials</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4443" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Watson OpenScale Foundations</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4329" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Watson Assistant Foundations</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4440" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Watson Business Solutions Overview</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4303" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Watson Studio Essentials</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4346" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Introduction to Text Analytics</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4332" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Watson and Cloud Foundations</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4320" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Watson Knowledge Studio Foundations and Methodology</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
+												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4294" target="_blank">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>Designing Conversational Solutions</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</li>
+							<li data-accordion-item="" class="bx--accordion__item ">
+								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane4">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">Hybrid Data Management</div>
+								</button>
+								
+<!--								Hybrid Data Management Content-->
+								<div id="pane4" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>--</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li data-accordion-item="" class="bx--accordion__item ">
+								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane5">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">Unified Governance and Integration</div>
+								</button>
+								
+<!--								Unified Governanace and Integration Content-->
+								<div id="pane5" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>--</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li data-accordion-item="" class="bx--accordion__item ">
+								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane6">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">Project Management</div>
+								</button>
+								
+<!--								Project Management Content-->
+								<div id="pane6" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>--</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li data-accordion-item="" class="bx--accordion__item ">
+								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane7">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">Agile Method</div>
+								</button>
+								
+<!--								Agile Method Content-->
+								<div id="pane7" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>--</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li data-accordion-item="" class="bx--accordion__item ">
+								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane9">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">AI use cases</div>
+								</button>
+								
+<!--								AI use cases content-->
+								<div id="pane9" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-4 bx--col-lg-4">
+											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
+												<a class="developer--card__block_link" href="">
+												<h5 class="developer--card__type">eLearning</h5>
+												<div class="developer--card__body">
+													<h3 class="developer--card__title"><span>--</span></h3>
+													
+												</div>
+												<div class="developer--card__bottom">
+													<p><span class="developer--card__date"></span></p>
+													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+												</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div> <!-- End of bx--col-md-12 bx--col-lg-12 bx--no-gutter--right -->
+				</div> <!-- End of bx--row -->
+			</div> <!-- End of bx--grid -->
+		</div> <!-- End of restrictContentWrap -->
+	</div> <!-- End of hub-solutions-for (Catalog) -->
+			</div> <!-- End of hub--content -->
+		</div> <!-- End of page_content_wrap -->
+		</div> <!-- End of page_content -->
+	</div><!-- End of content -->
+<!-- InstanceEndEditable -->
+	
+<script>
+    var getCssValuePrefix = function(){
+      var rtrnVal = '';//default to standard syntax
+      var prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
+      // Create a temporary DOM object for testing
+      var dom = document.createElement('div');
+      for (var i = 0; i < prefixes.length; i++){
+          // Attempt to set the style
+          dom.style.background = prefixes[i] + 'linear-gradient(#000000, #ffffff)';
+          // Detect if the style was successfully set
+          if (dom.style.background){
+              rtrnVal = prefixes[i];
+          }
+      }
+      dom = null;
+      delete dom;
+      return rtrnVal;
+    }
+
+    var hubOnReady = function(){
+      $featuredBlocks = document.getElementById('hubFeatured');
+      $hubHeader = document.getElementById('hubHeader');
+      //$thirdCard = $featuredBlocks.querySelector('#f3');
+      //$cardImageHeight = $thirdCard.querySelector('.developer--card__image');
+      $cardRow = document.querySelector('#featuredSecondRow .developer--card');
+      $cardImage = document.querySelector('#featuredSecondRow .developer--card__image');
+
+
+      if($cardImage){
+        setTimeout(adjustGradient,150);
+        window.addEventListener("resize", function(){
+          adjustGradient();
+        });
+      }
+    }
+
+    var adjustGradient = function(){
+      $hubHeader.classList.add('adjusted');
+      $colorOffset = (($cardRow.offsetHeight - ($cardImage.offsetHeight) ) * 100) / $hubHeader.offsetHeight;
+      $hubHeader.style.background = getCssValuePrefix() + 'linear-gradient(bottom, rgba(243,243,243,1) '+$colorOffset+'%, rgba(23,23,23,1) '+$colorOffset+'%, rgba(23,23,23,1) 100%)';
+    }
+
+
+    if ( document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll) ) {
+      hubOnReady();
+    } else {
+      document.addEventListener("DOMContentLoaded", hubOnReady);
+    }
+  </script>
+
+
+
+<!-- turning off developer footer because not needed --
+<div class="container_footer">
+	<footer role="contentinfo" aria-label="IBM Developer Footer">
+		<!-- developer footer here --
+	<div id="code-footer" class="code-footer">
+		<div class="ibm-logo">
+		<a href="https://www.ibm.com/">
+			<svg class="Footer-module--logo--3otJM" width="81" height="32" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd"><path d="M0 32h15.689v-2.038H0zM0 27.721h15.689v-2.038H0zM4.483 23.442h6.724v-2.037H4.483zM4.483 19.164h6.724v-2.038H4.483zM4.483 14.885h6.724v-2.037H4.483zM4.482 10.606h6.724V8.568H4.482zM0 6.327h15.689V4.29H0zM0 2.049h15.689V.011H0zM17.93 29.963V32h16.504a8.521 8.521 0 0 0 5.54-2.037H17.93zM17.93 25.683v2.038h23.914a8.535 8.535 0 0 0 .85-2.038H17.93zM22.412 23.442h6.724v-2.037h-6.724zM40.124 17.126H22.412v2.038H41.77a8.62 8.62 0 0 0-1.645-2.038M22.413 12.848v2.036h17.786a8.612 8.612 0 0 0 1.644-2.037h-19.43zM42.693 6.327a8.447 8.447 0 0 0-.85-2.037H17.93v2.037h24.763zM39.974 2.049a8.521 8.521 0 0 0-5.54-2.037H17.93v2.037h22.044zM22.412 10.606h6.724V8.568h-6.724zM35.453 10.606h7.29a8.603 8.603 0 0 0 .248-2.038h-7.538v2.038zM35.453 21.405v2.037h7.538c0-.703-.09-1.384-.248-2.037h-7.29zM57.457 0H44.825v2.038h13.34zM44.826 32h11.21v-2.038h-11.21zM44.826 27.72h11.21v-2.038h-11.21zM49.309 23.439h6.727v-2.038h-6.727zM49.309 19.159h6.727v-2.038h-6.727zM69.488 32h11.21v-2.038h-11.21zM69.488 27.72h11.21v-2.038h-11.21zM69.488 23.439h6.726v-2.038h-6.726zM69.487 19.159h6.726v-2.038h-6.726zM69.488 14.879h6.726V12.84H63.606l-.707 2.038h5.903l.686-1.94zM61.916 12.84H49.31v2.039h6.726v-1.94l.686 1.94h5.903zM76.213 8.56H65.091l-.707 2.038h11.83zM68.06 0l-.706 2.038h13.344V0zM62.757 32l.72-2.038h-1.432zM61.254 27.72h3.015l.72-2.038h-4.455zM59.743 23.44h6.037l.72-2.039h-7.476zM58.232 19.159h9.06l.719-2.038h-10.5zM49.309 10.598h11.83l-.707-2.038H49.309zM65.868 6.318h14.83V4.28H66.576zM58.947 4.28H44.826v2.038h14.828z"></path></g></svg>
+		</a>
+		</div>
+<!-- Closed footer -- >
+
+	<div class="footer-links">
+		<div class="bx--grid">
+			<div class="bx--row">
+				<div class="bx--col-sm-2 bx--col-md-3 bx--col-lg-3">
+					<ul>
+						<li class="heading">IBM Developer</li>
+						<li><a href="https://developer.ibm.com/about/?lang=en">About</a></li>
+						<li><a href="https://developer.ibm.com/feedback/">Site Feedback &amp; FAQ</a></li>
+						<li><a href="https://www.ibm.com/developerworks/secure/report/">Report abuse</a></li>
+						<li><a href="https://developer.ibm.com/terms/third-party-notice/">Third-party notice</a></li>
+					</ul>
+				</div>
+				<div class="bx--col-sm-2 bx--col-md-3 bx--col-lg-3">
+					<ul class="tr">
+						<li class="heading">Follow Us</li>
+						<li><a href="https://twitter.com/IBMDeveloper">Twitter</a></li>
+						<li><a href="https://www.linkedin.com/showcase/developerworks/">LinkedIn</a></li>
+						<li><a href="https://www.facebook.com/IBMDeveloper">Facebook</a></li>
+						<li><a href="https://www.youtube.com/channel/UCUm6InQvGI9-6vo1teGWINA">YouTube</a></li>
+					</ul>
+				</div>
+				<div class="bx--col-sm-2 bx--col-md-3 bx--col-lg-3">
+					<ul>
+						<li class="heading">Explore</li>
+						<li><a href="https://developer.ibm.com/newsletters/">Newsletters</a></li>
+						<li><a href="https://developer.ibm.com/patterns/">Code patterns</a></li>
+						<li><a href="https://developer.ibm.com/articles/">Articles</a></li>
+						<li><a href="https://developer.ibm.com/tutorials/">Tutorials</a></li>
+						<li><a href="https://developer.ibm.com/open/projects">Open source projects</a></li>
+						<li><a href="https://developer.ibm.com/videos/">Videos</a></li>
+						<li><a href="https://developer.ibm.com/events/">Events</a></li>
+						<li><a href="https://developer.ibm.com/answers/">Answers</a></li>
+						<li><a href="https://developer.ibm.com/cities/">Cities</a></li>
+					</ul>
+				</div>
+			</div> <!-- End of footer bx--rom
+		</div> <!-- End of footer bx--grid 
+	</div> <!-- End of footer-links --
+	</div> <!-- End of code-footer 
+		<div class="code_content__wrap">
+		</div>
+	</footer> <!-- End of footer 
+</div> <!-- End of container_footer -->
+		<!-- ibm footer here -->
+		<div aria-label="IBM Global Footer" class="dw-footer" id="dw-footer">
+			<div class="code_content__wrap">
+				<div id="code-footer" class="code-footer">
+					<div class="ibm-logo">
+					<a href="https://www.ibm.com/">
+						<svg class="Footer-module--logo--3otJM" width="81" height="32" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd"><path d="M0 32h15.689v-2.038H0zM0 27.721h15.689v-2.038H0zM4.483 23.442h6.724v-2.037H4.483zM4.483 19.164h6.724v-2.038H4.483zM4.483 14.885h6.724v-2.037H4.483zM4.482 10.606h6.724V8.568H4.482zM0 6.327h15.689V4.29H0zM0 2.049h15.689V.011H0zM17.93 29.963V32h16.504a8.521 8.521 0 0 0 5.54-2.037H17.93zM17.93 25.683v2.038h23.914a8.535 8.535 0 0 0 .85-2.038H17.93zM22.412 23.442h6.724v-2.037h-6.724zM40.124 17.126H22.412v2.038H41.77a8.62 8.62 0 0 0-1.645-2.038M22.413 12.848v2.036h17.786a8.612 8.612 0 0 0 1.644-2.037h-19.43zM42.693 6.327a8.447 8.447 0 0 0-.85-2.037H17.93v2.037h24.763zM39.974 2.049a8.521 8.521 0 0 0-5.54-2.037H17.93v2.037h22.044zM22.412 10.606h6.724V8.568h-6.724zM35.453 10.606h7.29a8.603 8.603 0 0 0 .248-2.038h-7.538v2.038zM35.453 21.405v2.037h7.538c0-.703-.09-1.384-.248-2.037h-7.29zM57.457 0H44.825v2.038h13.34zM44.826 32h11.21v-2.038h-11.21zM44.826 27.72h11.21v-2.038h-11.21zM49.309 23.439h6.727v-2.038h-6.727zM49.309 19.159h6.727v-2.038h-6.727zM69.488 32h11.21v-2.038h-11.21zM69.488 27.72h11.21v-2.038h-11.21zM69.488 23.439h6.726v-2.038h-6.726zM69.487 19.159h6.726v-2.038h-6.726zM69.488 14.879h6.726V12.84H63.606l-.707 2.038h5.903l.686-1.94zM61.916 12.84H49.31v2.039h6.726v-1.94l.686 1.94h5.903zM76.213 8.56H65.091l-.707 2.038h11.83zM68.06 0l-.706 2.038h13.344V0zM62.757 32l.72-2.038h-1.432zM61.254 27.72h3.015l.72-2.038h-4.455zM59.743 23.44h6.037l.72-2.039h-7.476zM58.232 19.159h9.06l.719-2.038h-10.5zM49.309 10.598h11.83l-.707-2.038H49.309zM65.868 6.318h14.83V4.28H66.576zM58.947 4.28H44.826v2.038h14.828z"></path></g></svg>
+					</a>
+					</div>
+					
+				</div>
+					<div class="dw-footer-corporate-links">
+						<ul>
+							<li><a href="https://community.ibm.com/community/user/ailearning/home">Community</a></li>
+							<li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+							<li><a href="https://www.ibm.com/legal">Terms of use</a></li>
+							<li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>									<li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="https://www.ibm.com/us-en/?ar=1#">Cookie preferences</a></li>
+						</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+			</div>
+		</div> <!-- End footer -->
+  
+
+
+<style>
+	#modal-k7naq0vevup .bx--modal-container, 
+	#challengeModal  .bx--modal-container{
+		max-width: 980px !important;
+		padding:0 !important;
+		height: 75% !important;
+	}
+	#challengeModal  .bx--modal-container{
+    height: 90% !important;
+    max-height: 90% !important;
+    border-color: #41a8a5;
+	}
+	#modal-k7naq0vevup .bx--modal-content,
+	#challengeModal .bx--modal-content{
+		margin-bottom: 0;
+		height: 100%;
+	}
+	#modal-k7naq0vevup .bx--modal-container iframe,
+	#challengeModal .bx--modal-container iframe{
+		height:100%;
+	}
+</style>
+
+<div id="challengeModal">
+  <div id="challengeIframeWrap">
+    <div class="challenge--modal-header">
+      <button class="challenge--modal-close" type="button" data-modal-close="" aria-label="close modal" data-modal-primary-focus="">
+        <svg class="challenge--modal-close__icon" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+          <title>Close Modal</title>
+          <path d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z" fill-rule="nonzero"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="challenge--modal-content">
+      <iframe id="challengeIframe" src="src/saved_resource.html" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- #page -->
+
+<script defer="" type="text/javascript" src="src/navigation.js.download"></script>
+<script type="text/javascript" src="src/new-tab.js.download"></script>
+<script type="text/javascript" src="src/wp-embed.min.js.download"></script>
+
+<!-- Embedded Script -->
+<script>
+
+	var $searchTrigger = document.getElementById('header-search-module'),
+      $modalInstance = undefined,
+      $developerBurger = document.getElementById('developer-burger'),
+      $codeSideNav = document.getElementById('developerNavTriggersMobile'),
+      $codeSideNavCover = document.getElementById('code--side-nav-cover'),
+      $announcementClose = document.getElementById('announcement_close');
+
+
+  if($announcementClose != null){
+    $announcementClose.addEventListener('click', function(event) {
+      $elm = document.getElementById('code_announcement');
+      $elm.parentNode.removeChild($elm);
+      document.body.classList.remove('no-fixed-menu');
+      ibmcode.setCookie('Code_Annouce_Closed','true',0);
+    });
+  }
+
+	if($searchTrigger != null){ //this can be way more efficient
+		$searchTrigger.addEventListener('click', function(event) {
+      $btn = ibmcode.getClosest(event.target, 'button');
+      if( $btn && $btn.classList.contains('GlobalSearch-module--search-button--search') ){
+        if($searchTrigger.querySelector('input[type="text"]').value.trim() != "" && !($searchTrigger.classList.contains('GlobalSearch-module--hidden')) ){
+          $searchTrigger.querySelector('form').submit();
+        }
+        $searchTrigger.classList.remove('GlobalSearch-module--hidden');
+        $searchTrigger.querySelector('input[type="text"]').focus();
+        $searchTrigger.querySelector('.GlobalSearch-module--search-button--close').classList.remove('GlobalSearch-module--hidden');
+      }else if( $btn && $btn.classList.contains('GlobalSearch-module--search-button--close') ){
+        $searchTrigger.classList.add('GlobalSearch-module--hidden');
+        $searchTrigger.querySelector('input[type="text"]').value= "";
+        $searchTrigger.querySelector('.GlobalSearch-module--search-button--close').classList.add('GlobalSearch-module--hidden');
+      }
+			// window.location.href = 'https://developer.ibm.com?s=';
+		});
+	}
+
+  if($developerBurger != null){
+		$developerBurger.addEventListener('click', function(event) {
+      //bx--side-nav--expanded
+      if( document.body.classList.contains('bx--side-nav--opened') ){
+        document.body.classList.remove('bx--side-nav--opened');
+      }else{
+        document.body.classList.add('bx--side-nav--opened');
+      }
+		});
+    $codeSideNavCover.addEventListener('click', function(event) {
+      //bx--side-nav--expanded
+      if( document.body.classList.contains('bx--side-nav--opened') ){
+        document.body.classList.remove('bx--side-nav--opened');
+      }else{
+        document.body.classList.add('bx--side-nav--opened');
+      }
+		});
+    $codeSideNav.addEventListener('click', function(event) {
+      //bx--side-nav--expanded
+      $letsFix = event.target.closest('.bx--side-nav__submenu');
+      if($letsFix){
+        if($letsFix.classList.contains('noclick')){
+          return;
+        }
+        if($letsFix.getAttribute("aria-expanded") === 'false'){
+          $letsFix.setAttribute("aria-expanded", "true");
+        }else{
+          $letsFix.setAttribute("aria-expanded", "false");
+        }
+      }
+		});
+	}
+
+
+	$codeLeftNav = document.getElementById('code--side-nav');
+	if($codeLeftNav != null){
+		$codeLeftNav.addEventListener('click', function(event) {
+      event.preventDefault();
+			var menuDropDown = event.target.closest('button.bx--side-nav__submenu');
+      if(menuDropDown){
+        if(menuDropDown.classList.contains('noclick')){
+          return;
+        }
+        if(menuDropDown.getAttribute("aria-expanded") === 'false'){
+          menuDropDown.setAttribute("aria-expanded", "true");
+        }else{
+          menuDropDown.setAttribute("aria-expanded", "false");
+        }
+      }
+		});
+	}
+  var openMenuItem = null;
+  var openSearch = null;
+	document.addEventListener('click', function (event) {
+    //we need a click event here to close the search if its open and there is a
+    if(openMenuItem != event.target){
+      if(openMenuItem != null){
+        openMenuItem.setAttribute("aria-expanded", "false");
+        openMenuItem = null;
+      }
+    }
+
+    // console.info(event);
+		if ( event.target.classList.contains('bx--snippet__icon') ) {
+			// Get the parent with the `.accordion` class
+			var parentBtn = ibmcode.getClosest(event.target, '.bx--snippet-button');
+			var codeBlock = parentBtn.previousElementSibling.querySelectorAll('code');
+			if(codeBlock[0]){
+				ibmcode.copyText(codeBlock[0]);
+			}
+		}
+    if ( ibmcode.getClosest(event.target, '.bx--header__menu-title') ) {
+      event.preventDefault();
+      var newTarg = ibmcode.getClosest(event.target, '.bx--header__menu-title');
+      if(newTarg === openMenuItem && openMenuItem != null){
+        openMenuItem.setAttribute("aria-expanded", "false");
+        openMenuItem = null;
+        return
+      }
+      openMenuItem = newTarg;
+      openMenuItem.setAttribute("aria-expanded", "true");
+    }
+
+    if ( ibmcode.getClosest(event.target, '.GlobalLogin-module--container') ) {
+      if(event.target.className === 'bx--header__menu-item'){
+        return;
+      }
+      event.preventDefault();
+      var newTarg = ibmcode.getClosest(event.target, '.GlobalLogin-module--container');
+      if(newTarg === openMenuItem && openMenuItem != null){
+        openMenuItem.setAttribute("aria-expanded", "false");
+        openMenuItem = null;
+        return;
+      }
+      openMenuItem = newTarg;
+      openMenuItem.setAttribute("aria-expanded", "true");
+    }
+
+
+
+    if(event.target.id === "challengeModal" || event.target.classList.contains('challenge--modal-close') || event.target.closest('.challenge--modal-close')){
+      toggleChallengeModal('',true);
+      return;
+    }
+    //we clicked on a challenge and we need to trigger the modal for taking it
+    if ( event.target.closest('.developer--card.ibmcode_challenges.loggedin') ) {
+      event.preventDefault();
+      $challengeURL = event.target.closest('.developer--card.ibmcode_challenges.loggedin').querySelector('.developer--card__block_link').href;
+      toggleChallengeModal($challengeURL);
+		}
+	}, false);
+
+
+  function set_size($size){
+    document.querySelector('#challengeIframeWrap .challenge--modal-content').style.height = $size;
+  }
+
+  function toggleChallengeModal($challengeURL,$close,$completedChallenge){
+    if($close === true){
+      document.body.classList.remove("showing-modal");
+      $iFrame = document.getElementById('challengeIframe');
+      $iFrame.src = 'about:blank';
+    }else{
+      $challengeModal = document.getElementById('challengeModal');
+      $iFrame = document.getElementById('challengeIframe');
+      // $iFrameHeight = $iFrame.contentWindow.document.body.offsetHeight;
+      $iFrame.src = $challengeURL;
+      document.body.classList.add("showing-modal");
+    }
+    if(typeof($completedChallenge) === "string"){
+      var completedChallengeCards = document.querySelectorAll('a[href="/challenges/'+$completedChallenge+'/"]');
+      for (var i = 0; i < completedChallengeCards.length; i++) {
+        completedChallengeCards[i].classList.add('completed');
+      }
+    }
+  }
+
+
+  var domReadyCallback = function(){
+    // Handler when the DOM is fully loaded
+    //handling the loazy loading of images in the content body and beyond.
+    var lazyloadCardImages,
+        lazyloadContentImages;
+
+    if ("IntersectionObserver" in window) {
+      //this will handle the card background images styled by css
+      lazyloadCardImages = document.querySelectorAll(".lazycards");
+      var imageCardObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var image = entry.target;
+            image.classList.remove("lazycards");
+            imageCardObserver.unobserve(image);
+          }
+        });
+      });
+      lazyloadCardImages.forEach(function(image) {
+        imageCardObserver.observe(image);
+      });
+      //this will handle the images used in the body of our content types
+      lazyloadContentImages = document.querySelectorAll(".lazycontent");
+      var imageContentObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var image = entry.target;
+            image.src = image.dataset.src;
+            image.classList.remove("lazycontent");
+            imageContentObserver.unobserve(image);
+          }
+        });
+      });
+
+      lazyloadContentImages.forEach(function(image) {
+        imageContentObserver.observe(image);
+      });
+    }
+
+    //function that runs to set the same height of card elements
+
+    setTimeout(function() {
+      $sameHeightWidgets = document.querySelectorAll('[data-widget="setsameheight"]');
+      ibmcode.widgetSetSameHeight($sameHeightWidgets,true);
+    }, 250);
+    var resizeTimer;
+    ibmcode.addEvent(window,'resize',function(){
+      clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          ibmcode.widgetSetSameHeight($sameHeightWidgets,true);
+        }, 250);
+    });
+  };
+
+  if ( document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll) ) {
+    domReadyCallback();
+  } else {
+    document.addEventListener("DOMContentLoaded", domReadyCallback);
+  }
+
+</script>
+
+
+<div id="teconsent" class="truste_cookie_prefs" style="position: fixed; display: none; height: 40px; background-color: #ffffff; z-index: 9999999999; bottom: 0; right: 0; margin: 0; padding: 0 16px; line-height: 40px; vertical-align: middle; box-shadow:0 0 10px 3px rgba(0,0,0,.1)" consent="undefined">
+	<script type="text/javascript" src="src/notice" id="truste_0.22970594237886544"></script>
+	<script async="async" type="text/javascript" crossorigin="" src="src/v1.7-30"></script>
+	<a id="icon-id03625086806430968" tabindex="0" role="button" lang="en" style="cursor: pointer; font-family: ibm-plex-sans; font-size: 12pt; color: #3d3d3d; text-decoration: none">Cookie Preferences</a>
+</div>
+<script async="" src="src/js(2)" id="mm_pp_background"></script>
+<iframe id="LOTCCFrame_1580751671012" src="src/rt=ifr.html" title="empty" tabindex="-1" role="presentation" aria-hidden="true" style="border: 0px; width: 0px; height: 0px; display: block;"></iframe>
+<iframe name="trustarc_notice" id="trustarcNoticeFrame" src="src/get.html" style="display: none;"></iframe>
+<div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.030159681698396446">
+	<img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.264036685009714" width="0" height="0" alt="" src="src/0">
+</div>
+<iframe src="src/iframe.html" id="mm_sync_back_ground" style="visibility: hidden; display: none;"></iframe>
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="src/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+
+</body>
+<!-- InstanceEnd --></html>
