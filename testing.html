@@ -147,6 +147,7 @@
             </tr>
         </table>
     </div>
+	<script type="text/javascript" src="example.json"></script>
     <script>
         //first add an event listener for page load
         document.addEventListener( "DOMContentLoaded", get_json_data, false ); // get_json_data is the function name that will fire on page load
@@ -170,7 +171,8 @@
             //set required headers for the request
             xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             // send the request
-            xmlhttp.send(); // when the request completes it will execute the code in onreadystatechange section
+            xmlhttp.send(); 
+			// when the request completes it will execute the code in onreadystatechange section
         }
 
         //this function appends the json data to the table 'gable'
