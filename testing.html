@@ -201,7 +201,7 @@
 	</script>
 -->
 	
-	<p>Demo:</p>
+	<p>Demo 1:</p>
 	<p id="demo"></p>
 
 	<script type="text/javascript" src="json_demo.txt"></script>
@@ -214,6 +214,22 @@
 	  }
 	};
 	xmlhttp.open("GET", "json_demo.txt", true);
+	xmlhttp.send();
+	</script>
+	
+	<p>Demo 2:</p>
+	<p id="demo2"></p>
+
+	<script type="text/javascript" src="example.json"></script>
+	<script>
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+		var myObj = JSON.parse(this.responseText);
+		document.getElementById("demo2").innerHTML = myObj.name;
+	  }
+	};
+	xmlhttp.open("GET", "example.json", true);
 	xmlhttp.send();
 	</script>
 </body>
