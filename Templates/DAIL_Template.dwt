@@ -950,6 +950,8 @@
 							<h4>For IBMers:</h4>
 							<ul id="menu-ibmers-nav" class="">
 								<li><a href="https://w3.ibm.com/w3publisher/daell-enablement/enablement" target="_blank">Internal Enablement (W3 required)</a></li>
+								<li><a href="https://w3.ibm.com/w3publisher/data-and-ai-learning" target="_blank">Sales - Data and AI Learning (W3 required)</a></li>
+								<li><a href="../testing.html" target="_blank">&nbsp;&nbsp;</a></li>
 							</ul>
 						</nav>
 <!-- Disable unused menuitems
