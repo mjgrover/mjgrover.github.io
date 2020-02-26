@@ -220,16 +220,16 @@
 	<p>Demo 2:</p>
 	<p id="demo2"></p>
 
-	<script type="text/javascript" src="example.json"></script>
+	<script type="text/javascript" src="example.txt"></script>
 	<script>
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 		var myObj = JSON.parse(this.responseText);
-		document.getElementById("demo2").innerHTML = myObj.name;
+		document.getElementById("demo2").innerHTML = myObj.COUNTRY;
 	  }
 	};
-	xmlhttp.open("GET", "example.json", true);
+	xmlhttp.open("GET", "example.txt", true);
 	xmlhttp.send();
 	</script>
 </body>
