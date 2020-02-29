@@ -251,7 +251,7 @@ function full_course_card(counter, wrapper, course_url, Learning_Type, Course_Ti
 	var a = document.createElement ('a');
 	a.className = 'developer--card__block_link';
 	a.id = 'href_wrapper'+counter;
-		if (wrapper == "true"){
+		if (wrapper.stringValue == "true"){
 			a.href = "content_wrapper.html?loc=https://"+course_url+"&code="+course_code;
 			}
 		else{
