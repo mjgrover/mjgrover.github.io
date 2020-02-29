@@ -77,8 +77,8 @@
 		   $.each(data, function(key, value){
 //			   if (value.segment == segment_value){
 				   
-					   // function full_course_card(course_url, Learning_Type, Course_Title, Description)
-					   full_course_card(counter, value.course_url, value.Learning_Type, value.Course_Title, value.Description);
+					   // function full_course_card(wrapper, course_url, Learning_Type, Course_Title, Description)
+					   full_course_card(counter, value.wrapper, value.course_url, value.Learning_Type, value.Course_Title, value.Description, value.course_code);
 				   counter++;
 		   			});
 				   
@@ -225,7 +225,7 @@ $(document).ready(function(){
 
 
 <script>
-function full_course_card(counter, course_url, Learning_Type, Course_Title, Description)
+function full_course_card(wrapper, counter, course_url, Learning_Type, Course_Title, Description, course_code)
 {
 	var block_to_insert ;
 	var container_block ;
@@ -251,7 +251,13 @@ function full_course_card(counter, course_url, Learning_Type, Course_Title, Desc
 	var a = document.createElement ('a');
 	a.className = 'developer--card__block_link';
 	a.id = 'href_wrapper'+counter;
-	a.href = course_url;
+		if (wrapper == 'true'){
+			a.href = "content_wrapper.html?loc=https://"+course_url+"&code="+course_code;
+			}
+		else{
+			a.href = "https://"+course_url;
+		}
+			
 	a.target = '_blank';
 	
 	container_block = document.getElementById( 'card'+counter );
