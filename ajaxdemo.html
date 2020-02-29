@@ -73,14 +73,14 @@
 			   $.getJSON("course.json", function(data){
 				   var course_data = '';
 				   var counter = '0';
-				   var segment_value = 'Watson';
+//				   var segment_value = 'Watson';
 		   $.each(data, function(key, value){
-			   if (value.segment == segment_value){
+//			   if (value.segment == segment_value){
 				   
 					   // function full_course_card(course_url, Learning_Type, Course_Title, Description)
 					   full_course_card(counter, value.course_url, value.Learning_Type, value.Course_Title, value.Description);
 				   counter++;
-		   			}});
+		   			});
 				   
 			   	});
 		   });
