@@ -9,19 +9,21 @@
  <body>
   <div class="container">
    <div class="table-responsive">
-    <h1 align="center">CSV File to HTML Table Using AJAX jQuery</h1>
+    <h1 align="center">JSON File to HTML Table/Div Using AJAX jQuery</h1>
     <br />
+<!--
     <div align="center">
      <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Employee Data-CSV</button>
 	 <button type="button" name="load_coursedata" id="load_coursedata" class="btn btn-info">Load Course Data-CSV</button>
-<!--	 <button type="button" name="load_jsondata" id="load_jsondata" class="btn btn-info">Load Course Data-JSON</button>-->
+	 <button type="button" name="load_jsondata" id="load_jsondata" class="btn btn-info">Load Course Data-JSON</button>
     </div>
 	   
     <br />
     <div id="employee_table"></div>
 	<div id="course_table"></div>
+-->
 <!--	<div id="json_table"></div>-->
-	   <H1>Catalog with Description</h1>
+	   <h1>Catalog with Description</h1>
 	   <table class="table table-bordered table-striped" id="json_table">
 		   <tr>
 			   <th>Learning Type</th>
@@ -30,13 +32,58 @@
 		   </tr>
 	   </table>
 	   <br>
-	   <H1>Catalog without Description</h1>
+	   <h1>Catalog without Description</h1>
 	   <table class="table table-bordered table-striped" id="json2_table">
 		   <tr>
 			   <th>Learning Type</th>
 			   <th>Course Title</th>
 		   </tr>
 	   </table>
+	   <br>
+	   <h1>Catalog limited to segment = Watson</h1>
+	   <table class="table table-bordered table-striped" id="json3_table">
+		   <tr>
+			   <th>Learning Type</th>
+			   <th>Course Title</th>
+		   </tr>
+	   </table>
+	   <br>
+	   <h1>Sample of manually created Div Catalog Item</h1>
+	   <div class="bx--col-sm-4 bx--col-lg-4">
+			<div class="developer--card bx--tile ibmcode_series developer--darkcard">
+				<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/0A039G&code=0A039G" target="_blank">
+				<h5 class="developer--card__type">eLearning</h5>
+				<div class="developer--card__body">
+					<h3 class="developer--card__title"><span>Advanced Machine Learning Models Using IBM SPSS Modeler (V18.2)</span></h3>
+					<p class="developer--card__description">This course presents advanced models available in IBM SPSS Modeler. The participant is first introduced to a technique named PCA/Factor, to reduce the number of fields to a number of core factors, referred to as components or factors. The next topics focus on supervised models, including Support Vector Machines, Random Trees, and XGBoost. Methods are reviewed on how to analyze text data, combine individual models into a single model, and how to enhance the power of IBM SPSS Modeler by adding external models, developed in Python or R, to the Modeling palette.</p>
+				</div>
+				<div class="developer--card__bottom">
+					<p><span class="developer--card__date"></span></p>
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
+				</div>
+				</a>
+			</div>
+		</div>
+	   <br>
+	   <div id="catalogcontainer">
+		   <script type="text/javascript">
+		   $(document).ready(function(){
+			   $.getJSON("course.json", function(data){
+				   var course_data = '';
+				   $.each(data, function(key, value){
+					   // function full_course_card(course_url, Learning_Type, Course_Title, Description)
+					   full_course_card(value.course_url, value.Learning_Type, value.Course_Title, value.Description);
+		   			});
+			   	});
+		   });
+		   </script>
+		<p>
+		The new block will appear here:.
+		</p>
+		</div>
+	   
+	   <h1>Built using Script to create the Div's and Populate with JSON</h1>
+	   <div id="build_catalog"></div>
    </div>
   </div>
  </body>
@@ -133,6 +180,7 @@ $(document).ready(function(){
 	});
 </script>
 
+<!--JSON without Description-->
 <script>
 $(document).ready(function(){
  $.getJSON("course.json", function(data){
@@ -146,4 +194,134 @@ $(document).ready(function(){
 	$('#json2_table').append(course_data);
 });
 	});
+</script>
+
+<!--JSON segmented by Watson-->
+<script>
+$(document).ready(function(){
+ $.getJSON("course.json", function(data){
+		   var course_data = '';
+	 	   var destination_table = '#json3_table';
+	 	   var segment_value = 'Watson';
+		   $.each(data, function(key, value){
+			   if (value.segment == segment_value){
+	 course_data += '<tr>';
+	 course_data += '<td>'+value.Learning_Type+'</td>';
+	 course_data += '<td>'+value.Course_Title+'</td>';
+	 course_data += '</tr>';
+				   }
+ });
+	$(destination_table).append(course_data);
+});
+	});
+</script>
+
+
+<script>
+function full_course_card(course_url, Learning_Type, Course_Title, Description){
+	var block_to_insert ;
+	var container_block ;
+
+	block_to_insert = document.createElement( 'div' );
+	block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4'
+	block_to_insert.id = "cardContainer"
+	
+	container_block = document.getElementById( 'catalogcontainer' );
+	container_block.appendChild( block_to_insert );
+
+	// Nested 2nd Div for Card
+	block_to_insert = document.createElement( 'div' );
+	block_to_insert.className = 'developer--card bx--tile ibmcode_series developer--darkcard'
+	block_to_insert.id = "card"
+	
+	container_block = document.getElementById( 'cardContainer' );
+	container_block.appendChild( block_to_insert );
+	
+	// Add Href wrapper
+//	var course_url = 'www.google.com';
+	var a = document.createElement ('a');
+	a.className = 'developer--card__block_link';
+	a.id = 'href_wrapper';
+	a.href = course_url;
+	a.target = '_blank';
+	
+	container_block = document.getElementById( 'card' );
+	container_block.appendChild( a );
+	
+		// Add H5 class for Card Type
+//		var Learning_Type = 'eLearning';
+		var h5 = document.createElement ('h5');
+		h5.id = 'learning_type';
+		h5.className = 'developer--card__type';
+		h5.innerHTML = Learning_Type;
+		
+		container_block = document.getElementById('href_wrapper');
+		container_block.appendChild( h5 );
+	
+			// Nested 3nd Div for Card Body
+			block_to_insert = document.createElement( 'div' );
+			block_to_insert.className = 'developer--card__body';
+			block_to_insert.id = "card_body";
+
+			container_block = document.getElementById( 'href_wrapper' );
+			container_block.appendChild( block_to_insert );
+	
+				//Card Title
+//				var Course_Title = 'Name of sample course';
+				var h3 = document.createElement ('h3');
+				h3.id = 'card_title';
+				h3.className = 'developer--card__title';
+				h3.innerHTML = Course_Title;
+	
+				container_block = document.getElementById( 'card_body' );
+				container_block.appendChild( h3 );
+	
+				//Card Description
+//				var Description = 'This is all the details you want to know about this course.  This is all about blah, blah, blah.';
+				var p = document.createElement ('p');
+				p.id = 'card_description';
+				p.className = 'developer--card__description';
+				p.innerHTML = Description;
+	
+				container_block = document.getElementById( 'card_body' );
+				container_block.appendChild( p );
+	
+			//Card Bottom
+			block_to_insert = document.createElement( 'div' );
+			block_to_insert.className = 'developer--card__bottom';
+			block_to_insert.id = "card_bottom";
+
+			container_block = document.getElementById( 'href_wrapper' );
+			container_block.appendChild( block_to_insert );
+	
+			//Card Date
+			var Date = '';
+			var p = document.createElement ('p');
+			p.id = 'card_date';
+			p.className = 'developer--card__date';
+			p.innerHTML = Date;
+			
+			container_block = document.getElementById( 'card_bottom' );
+			container_block.appendChild( p );
+	
+			//Card Arrow
+			var boxWidth = 24;
+			var boxHeight = 24;
+			var path1 = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+			var svgElem = document.createElementNS ("http://www.w3.org/2000/svg", "svg" );
+			
+			svgElem.id = 'card_arrow';
+			svgElem.setAttribute("focusable", false);
+			svgElem.setAttribute("preserveAspectRatio", "xMidYMid meet");
+			svgElem.setAttribute("width", boxWidth);
+			svgElem.setAttribute("height", boxHeight);
+			svgElem.setAttribute("viewBox", "0 0 "+boxWidth+" "+boxHeight);
+			svgElem.setAttribute("aria-hidden", true);
+			svgElem.style="will-change: transform;";
+			path1.setAttribute('d', 'M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z');
+	
+			svgElem.appendChild(path1);
+			container_block = document.getElementById( 'card_bottom' );
+			container_block.appendChild( svgElem );
+}
 </script>
