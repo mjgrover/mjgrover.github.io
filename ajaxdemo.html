@@ -48,6 +48,7 @@
 		   </tr>
 	   </table>
 	   <br>
+<!--
 	   <h1>Sample of manually created Div Catalog Item</h1>
 	   <div class="bx--col-sm-4 bx--col-lg-4">
 			<div class="developer--card bx--tile ibmcode_series developer--darkcard">
@@ -64,16 +65,23 @@
 				</a>
 			</div>
 		</div>
+-->
 	   <br>
 	   <div id="catalogcontainer">
 		   <script type="text/javascript">
 		   $(document).ready(function(){
 			   $.getJSON("course.json", function(data){
 				   var course_data = '';
-				   $.each(data, function(key, value){
+				   var counter = '0';
+				   var segment_value = 'Watson';
+		   $.each(data, function(key, value){
+			   if (value.segment == segment_value){
+				   
 					   // function full_course_card(course_url, Learning_Type, Course_Title, Description)
-					   full_course_card(value.course_url, value.Learning_Type, value.Course_Title, value.Description);
-		   			});
+					   full_course_card(counter, value.course_url, value.Learning_Type, value.Course_Title, value.Description);
+				   counter++;
+		   			}});
+				   
 			   	});
 		   });
 		   </script>
@@ -218,90 +226,92 @@ $(document).ready(function(){
 
 
 <script>
-function full_course_card(course_url, Learning_Type, Course_Title, Description){
+function full_course_card(counter, course_url, Learning_Type, Course_Title, Description)
+{
 	var block_to_insert ;
 	var container_block ;
+	
 
 	block_to_insert = document.createElement( 'div' );
-	block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4'
-	block_to_insert.id = "cardContainer"
+	block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4';
+	block_to_insert.id = 'cardContainer'+counter;
 	
 	container_block = document.getElementById( 'catalogcontainer' );
 	container_block.appendChild( block_to_insert );
-
+	{
 	// Nested 2nd Div for Card
 	block_to_insert = document.createElement( 'div' );
 	block_to_insert.className = 'developer--card bx--tile ibmcode_series developer--darkcard'
-	block_to_insert.id = "card"
+	block_to_insert.id = 'card'+counter;
 	
-	container_block = document.getElementById( 'cardContainer' );
+	container_block = document.getElementById( 'cardContainer'+counter );
 	container_block.appendChild( block_to_insert );
 	
 	// Add Href wrapper
 //	var course_url = 'www.google.com';
 	var a = document.createElement ('a');
 	a.className = 'developer--card__block_link';
-	a.id = 'href_wrapper';
+	a.id = 'href_wrapper'+counter;
 	a.href = course_url;
 	a.target = '_blank';
 	
-	container_block = document.getElementById( 'card' );
+	container_block = document.getElementById( 'card'+counter );
 	container_block.appendChild( a );
 	
 		// Add H5 class for Card Type
 //		var Learning_Type = 'eLearning';
 		var h5 = document.createElement ('h5');
-		h5.id = 'learning_type';
+		h5.id = 'learning_type'+counter;
 		h5.className = 'developer--card__type';
 		h5.innerHTML = Learning_Type;
 		
-		container_block = document.getElementById('href_wrapper');
+		container_block = document.getElementById('href_wrapper'+counter);
 		container_block.appendChild( h5 );
 	
 			// Nested 3nd Div for Card Body
 			block_to_insert = document.createElement( 'div' );
 			block_to_insert.className = 'developer--card__body';
-			block_to_insert.id = "card_body";
+			block_to_insert.id = 'card_body'+counter;
 
-			container_block = document.getElementById( 'href_wrapper' );
+			container_block = document.getElementById( 'href_wrapper'+counter );
 			container_block.appendChild( block_to_insert );
 	
 				//Card Title
 //				var Course_Title = 'Name of sample course';
 				var h3 = document.createElement ('h3');
-				h3.id = 'card_title';
+				h3.id = 'card_title'+counter;
 				h3.className = 'developer--card__title';
 				h3.innerHTML = Course_Title;
 	
-				container_block = document.getElementById( 'card_body' );
+				container_block = document.getElementById( 'card_body'+counter );
 				container_block.appendChild( h3 );
 	
 				//Card Description
 //				var Description = 'This is all the details you want to know about this course.  This is all about blah, blah, blah.';
 				var p = document.createElement ('p');
-				p.id = 'card_description';
+				p.id = 'card_description'+counter;
 				p.className = 'developer--card__description';
 				p.innerHTML = Description;
 	
-				container_block = document.getElementById( 'card_body' );
+				container_block = document.getElementById( 'card_body'+counter );
 				container_block.appendChild( p );
 	
 			//Card Bottom
 			block_to_insert = document.createElement( 'div' );
 			block_to_insert.className = 'developer--card__bottom';
-			block_to_insert.id = "card_bottom";
+			block_to_insert.id = 'card_bottom'+counter;
 
-			container_block = document.getElementById( 'href_wrapper' );
+			container_block = document.getElementById( 'href_wrapper'+counter );
 			container_block.appendChild( block_to_insert );
 	
 			//Card Date
 			var Date = '';
 			var p = document.createElement ('p');
-			p.id = 'card_date';
+			p.id = 'card_date'+counter;
 			p.className = 'developer--card__date';
 			p.innerHTML = Date;
 			
-			container_block = document.getElementById( 'card_bottom' );
+			container_block = document.getElementById( 'card_bottom'+counter );
 			container_block.appendChild( p );
 	
 			//Card Arrow
@@ -321,7 +331,7 @@ function full_course_card(course_url, Learning_Type, Course_Title, Description){
 			path1.setAttribute('d', 'M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z');
 	
 			svgElem.appendChild(path1);
-			container_block = document.getElementById( 'card_bottom' );
+			container_block = document.getElementById( 'card_bottom'+counter );
 			container_block.appendChild( svgElem );
-}
+}}
 </script>
