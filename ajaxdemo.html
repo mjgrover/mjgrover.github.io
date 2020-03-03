@@ -9,9 +9,13 @@
 	 <script>
 		 $(document).ready(function(){
 			 console.log("ready");
+			 	// input format: jsonfile, targetcontainer, display_type (1 = short, 2 = include description), card segment
+			    // card segment values: Cloud Pak for Data, Data Science, HDM, UGI, Watson, WFSS, AILearning
 				create_card("course.json", "catalogcontainer", '2');
 	 			create_card("course.json", "shortcatalog", '1');
-			 	create_card("example.json", "2ndlong", '2');	 
+			 	create_card("courses_master.json", "watsoncatalog", '2', 'Watson');
+			 	create_card("courses_master.json", "datasciencecatalog", '2', 'Data Science');	 
+			 	create_card("course.json", "testcatalog", '1');
 		 });
 	 </script>
 	 
@@ -97,8 +101,18 @@
 <!--		<script>window.onload = create_card("course.json", "shortcatalog", '1');</script>-->
 	   
 	   <p></p>
-	   <div id="2ndlong">
-	   		<h1>2nd Long Catalog</h1>
+	   <div id="watsoncatalog">
+	   		<h1>Watson Catalog</h1>
+	   </div>
+	   
+	   <p></p>
+	   <div id="datasciencecatalog">
+	   		<h1>Data Science Catalog</h1>
+	   </div>
+	   
+	   <p></p>
+	   <div id="testcatalog">
+	   		<h1>Test Catalog</h1>
 	   </div>
 	    
 <!--		<script>window.onload = create_card("course.json", "2ndlong", '2');</script>-->
@@ -189,9 +203,9 @@ $(document).ready(function(){
 		   var course_data = '';
 		   $.each(data, function(key, value){
 	 course_data += '<tr>';
-	 course_data += '<td>'+value.Learning_Type+'</td>';
-	 course_data += '<td>'+value.Course_Title+'</td>';
-	 course_data += '<td>'+value.Description+'</td>';
+	 course_data += '<td>'+value.learning_type+'</td>';
+	 course_data += '<td>'+value.course_title+'</td>';
+	 course_data += '<td>'+value.description+'</td>';
 	 course_data += '</tr>';
  });
 	$('#json_table').append(course_data);
@@ -206,8 +220,8 @@ $(document).ready(function(){
 		   var course_data = '';
 		   $.each(data, function(key, value){
 	 course_data += '<tr>';
-	 course_data += '<td>'+value.Learning_Type+'</td>';
-	 course_data += '<td>'+value.Course_Title+'</td>';
+	 course_data += '<td>'+value.learning_type+'</td>';
+	 course_data += '<td>'+value.course_title+'</td>';
 	 course_data += '</tr>';
  });
 	$('#json2_table').append(course_data);
@@ -225,8 +239,8 @@ $(document).ready(function(){
 		   $.each(data, function(key, value){
 			   if (value.segment == segment_value){
 	 course_data += '<tr>';
-	 course_data += '<td>'+value.Learning_Type+'</td>';
-	 course_data += '<td>'+value.Course_Title+'</td>';
+	 course_data += '<td>'+value.learning_type+'</td>';
+	 course_data += '<td>'+value.course_title+'</td>';
 	 course_data += '</tr>';
 				   }
  });
