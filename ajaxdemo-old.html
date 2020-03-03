@@ -5,17 +5,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script src="courses.js"></script>
-	 <script>
-		 $(document).ready(function(){
-			 console.log("ready");
-				create_card("course.json", "catalogcontainer", '2');
-	 			create_card("course.json", "shortcatalog", '1');
-			 	create_card("example.json", "2ndlong", '2');	 
-		 });
-	 </script>
-	 
-	 
  </head>
  <body>
   <div class="container">
@@ -79,29 +68,28 @@
 -->
 	   <br>
 	   <div id="catalogcontainer">
-		   <h1>Catalog Container</h1>   
+		   <script type="text/javascript">
+		   $(document).ready(function(){
+			   $.getJSON("course.json", function(data){
+				   var course_data = '';
+				   var counter = '0';
+//				   var segment_value = 'Watson';
+		   $.each(data, function(key, value){
+//			   if (value.segment == segment_value){
+				   
+					   // function full_course_card(wrapper, course_url, Learning_Type, Course_Title, Description)
+					   full_course_card(counter, value.wrapper, value.course_url, value.Learning_Type, value.Course_Title, value.Description, value.course_code);
+				   counter++;
+		   			});
+				   
+			   	});
+		   });
+		   </script>
+		<p>
+		<h1>Populated via JSON/Javascript</h1>
+		</p>
 		</div>
-<!--	    <script src="courses.js"></script>-->
 	   
-<!--
-		<script>$(document).ready(function(){
-				create_card("course.json", "catalogcontainer", '2') });</script>
--->
-<!--	   <script>window.onload = create_card("course.json", "catalogcontainer", '2');</script>-->
-	   
-	   <p></p>
-	   <div id="shortcatalog">
-	   		<h1>Short Catalog</h1>
-	   </div>
-	    
-<!--		<script>window.onload = create_card("course.json", "shortcatalog", '1');</script>-->
-	   
-	   <p></p>
-	   <div id="2ndlong">
-	   		<h1>2nd Long Catalog</h1>
-	   </div>
-	    
-<!--		<script>window.onload = create_card("course.json", "2ndlong", '2');</script>-->
 	   
    </div>
   </div>
@@ -236,17 +224,119 @@ $(document).ready(function(){
 </script>
 
 
-<!--
-
-<script src="courses.js"></script>
 <script>
-	$(document).ready(function(){
-//	useage: Jsonfile, div location, display_type (1 = short, 2 = full)	
-		create_card("course.json", "catalogcontainer", '2');	
+function full_course_card(counter, wrapper, course_url, Learning_Type, Course_Title, Description, course_code)
+{
+	var block_to_insert ;
+	var container_block ;
+	
+
+	block_to_insert = document.createElement( 'div' );
+	block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4';
+	block_to_insert.id = 'cardContainer'+counter;
+	
+	container_block = document.getElementById( 'catalogcontainer' );
+	container_block.appendChild( block_to_insert );
+	{
+	// Nested 2nd Div for Card
+	block_to_insert = document.createElement( 'div' );
+	block_to_insert.className = 'developer--card bx--tile ibmcode_series developer--darkcard'
+	block_to_insert.id = 'card'+counter;
+	
+	container_block = document.getElementById( 'cardContainer'+counter );
+	container_block.appendChild( block_to_insert );
+	
+	// Add Href wrapper
+//	var course_url = 'www.google.com';
+	var a = document.createElement ('a');
+	a.className = 'developer--card__block_link';
+	a.id = 'href_wrapper'+counter;
+		if (wrapper === "true"){
+			a.href = "content_wrapper.html?loc="+course_url+"&code="+course_code;
+			}
+		else{
+			a.href = "https://"+course_url;
+		}
+			
+	a.target = '_blank';
+	
+	container_block = document.getElementById( 'card'+counter );
+	container_block.appendChild( a );
+	
+		// Add H5 class for Card Type
+//		var Learning_Type = 'eLearning';
+		var h5 = document.createElement ('h5');
+		h5.id = 'learning_type'+counter;
+		h5.className = 'developer--card__type';
+		h5.innerHTML = Learning_Type;
 		
-});
+		container_block = document.getElementById('href_wrapper'+counter);
+		container_block.appendChild( h5 );
+	
+			// Nested 3nd Div for Card Body
+			block_to_insert = document.createElement( 'div' );
+			block_to_insert.className = 'developer--card__body';
+			block_to_insert.id = 'card_body'+counter;
+
+			container_block = document.getElementById( 'href_wrapper'+counter );
+			container_block.appendChild( block_to_insert );
+	
+				//Card Title
+//				var Course_Title = 'Name of sample course';
+				var h3 = document.createElement ('h3');
+				h3.id = 'card_title'+counter;
+				h3.className = 'developer--card__title';
+				h3.innerHTML = Course_Title;
+	
+				container_block = document.getElementById( 'card_body'+counter );
+				container_block.appendChild( h3 );
+	
+				//Card Description
+//				var Description = 'This is all the details you want to know about this course.  This is all about blah, blah, blah.';
+				var p = document.createElement ('p');
+				p.id = 'card_description'+counter;
+				p.className = 'developer--card__description';
+				p.innerHTML = Description;
+	
+				container_block = document.getElementById( 'card_body'+counter );
+				container_block.appendChild( p );
+	
+			//Card Bottom
+			block_to_insert = document.createElement( 'div' );
+			block_to_insert.className = 'developer--card__bottom';
+			block_to_insert.id = 'card_bottom'+counter;
+
+			container_block = document.getElementById( 'href_wrapper'+counter );
+			container_block.appendChild( block_to_insert );
+	
+			//Card Date
+			var Date = '';
+			var p = document.createElement ('p');
+			p.id = 'card_date'+counter;
+			p.className = 'developer--card__date';
+			p.innerHTML = Date;
+			
+			container_block = document.getElementById( 'card_bottom'+counter );
+			container_block.appendChild( p );
+	
+			//Card Arrow
+			var boxWidth = 24;
+			var boxHeight = 24;
+			var path1 = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+			var svgElem = document.createElementNS ("http://www.w3.org/2000/svg", "svg" );
+			
+			svgElem.id = 'card_arrow';
+			svgElem.setAttribute("focusable", false);
+			svgElem.setAttribute("preserveAspectRatio", "xMidYMid meet");
+			svgElem.setAttribute("width", boxWidth);
+			svgElem.setAttribute("height", boxHeight);
+			svgElem.setAttribute("viewBox", "0 0 "+boxWidth+" "+boxHeight);
+			svgElem.setAttribute("aria-hidden", true);
+			svgElem.style="will-change: transform;";
+			path1.setAttribute('d', 'M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z');
+	
+			svgElem.appendChild(path1);
+			container_block = document.getElementById( 'card_bottom'+counter );
+			container_block.appendChild( svgElem );
+}}
 </script>
--->
-<!--<script src="courses.js">var json_file = "course.json"; var container="catalogcontainer"; var display_type='1';</script>-->
-
-
