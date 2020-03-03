@@ -1,0 +1,11 @@
+[
+  {
+    "learning_type": "WBT",
+    "segment": "Watson",
+    "course_code": "W68003T",
+    "wrapper": "n",
+    "course_url": "learn.ibm.com/course/view.php?id=4327",
+    "course_title": "Artificial Intelligence Concepts",
+    "description": "Terms and concepts related to artificial intelligence (AI), including augmented intelligence, machine learning, deep learning, neural networks, and natural language processing, can be confusing at first glance. This course explains common AI concepts used at IBM and how these concepts relate to Watson technologies. This course is free. (Requires login using IBM id)"
+  }
+]

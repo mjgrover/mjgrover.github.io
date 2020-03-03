@@ -950,6 +950,8 @@
 							<h4>For IBMers:</h4>
 							<ul id="menu-ibmers-nav" class="">
 								<li><a href="https://w3.ibm.com/w3publisher/daell-enablement/enablement" target="_blank">Internal Enablement (W3 required)</a></li>
+								<li><a href="https://w3.ibm.com/w3publisher/data-and-ai-learning" target="_blank">Sales - Data and AI Learning (W3 required)</a></li>
+								<li><a href="testing.html" target="_blank">&nbsp;&nbsp;</a></li>
 							</ul>
 						</nav>
 <!-- Disable unused menuitems
@@ -1002,6 +1004,10 @@
 		<div class="restrictContentWrap">
 			<div class="bx--grid devContentGrid">
 				<div class="bx--row">
+					
+					<div class="bx--row" id="featuredcourse"></div>
+					
+<!--
 					<div class="bx--col-md-4 bx--col-lg-4"><h2>Featured Course:</h2>
 						<h3 class="code--taxonomy__section-header">Artificial Intelligence Concepts</h3>
 						<p><a href="https://learn.ibm.com/course/view.php?id=4327" target="_blank">Access course »</a></p>
@@ -1009,21 +1015,40 @@
 					<div class="bx--col-md-8 bx--col-lg-8">
 						<p>Terms and concepts related to artificial intelligence (AI), including augmented intelligence, machine learning, deep learning, neural networks, and natural language processing, can be confusing at first glance. This course explains common AI concepts used at IBM and how these concepts relate to Watson technologies. This course is <strong>free</strong>. (Requires login using IBM id)</p>
 					</div>
+-->
 				</div>
 			</div>
 		</div>
 	</div>
 	
 <!--	START CATALOG HERE-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="courses.js"></script>
+	 <script>
+		 $(document).ready(function(){
+			 console.log("load catalogs");
+			 	// input format: jsonfile, targetcontainer, display_type (1 = short, 2 = include description), card segment from JSON
+			    // card segment values: Cloud Pak for Data, Data Science, HDM, UGI, Watson, WFSS, AILearning
+				create_card("courses_master.json", "cloudpakfordatacatalog", '2', 'Cloud Pak for Data');
+	 			create_card("courses_master.json", "datasciencecatalog", '2', 'Data Science');
+			 	create_card("courses_master.json", "watsoncatalog", '2', 'Watson');
+			 	create_card("courses_master.json", "hdmcatalog", '2', 'HDM');	 
+			 	create_card("courses_master.json", "ugicatalog", '2', 'UGI');
+			 	create_card("courses_master.json", "wfsscatalog", '2', 'WFSS');
+			 	create_card("courses_master.json", "ailearningcatalog", '2', 'AILearning');
+			 	featured_card("featured_master.json", "featuredcourse");
+		 });
+	 </script>
 	
 	<div class="hub-solutions-for">
 		<div class="restrictContentWrap">
 			<div class="bx--grid">
 				<div class="bx--row">
 					<div class="bx--col-md-12 bx--col-lg-12 bx--no-gutter--right">
-						<h3 class="code--taxonomy__section-header">Data and AI Learning Catalog - By Function</h3>
+						<h3 class="code--taxonomy__section-header">Data and AI Learning Catalog - By Product/Function</h3>
 						<ul data-accordion="" class="bx--accordion">
 							
+
 							<li data-accordion-item="" class="bx--accordion__item ">
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane2">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
@@ -1031,131 +1056,47 @@
 									</svg>
 									<div class="bx--accordion__title">Cloud Pak for Data</div>
 								</button>
-								
-<!--								Cloud Pak for Data Content-->
 								<div id="pane2" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
 										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
-											<p style="padding-left: 1rem;">Accelerate your journey to AI to transform how your business operates with an open, extensible data and AI platform that runs on any cloud</p>
-											<p style="padding-left: 1rem; font-size: 125%; color: red;">Cloud Pak for Data learning journey v2.5 coming in February 2020</p>
+											<p style="padding-left: 1rem;">Accelerate your journey to AI to transform how your business operates with an open, extensible data and AI platform that runs on any cloud</p>	
 										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/6X136G&code=6X136G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Cloud Pak for Data - Foundations (V2.1.x)</span></h3>
-														<p class="developer--card__description">This learning offering will tell a holistic story of Cloud Pak for Data including collaboration across an organization, which is key in this platform. Applicable to all personas. Multiple use cases will provide understanding of how organizations can benefit from Cloud Pak for Data. A variety of features will also be explored, providing students with the insight on how to use the platform.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/6X235G&code=6X235G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Cloud Pak for Data (V2.5.x): Data Virtualization</span></h3>
-													<p class="developer--card__description">This learning offering will focus on the Data Virtualization add-on to IBM Cloud Pak for Data. Students will learn about the Data Virtualization technology and be able to create connections to remote data sources. The offering will also cover how to create and manage virtual assets, such as database tables or views, from the remote data sources. Finally, the students will use those assets within IBM Cloud Pak for Data without needing to move any data.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/6X240G&code=6X240G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Watson OpenScale on IBM Cloud Pak for Data (V2.5.x)</span></h3>
-													<p class="developer--card__description">This offering teaches you how IBM Watson OpenScale on IBM Cloud Pak for Data lets business analysts, data scientists, and developers build monitors for artificial intelligence (AI) models to manage risks. You will understand how to use Watson OpenScale to build monitors for quality, fairness, and drift, and how monitors impact business KPIs. You will also learn how monitoring for unwanted biases and viewing explanations of predictions helps provide business stakeholders confidence in the AI being launched into production. Note: This course contains the same topics as W7069G Watson OpenScale Methodology WBT.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/6X241G&code=6X241G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Watson Knowledge Catalog on IBM Cloud Pak for Data (V2.5.x)</span></h3>
-													<p class="developer--card__description">This offering provides analysts an introduction to the basics of IBM Watson Knowledge Catalog on IBM Cloud Pak for Data. Learners will be introduced to the Cloud Pak for Data product layout and functionality and the role of services within the product. They will learn to access the Watson Knowledge Catalog through the service, and gain skills in creating catalogs, populating them with assets, and then managing the assets in the catalog.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/6X137G&code=6X137G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Cognos Analytics on IBM Cloud Pak for Data (V2.1.x): Dashboarding and Reporting</span></h3>
-													<p class="developer--card__description">This offering provides analysts with an introduction to create dashboards with Cloud Pak for Data, and create dashboards and reports using the Cognos Analytics add-on.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/6X140G&code=6X140G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM SPSS Modeler Foundations on IBM Cloud Pak for Data (V2.1.X)</span></h3>
-													<p class="developer--card__description">SPSS Modeler is one of the add-on modules on IBM Cloud Pak for Data. This course reviews the basics of how to import, explore, and prepare data, and introduces the student to machine learning models with SPSS Modeler on Cloud Pak for Data. This training also applies to IBM Cloud Pak for Data System and IBM Cloud Private for Data.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/6X139G&code=6X139G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Decision Optimization on IBM Cloud Pak for Data (V2.1.x)</span></h3>
-													<p class="developer--card__description">IBM Decision Optimization allows you to run optimization models in IBM Cloud Private for Data, with a user-friendly environment in which you can combine optimization with data science. IBM Decision Optimization gives you access to IBM's industry-leading solution engines for mathematical programming and constraint programming.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
+										<div class="bx--row bx--no-gutter--right" id="cloudpakfordatacatalog"></div>
 									</div>
 								</div>
+							</li>
 							
+							<li data-accordion-item="" class="bx--accordion__item ">
+								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane7">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">AI Learning (non product specific AI focused learning)</div>
+								</button>
+								<div id="pane7" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
+											<p style="padding-left: 1rem;">Access a continually growing library of AI Learning assets to help you fast track your artificial intelligence knowledge.</p>
+										</div>
+										<div class="bx--row bx--no-gutter--right" id="ailearningcatalog"></div>
+									</div>
+								</div>
+							</li>
+							
+							
+							<li data-accordion-item="" class="bx--accordion__item ">
+								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane3">
+									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
+									</svg>
+									<div class="bx--accordion__title">IBM Watson (Product training)</div>
+								</button>
+								<div id="pane3" class="bx--accordion__content">
+									<div class="bx--row bx--no-gutter--right">
+										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
+											<p style="padding-left: 1rem;">Powered by the latest innovations in machine learning, Watson is the open, multicloud platform that lets you automate the AI lifecycle. Build powerful models from scratch, or speed time-to-value with pre-built enterprise apps.</p>
+										</div>
+										<div class="bx--row bx--no-gutter--right" id="watsoncatalog"></div>
+									</div>
+								</div>
 							</li>
 							
 							<li data-accordion-item="" class="bx--accordion__item "> <!-- Add bx--accordion__item--active to auto-open the dropdown -->
@@ -1165,611 +1106,68 @@
 									</svg>
 									<div class="bx--accordion__title">Data Science (Cognos, SPSS, etc)</div>
 								</button>
-								
-<!--								Data Science Content-->
 								<div id="pane1" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
 										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
 											<p style="padding-left: 1rem;">Unlock the value of your data in new ways and accelerate your journey to AI</p>
 										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/B6255G&code=B6255G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Cognos Analytics: Enterprise Administration (V11.1.x)</span></h3>
-													<p class="developer--card__description">This offering covers the fundamental concepts of installing and configuring IBM Cognos Analytics, and administering servers and content, in a distributed environment. In the course, participants will identify requirements for the installation and configuration of a distributed IBM Cognos Analytics software environment, implement security in the environment, and manage the server components. Students will also monitor and schedule tasks, create data sources, and manage and deploy content in the portal and IBM Cognos Administration.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=https://www.ibm.com/services/learning/course/B6252G&code=B6252G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Cognos Framework Manager: Design Metadata Models (v11.1.x)</span></h3>
-													<p class="developer--card__description">This offering provides participants with introductory to advanced knowledge of metadata modeling concepts, and how to model metadata for predictable reporting and analysis results using IBM Cognos Framework Manager. Participants will learn the full scope of the metadata modeling process, from initial project creation, to publishing of metadata to the web, enabling end users to easily author reports and analyze data.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/P8357G&code=P8357G" target="_blank">
-												<h5 class="developer--card__type">Classroom</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Planning Analytics: Analyze Data and Create Reports (V2.0.x) - P8357G</span></h3>
-													<p class="developer--card__description">This course is designed to teach analysts how to use IBM Planning Analytics to analyze data to discover trends and exceptions, create and customize reports and templates, and contribute data to plans. Through a series of lectures and hands-on activities, you will learn how use Planning Analytics Workspace and Planning Analytics for Microsoft Excel to create analyses, enter data, create custom views and dashboards, and build formatted reports and forms.</p>
-												</div>
-            									<div class="developer--card__bottom">
-              										<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/B6259G&code=B6259G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Cognos Analytics: Author Reports Advanced (V11.1.x)</span></h3>
-													<p class="developer--card__description">This course teaches experienced authors advanced report building techniques to enhance, customize, manage, and distribute reports. Additionally, the student will learn how to create highly interactive and engaging reports that can be run offline by creating Active Reports.</p>
-												</div>
-            									<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-              										<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/B6289G&code=B6289G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Cognos Analytics: Dashboard Essentials (V11.1.x)</span></h3>
-													<p class="developer--card__description">This Web-Based Training course teaches authors how to create dashboards in IBM Cognos Analytics so users can explore and interact with their data and gain insight into their business. You will learn how to add data sources, create and interact with dashboards, and customize content for presentation. You will also learn how to create effective narratives by using stories, and how to use explorations to perform a deeper analysis on your data.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/B6258G&code=B6258G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Cognos Analytics: Author Reports Fundamentals (V11.1.x)</span></h3>
-													<p class="developer--card__description">This course provides authors with an introduction to build reports using Cognos Analytics. Techniques to enhance, customize, and manage reports will be explored. Activities will illustrate and reinforce key concepts during this learning opportunity.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/P8362G&code=P8362G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Planning Analytics: Design and Develop Models in Planning Analytics Workspace (V2.0.x)</span></h3>
-													<p class="developer--card__description">This course is designed to teach modelers how to build a complete model in IBM Planning Analytics using Planning Analytics Workspace. Through a series of lectures and hands-on exercises, students will learn how to set up dimensions and cubes, manually enter data into these structures, and define the data that users can see. Students will also learn how to transfer data into the IBM Planning Analytics model, including the use of TurboIntegrator scripts to perform data transfer. In addition, the course outlines how to customize drill paths, convert currencies, and model for different fiscal requirements.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/P8357G&code=P8357G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Planning Analytics: Analyze Data and Create Reports (V2.0.x)</span></h3>
-													<p class="developer--card__description">This course is designed to teach analysts how to use IBM Planning Analytics to analyze data to discover trends and exceptions, create and customize reports and templates, and contribute data to plans. Through a series of lectures and hands-on activities, you will learn how use Planning Analytics Workspace and Planning Analytics for Microsoft Excel to create analyses, enter data, create custom views and dashboards, and build formatted reports and forms.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/0G09BG&code=0G09BG" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Advanced Statistical Analysis Using IBM SPSS Statistics (V26)</span></h3>
-													<p class="developer--card__description">This course provides an application-oriented introduction to advanced statistical methods available in IBM SPSS Statistics. Students will review a variety of advanced statistical techniques and discuss situations in which each technique would be used, the assumptions made by each method, how to set up the analysis, and how to interpret the results. This includes a broad range of techniques for predicting variables, as well as methods to cluster variables and cases.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/0G53BG&code=0G53BG" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM SPSS Statistics Essentials (V26)</span></h3>
-													<p class="developer--card__description">This course guides students through the fundamentals of using IBM SPSS Statistics for typical data analysis. Students will learn the basics of reading data, data definition, data modification, data analysis, and presentation of analytical results. In addition to the fundamentals, students will learn shortcuts that will help them save time. This course uses the IBM SPSS Statistics Base; one section presents an add-on module, IBM SPSS Custom Tables.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/0G51BG&code=0G51BG" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Statistical Analysis Using IBM SPSS Statistics (V26)</span></h3>
-													<p class="developer--card__description">This course provides an application-oriented introduction to the statistical component of IBM SPSS Statistics. Students will review several statistical techniques and discuss situations in which they would use each technique, how to set up the analysis, and how to interpret the results. This includes a broad range of techniques for exploring and summarizing data, as well as investigating and testing relationships. Students will gain an understanding of when and why to use these various techniques and how to apply them with confidence, interpret their output, and graphically display the results.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/0A039G&code=0A039G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Advanced Machine Learning Models Using IBM SPSS Modeler (V18.2)</span></h3>
-													<p class="developer--card__description">This course presents advanced models available in IBM SPSS Modeler. The participant is first introduced to a technique named PCA/Factor, to reduce the number of fields to a number of core factors, referred to as components or factors. The next topics focus on supervised models, including Support Vector Machines, Random Trees, and XGBoost. Methods are reviewed on how to analyze text data, combine individual models into a single model, and how to enhance the power of IBM SPSS Modeler by adding external models, developed in Python or R, to the Modeling palette.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/0A079G&code=0A079G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Introduction to Machine Learning Models Using IBM SPSS Modeler (V18.2)</span></h3>
-													<p class="developer--card__description">This course provides an introduction to supervised models, unsupervised models, and association models. This is an application-oriented course and examples include predicting whether customers cancel their subscription, predicting property values, segment customers based on usage, and market basket analysis.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_series developer--darkcard">
-												<a class="developer--card__block_link" href="content_wrapper.html?loc=www.ibm.com/services/learning/course/0A069G&code=0A069G" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM SPSS Modeler Foundations (V18.2)</span></h3>
-													<p class="developer--card__description">This course provides the foundations of using IBM SPSS Modeler and introduces the participant to data science. The principles and practice of data science are illustrated using the CRISP-DM methodology. The course provides training in the basics of how to import, explore, and prepare data with IBM SPSS Modeler v18.2, and introduces the student to modeling.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
+										<div class="bx--row bx--no-gutter--right" id="datasciencecatalog"></div>
 									</div>
 								</div>
-								
 							</li>
 							
-							<li data-accordion-item="" class="bx--accordion__item ">
-								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane3">
-									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
-									</svg>
-									<div class="bx--accordion__title">IBM Watson (Product training)</div>
-								</button>
-								
-<!--								IBM Watson Product Training Content-->
-								<div id="pane3" class="bx--accordion__content">
-									<div class="bx--row bx--no-gutter--right">
-										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
-											<p style="padding-left: 1rem;">Powered by the latest innovations in machine learning, Watson is the open, multicloud platform that lets you automate the AI lifecycle. Build powerful models from scratch, or speed time-to-value with pre-built enterprise apps.</p>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4726" target="_blank">     
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Watson Discovery Foundations</span></h3>
-													<p class="developer--card__description">This course provides a foundational understanding of Watson Discovery. Upon completion, the individual can articulate what Discovery is, what the appropriate business themes and use cases are, and how Discovery refines the values of your data.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-										
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4480" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Data Refinery Essentials</span></h3>
-													<p class="developer--card__description">Data Refinery is a self-service data preparation client for data scientists, data engineers, and business analysts. With it, you can quickly transform large amounts of raw data into consumable, quality information that’s ready for analytics.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4481" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Watson Knowledge Catalog Essentials</span></h3>
-													<p class="developer--card__description">IBM Watson Knowledge Catalog is a secure enterprise catalog to index, classify, and govern your data with greater efficiency. Watson Knowledge Catalog lets you manage your data from every angle giving you a 360-degree view of your data so you can create models, uncover insights, and enable your teams to collaborate more effectively.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4482" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Watson Machine Learning Essentials</span></h3>
-													<p class="developer--card__description">Watson Machine Learning is a service on IBM Cloud with features for training and deploying machine learning models and neural networks. This course consists of a series of videos showing how to use the Watson Machine Learning in Watson Studio.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4483" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Watson Studio Dashboard Essentials</span></h3>
-													<p class="developer--card__description">With Business Analytics Dashboards inside Watson Studio, you can explore data and share compelling visualized results through interactive dashboards created within a powerful drag a drop authoring environment.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4484" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Watson Studio Streams Flows Essentials</span></h3>
-													<p class="developer--card__description">IBM Watson Studio Streams Flows is a web-based development tool for building streaming applications and available through the IBM Watson platform. Watson Studio Streams Flows provides a simple approach to define the intent of an app through visual composition and code. Apps can then be deployed to the Streaming Analytics service.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4485" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>IBM Watson Studio Visual Recognition Essentials</span></h3>
-													<p class="developer--card__description">IBM Watson Visual Recognition service uses deep learning algorithms to analyze images for scenes, objects, faces, and other content. IBM Watson Studio provides a collaborative environment in the cloud where you can work with your images and your Visual Recognition custom models.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4443" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Watson OpenScale Foundations</span></h3>
-													<p class="developer--card__description">This course is designed to show how Watson OpenScale can be integrated into a solution to provide transparency in AI decision making.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4329" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Watson Assistant Foundations</span></h3>
-													<p class="developer--card__description">Introductory primer on different types of chatbots, the purpose and core responsibilities of the Watson Assistant service, an overview on service integration, service features, a short demonstration of a working Assistant. Prerequisite: Designing Conversational Solutions course.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4440" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Watson Business Solutions Overview</span></h3>
-													<p class="developer--card__description">Watson Business Solutions allow businesses to accelerate their delivery of foundational AI solutions. The most successful use cases focus on customer care, expert assist, compliance assist, and voice of the customer.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4303" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Watson Studio Essentials</span></h3>
-													<p class="developer--card__description">An interactive, collaborative, cloud-based environment where data scientists can use multiple tools to activate their insights. Data scientists can work with tools such as RStudio, Jupyter, Python, Scala, Spark, IBM Watson Machine Learning, and more.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4346" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Introduction to Text Analytics</span></h3>
-													<p class="developer--card__description">An overview of natural language processing methods, tools and technologies used, and business solutions that can be implemented using Text analysis. Business cases included highlight different forms of text analytics. Co-Requisite: Data identification, collection &amp; curation course</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4332" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Watson and Cloud Foundations</span></h3>
-													<p class="developer--card__description">Foundational understanding of IBM Watson and IBM Cloud; how IBM Watson is Data for AI; how IBM Cloud supports IBM Watson services, what are the IBM Watson Data and AI services, how to implement a Watson service. Prerequisite: Artificial Intelligence Concepts Course</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4320" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Watson Knowledge Studio Foundations and Methodology</span></h3>
-													<p class="developer--card__description">This course will familiarize you with end-to-end development of machine learning annotators utilizing Watson Knowledge Studio.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard ">
-												<a class="developer--card__block_link" href="https://learn.ibm.com/course/view.php?id=4294" target="_blank">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>Designing Conversational Solutions</span></h3>
-													<p class="developer--card__description">Introductory course covering best practices for Conversation Design that are applicable to any conversational application.  Introduction to the concepts of conversation interaction, positioning, dialog design, and tone &amp; writing.</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-							</li>
 							<li data-accordion-item="" class="bx--accordion__item ">
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane4">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
 									<div class="bx--accordion__title">Hybrid Data Management</div>
 								</button>
-								
-<!--								Hybrid Data Management Content-->
 								<div id="pane4" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>--</span></h3>
-													<p class="developer--card__description">--</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
+										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
+											<p style="padding-left: 1rem;">IBM Hybrid Data Management is a complete set of AI-enabled solutions that allow organizations to collect data of any type, source and structure to make it simple and accessible across multiple vendors, deployments and workloads.</p>
 										</div>
+										<div class="bx--row bx--no-gutter--right" id="hdmcatalog"></div>
 									</div>
 								</div>
 							</li>
+							
 							<li data-accordion-item="" class="bx--accordion__item ">
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane5">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
 									<div class="bx--accordion__title">Unified Governance and Integration</div>
 								</button>
-								
-<!--								Unified Governanace and Integration Content-->
 								<div id="pane5" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>--</span></h3>
-													<p class="developer--card__description">--</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
+										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
+											<p style="padding-left: 1rem;">IBM Unified Governance and Integration Platform is a robust and flexible offering with world class data governance and integration capabilities that enable your organization to identify, manage, and explore data for insights. The offering provides great flexibility; you can buy entitlement to various capabilities in flex points which do not expire and can be applied to any product within the portfolio bundle as the needs of the business evolve over time.</p>
 										</div>
+										<div class="bx--row bx--no-gutter--right" id="ugicatalog"></div>
 									</div>
 								</div>
 							</li>
+							
 							<li data-accordion-item="" class="bx--accordion__item ">
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane6">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
-									<div class="bx--accordion__title">Project Management</div>
+									<div class="bx--accordion__title">Watson Financial API Development Service</div>
 								</button>
-								
-<!--								Project Management Content-->
 								<div id="pane6" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>--</span></h3>
-													<p class="developer--card__description">--</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
+										<div class="bx--col-sm-12 bx--col-md-12 bx--col-lg-12">
+											<p style="padding-left: 1rem;">IBM provides a rich and ever-growing set of API's for the Watson Financial Services (WFSS) portfolio of solutions. With these API's, organizations can enhance and further integrate their solutions with IBM cognitive and predictive functionality to extend capabilities and add business value.</p>
 										</div>
+										<div class="bx--row bx--no-gutter--right" id="wfsscatalog"></div>
 									</div>
 								</div>
 							</li>
-							<li data-accordion-item="" class="bx--accordion__item ">
-								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane7">
-									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
-									</svg>
-									<div class="bx--accordion__title">Agile Method</div>
-								</button>
-								
-<!--								Agile Method Content-->
-								<div id="pane7" class="bx--accordion__content">
-									<div class="bx--row bx--no-gutter--right">
-										<div class="bx--col-sm-4 bx--col-lg-4">
-											<div class="developer--card bx--tile ibmcode_patterns developer--darkcard">
-												<a class="developer--card__block_link" href="">
-												<h5 class="developer--card__type">eLearning</h5>
-												<div class="developer--card__body">
-													<h3 class="developer--card__title"><span>--</span></h3>
-													<p class="developer--card__description">--</p>
-												</div>
-												<div class="developer--card__bottom">
-													<p><span class="developer--card__date"></span></p>
-													<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="will-change: transform;"><path d="M14 4l-1.1 1.1 6 6.1H2v1.6h16.9l-6 6.1L14 20l8-8z"></path></svg>
-												</div>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li>
+							
+							
+							
+<!--
+							Extra Placeholder for additional catalog
 							<li data-accordion-item="" class="bx--accordion__item ">
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane9">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
@@ -1777,7 +1175,7 @@
 									<div class="bx--accordion__title">AI use cases</div>
 								</button>
 								
-<!--								AI use cases content-->
+
 								<div id="pane9" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
 										<div class="bx--col-sm-4 bx--col-lg-4">
@@ -1797,8 +1195,9 @@
 										</div>
 									</div>
 								</div>
-								
 							</li>
+-->
+							
 						</ul>
 					</div> <!-- End of bx--col-md-12 bx--col-lg-12 bx--no-gutter--right -->
 				</div> <!-- End of bx--row -->
@@ -1809,6 +1208,7 @@
 <!--		</div>  End of page_content_wrap -->
 		</div> <!-- End of page_content -->
 <!--	</div>  End of content -->
+	
 <!-- InstanceEndEditable -->
 	
 <script>
