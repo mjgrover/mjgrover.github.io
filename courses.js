@@ -3,8 +3,11 @@
 
 //'use strict';
 var counter = '0';
+var validElement;
 var display_type; //1=short
 var segment_val;
+var ladder_val;
+
 $.ajaxSetup({
 	async: false
 });
@@ -21,42 +24,72 @@ function create_card(json_file, cardlocation, card_type, card_group){
 	insert_course_card(json_file, cardlocation);
 }
 
+function create_ladder_card(json_file, cardlocation, card_type, card_group){
+	
+	display_type = card_type;
+	ladder_val = card_group;
+	
+	insert_ai_card(json_file, cardlocation);
+}
+
+
 function insert_course_card(json_file, cardlocation){
 	$.getJSON(json_file, function(data){
 		
 		var block_to_insert ;
 		var container_block ;
+		var course_count = '0';
 		
 		$.each(data, function(key, value){
-			
 			if (value.segment == segment_val){
+				block_to_insert = document.createElement( 'div' );
+				block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4';
+				block_to_insert.id = 'cardContainer'+counter;
 				
-				block_to_insert = document.createElement( 'div' );
-				block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4';
-				block_to_insert.id = 'cardContainer'+counter;
-
 				container_block = document.getElementById( cardlocation );
 				container_block.appendChild( block_to_insert );
 				{
 					populate_card(value);
 					counter++;
-				}	
-			}
-			else{
-				if (segment_val === undefined){
-			
-				block_to_insert = document.createElement( 'div' );
-				block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4';
-				block_to_insert.id = 'cardContainer'+counter;
-
-				container_block = document.getElementById( cardlocation );
-				container_block.appendChild( block_to_insert );
-				{
-					populate_card(value);
-					counter++;
+					course_count++;
 				}
 			}
-		}});
+
+	});
+		validElement = document.getElementById(cardlocation+'count')
+		if (validElement != null){
+			document.getElementById(cardlocation+'count').innerHTML = "(Catalog count: "+course_count+") ";}
+//		console.log(course_count);
+	});
+}
+
+function insert_ai_card(json_file, cardlocation){
+	$.getJSON(json_file, function(data){
+		
+		var block_to_insert ;
+		var container_block ;
+		var course_count = '0';
+		
+		$.each(data, function(key, value){
+			if (value.ladder == ladder_val){
+				block_to_insert = document.createElement( 'div' );
+				block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4';
+				block_to_insert.id = 'cardContainer'+counter;
+
+				container_block = document.getElementById( cardlocation );
+				container_block.appendChild( block_to_insert );
+				{
+					populate_card(value);
+					counter++;
+					course_count++;
+				}	
+			}
+		
+	});
+		validElement = document.getElementById(cardlocation+'count')
+		if (validElement != null){
+			document.getElementById(cardlocation+'count').innerHTML = "(Catalog count: "+course_count+") ";}
+//		console.log(course_count);
 	});
 }
 
@@ -94,15 +127,31 @@ function populate_card(value){
 
 		// Add H5 class for Card Type
 //		var Learning_Type = 'eLearning';
+		
 		var h5 = document.createElement ('h5');
 		h5.id = 'learning_type'+counter;
 		h5.className = 'developer--card__type';
+		h5.innerHTML = "eLearning | "+value.learning_type;
+	
 		if (value.learning_type == "Instructor-led"){
 			h5.innerHTML = value.learning_type;
 		}
-		else{
-			h5.innerHTML = "eLearning | "+value.learning_type;
+	
+		if (value.learning_type == "Badge"){
+			var k = value.b_knowledge;
+			var p = value.b_proficiency;
+			var s = value.b_skill;
+			if (k == "y"){k = "Knowledge  ";}
+				else{k = "";}
+			if (p == "y"){p = "Proficency  ";}
+				else{p="";}
+			if (s == "y"){s = "Skill  ";}
+				else{s="";}
+			h5.innerHTML = "Badge | "+k+p+s
 		}
+//		else{
+//			h5.innerHTML = "eLearning | "+value.learning_type;
+//		}
 
 		container_block = document.getElementById('href_wrapper'+counter);
 		container_block.appendChild( h5 );
@@ -120,7 +169,23 @@ function populate_card(value){
 				var h3 = document.createElement ('h3');
 				h3.id = 'card_title'+counter;
 				h3.className = 'developer--card__title';
-				h3.innerHTML = value.course_title;
+				if (value.learning_type == "Badge"){
+					
+					k = value.b_knowledge;
+					p = value.b_proficiency;
+					s = value.b_skill;
+					if (k == "y"){k = '<img src="images/K_icon-26x26.png" alt="KNOWLEDGE">';}
+						else{k = "";}
+					if (p == "y"){p = '<img src="images/P_icon-26x26.png" alt="PROFICIENCY">';}
+						else{p="";}
+					if (s == "y"){s = '<img src="images/S_icon-26x26.png" alt="SKILL">';}
+						else{s="";}
+					h3.innerHTML = value.course_title+" "+k+p+s;
+				}
+				else{
+					h3.innerHTML = value.course_title;	
+				}
+				
 
 				container_block = document.getElementById( 'card_body'+counter );
 				container_block.appendChild( h3 );
@@ -129,7 +194,7 @@ function populate_card(value){
 //				var Description = 'This is all the details you want to know about this course.  This is all about blah, blah, blah.';
 //				diplay_type: 1= short catalog, 2= full catalog
 				if (display_type == '2'){
-				var p = document.createElement ('p');
+				p = document.createElement ('p');
 				p.id = 'card_description'+counter;
 				p.className = 'developer--card__description';
 				p.innerHTML = value.description;

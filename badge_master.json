@@ -1,0 +1,578 @@
+[
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/cognos_analytics/index.html",
+    "course_title": "IBM Cognos Analytics",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/decision_optimization_cloud/index.html",
+    "course_title": "IBM Decision Optimization on Cloud",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/decision_optimization_center/index.html",
+    "course_title": "IBM Decision Optimization Center",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/spss_modeler/index.html",
+    "course_title": "IBM SPSS Modeler",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/spss_pae/index.html",
+    "course_title": "IBM SPSS Statistics",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/spss_amos/index.html",
+    "course_title": "IBM SPSS Amos",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/planning_analytics/index.html",
+    "course_title": "IBM Planning Analytics",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": "y"
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_explorer/index.html",
+    "course_title": "IBM Watson Explorer Deep Analytics Edition",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/dsx_local/index.html",
+    "course_title": "IBM Data Science Experience Local",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Data Science",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/machine_learning/index.html",
+    "course_title": "IBM Machine Learning",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/db2_cmsfaat/index.html",
+    "course_title": "IBM Db2 on Cloud Analytics and Transactions",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/db2_warehouse/index.html",
+    "course_title": "IBM Db2 Warehouse",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/db2_hosted/index.html",
+    "course_title": "IBM Db2 Hosted",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/data_studio_explorer/index.html",
+    "course_title": "IBM Data Studio Developer",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/informix_cloud/index.html",
+    "course_title": "IBM Informix on Cloud",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/compose_essentials/index.html",
+    "course_title": "IBM Compose Essentials",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/db2_aaoc/index.html",
+    "course_title": "IBM Db2 Analytics Accelerator on Cloud",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/infosphere_ii/index.html",
+    "course_title": "IBM InfoSphere Identity Insight",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/db2_connect/index.html",
+    "course_title": "IBM Db2 Connect Foundation",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/db2_tools/index.html",
+    "course_title": "IBM Db2 Tools Foundation",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/infosphere_gnm/index.html",
+    "course_title": "IBM InfoSphere Global Name Management",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/big_sql/index.html",
+    "course_title": "IBM Big SQL",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/integrated_analytics_system/index.html",
+    "course_title": "IBM Integrated Analytics System",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/db2_zOS/index.html",
+    "course_title": "IBM Db2 for z/OS Database Administrator",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": "y"
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "HDM",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/db2_luw/index.html",
+    "course_title": "IBM Db2 for LUW",
+    "b_knowledge": "",
+    "b_proficiency": "",
+    "b_skill": "y"
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/information_sc/index.html",
+    "course_title": "IBM Information Server on Cloud",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/information_sca/index.html",
+    "course_title": "IBM Information Server on Cloud Administration",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/datastage_cloud/index.html",
+    "course_title": "IBM DataStage on Cloud",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": "y"
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/information_gcc/index.html",
+    "course_title": "IBM Information Governance Catalog on Cloud",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/mdm_cloud/index.html",
+    "course_title": "IBM MDM on Cloud",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/bigintegrate_bigquality/index.html",
+    "course_title": "IBM BigInsights BigIntegrate and BigQuality",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/information_ad/index.html",
+    "course_title": "IBM Information Analyzer Developer",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/infosphere_bmah/index.html",
+    "course_title": "IBM InfoSphere Big Match for Apache Hadoop",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/qualitystage_cloud/index.html",
+    "course_title": "IBM QualityStage on Cloud",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/infosphere_dr/index.html",
+    "course_title": "IBM InfoSphere Data Replication",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/infosphere_gnm/index.html",
+    "course_title": "IBM InfoSphere Global Name Management",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "UGI",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/storediq/index.html",
+    "course_title": "IBM StoredIQ",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson Data",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/Apache_Spark_%20on_Cloud/index.html",
+    "course_title": "IBM Analytics for Apache Spark on Cloud",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson Data",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/cloudant_managed_service/index.html",
+    "course_title": "IBM Cloudant Managed Service",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson Data",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/cloudant_local/index.html",
+    "course_title": "IBM Cloudant Local",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson Data",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/cloud_lift_essentials/index.html",
+    "course_title": "IBM Cloud Lift Essentials",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson Data",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/streaming_analytics/index.html",
+    "course_title": "IBM Streaming Analytics",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson Data",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/geospatial_analytics/index.html",
+    "course_title": "IBM Geospatial Analytics",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Cloud Pak for Data",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/cloud_pak_for_data/index.html#3",
+    "course_title": "IBM Cloud Pak for Data v2.5.x",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": "y"
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Cloud Pak for Data",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/cloud_pak_for_data/index.html#1",
+    "course_title": "IBM Cloud Pak for Data v2.1.x",
+    "b_knowledge": "",
+    "b_proficiency": "y",
+    "b_skill": "y"
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/data_refinery_essentials/index.html",
+    "course_title": "Data Refinery Essentials",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_knowledge_catalog/index.html",
+    "course_title": "IBM Watson Knowledge Catalog Essentials",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_machine_learning/index.html",
+    "course_title": "IBM Watson Machine Learning Essentials",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_studio_dashboard/index.html",
+    "course_title": "IBM Watson Studio Dashboard Essentials",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_studio_streams_flows/index.html",
+    "course_title": "IBM Watson Studio Streams Flows Essentials",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_studio_visual_recognition/index.html",
+    "course_title": "IBM Watson Studio Visual Recognition",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_and_cloud_foundations/index.html",
+    "course_title": "Watson and Cloud Foundations",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_assistant_foundations/index.html",
+    "course_title": "Watson Assistant Foundations",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_assistant_handson/index.html",
+    "course_title": "Watson Assistant Hands-On",
+    "b_knowledge": "",
+    "b_proficiency": "",
+    "b_skill": "y"
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_assistant_methodology/index.html",
+    "course_title": "Watson Assistant Methodology",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_discovery_foundations/index.html",
+    "course_title": "Watson Discovery Foundations",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_discovery_service_developers/index.html",
+    "course_title": "Watson Discovery Service for Developers",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_discovery_service_foundations/index.html",
+    "course_title": "Watson Discovery Service Foundations",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_knowledge_studio_handson/index.html",
+    "course_title": "Watson Knowledge Studio Hands-On",
+    "b_knowledge": "",
+    "b_proficiency": "",
+    "b_skill": "y"
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_knowledge_studio_methodology/index.html",
+    "course_title": "Watson Knowledge Studio Methodology",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_openscale_foundations/index.html",
+    "course_title": "Watson OpenScale Foundations",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_speech_text/index.html",
+    "course_title": "Watson Speech to Text",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_studio_essentials/index.html",
+    "course_title": "Watson Studio Essentials",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  },
+  {
+    "learning_type": "Badge",
+    "segment": "Watson",
+    "course_url": "learn.ibm.com/files/analytics/DAELL/DAELL-Badge-Program/watson_visual_recognition/index.html",
+    "course_title": "Watson Visual Recognition",
+    "b_knowledge": "y",
+    "b_proficiency": "",
+    "b_skill": ""
+  }
+]

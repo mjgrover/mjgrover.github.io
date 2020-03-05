@@ -6,257 +6,22 @@
 	<noscript>
 		<link rel="stylesheet" href="css/style.css?cb=12">
 	</noscript>
-<!--	<script type="text/javascript" async="" src="../src/analytics.js.download"></script>
-	<script id="loadedViaBxAnalytics-HU3dbkAG5wE0F1IkRf9S1RexlAqo3jby" src="../src/analytics.min.js.download" type="text/javascript" async=""></script>
-	<script async="" src="../src/ia.js.download"></script>
-
-	<script type="text/javascript" async="" charset="utf-8" id="utag_21" src="../src/bat.js.download"></script>
-	<script type="text/javascript" async="" charset="utf-8" id="utag_19" src="../src/hotjar-42920.js.download"></script><script type="text/javascript" async="" charset="utf-8" id="utag_16" src="../src/f.txt"></script>
-	<script async="" src="../src/1474.js.download"></script>
-	<script type="text/javascript" async="" charset="utf-8" id="utag_53" src="../src/js"></script>
-	<script type="text/javascript" async="" charset="utf-8" id="utag_162" src="../src/js(1)"></script>
-	<script type="text/javascript" async="" charset="utf-8" id="tealium_cormetrics2" src="../src/eluminate.js.download"></script>
-	<script src="../src/bluemix-analytics.min.js.download" type="application/javascript" async=""></script>
-	<script type="text/javascript" async="" charset="utf-8" id="dle_api_efaddbc6b5f457b55aecd70a033f1fecc2fdfb1af518e282066e739efd677f71" src="../src/p_efaddbc6b5f457b55aecd70a033f1fecc2fdfb1af518e282066e739efd677f71.js.download"></script>
-	<script src="../src/utag.js.download" type="application/javascript" async=""></script>
-	<script src="../src/p_efaddbc6b5f457b55aecd70a033f1fecc2fdfb1af518e282066e739efd677f71.js.download" type="application/javascript" async=""></script>
-
-	<script>
-	/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-	/* This file is meant as a standalone workflow for
-	- testing support for link[rel=preload]
-	- enabling async CSS loading in browsers that do not support rel=preload
-	- applying rel preload css once loaded, whether supported or not.
-	*/
-	(function( w ){
-		"use strict";
-		// rel=preload support test
-		if( !w.loadCSS ){
-			w.loadCSS = function(){};
-		}
-		// define on the loadCSS obj
-		var rp = loadCSS.relpreload = {};
-		// rel=preload feature support test
-		// runs once and returns a function for compat purposes
-		rp.support = (function(){
-			var ret;
-			try {
-				ret = w.document.createElement( "link" ).relList.supports( "preload" );
-			} catch (e) {
-				ret = false;
-			}
-			return function(){
-				return ret;
-			};
-		})();
-
-		// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-		// then change that media back to its intended value on load
-		rp.bindMediaToggle = function( link ){
-			// remember existing media attr for ultimate state, or default to 'all'
-			var finalMedia = link.media || "all";
-
-			function enableStylesheet(){
-				// unbind listeners
-				if( link.addEventListener ){
-					link.removeEventListener( "load", enableStylesheet );
-				} else if( link.attachEvent ){
-					link.detachEvent( "onload", enableStylesheet );
-				}
-				link.setAttribute( "onload", null );
-				link.media = finalMedia;
-			}
-
-			// bind load handlers to enable media
-			if( link.addEventListener ){
-				link.addEventListener( "load", enableStylesheet );
-			} else if( link.attachEvent ){
-				link.attachEvent( "onload", enableStylesheet );
-			}
-
-			// Set rel and non-applicable media type to start an async request
-			// note: timeout allows this to happen async to let rendering continue in IE
-			setTimeout(function(){
-				link.rel = "stylesheet";
-				link.media = "only x";
-			});
-			// also enable media after 3 seconds,
-			// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-			setTimeout( enableStylesheet, 3000 );
-		};
-
-		// loop through link elements in DOM
-		rp.poly = function(){
-			// double check this to prevent external calls from running
-			if( rp.support() ){
-				return;
-			}
-			var links = w.document.getElementsByTagName( "link" );
-			for( var i = 0; i < links.length; i++ ){
-				var link = links[ i ];
-				// qualify links to those with rel=preload and as=style attrs
-				if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-					// prevent rerunning on link
-					link.setAttribute( "data-loadcss", true );
-					// bind listeners to toggle media back
-					rp.bindMediaToggle( link );
-				}
-			}
-		};
-
-		// if unsupported, run the polyfill
-		if( !rp.support() ){
-			// run once at least
-			rp.poly();
-
-			// rerun poly on an interval until onload
-			var run = w.setInterval( rp.poly, 500 );
-			if( w.addEventListener ){
-				w.addEventListener( "load", function(){
-					rp.poly();
-					w.clearInterval( run );
-				} );
-			} else if( w.attachEvent ){
-				w.attachEvent( "onload", function(){
-					rp.poly();
-					w.clearInterval( run );
-				} );
-			}
-		}
-
-
-		// commonjs
-		if( typeof exports !== "undefined" ){
-			exports.loadCSS = loadCSS;
-		}
-		else {
-			w.loadCSS = loadCSS;
-		}
-	}( typeof global !== "undefined" ? global : this ) );
-	</script>
--->
 	<!-- InstanceBeginEditable name="doctitle" -->
 	<title>Data and AI Learning</title>
 	<!-- InstanceEndEditable -->
 	<link rel="dns-prefetch" href="https://1.www.s81c.com/">
 	<link rel="dns-prefetch" href="https://s.w.org/">
-<!--	<link rel="alternate" type="application/rss+xml" title="IBM Developer » Feed" href="https://developer.ibm.com/feed/">-->
-<!--	<link rel="alternate" type="application/rss+xml" title="IBM Developer » Comments Feed" href="https://developer.ibm.com/comments/feed/">-->
-<!--    <link rel="canonical" href="https://developer.ibm.com/technologies/artificial-intelligence/">-->
     <meta name="description" content="Learn how to build and train models, and create apps, with a trusted AI-infused platform.">
     <meta name="keywords" content="artificial intelligence, machine learning, vision, speech, empathy, natural language processing, knowledge discovery, virtual reality, deep learning, data, AI, IA,">
     <meta property="og:title" content="Data and AI Learning">
     <meta property="og:description" content="Learn how to build and train models, and create apps, with a trusted AI-infused platform.">
     <meta property="og:type" content="Hub">
     <meta property="og:site_name" content="IBM Data and AI Learning">
-<!--    <meta property="og:url" content="https://developer.ibm.com/technologies/artificial-intelligence/">-->
-<!--    <meta property="og:image" content="https://s3.us.cloud-object-storage.appdomain.cloud/ibmdevwp/icons/social/social.jpg">-->
-<!--    <meta property="twitter:account_id" content="16362921">-->
-<!--    <meta name="twitter:card" content="summary">    -->
-<!--	<meta name="twitter:url" content="https://developer.ibm.com/technologies/artificial-intelligence/">-->
-<!--    <meta name="twitter:title" content="Artificial intelligence">-->
-<!--    <meta name="twitter:description" content="Build and train models, and create apps, with a trusted AI-infused platform.">-->
-<!--    <meta name="twitter:image" content="https://s3.us.cloud-object-storage.appdomain.cloud/ibmdevwp/icons/social/social.jpg">-->
-<!--    <meta property="twitter:image:src" content="https://s3.us.cloud-object-storage.appdomain.cloud/ibmdevwp/icons/social/social.jpg">-->
-<!--    <meta name="twitter:site" content="https://developer.ibm.com">-->
-<!--    <meta name="twitter:creator" content="@ibmdeveloper">-->
-
-    
-    <!-- BEGIN: Use this section to set page specific variables for the Page Tag -->
-<!--  	<script language="JavaScript">var NTPT_PGEXTRA="ibmCmaId=&ibmContentAreas=Artificial intelligence";</script>-->
-  	<!--END -->
-<!--
-    <script>
-  		digitalData = {
-  				"page": {
-  					"category": {
-  						"primaryCategory": "SOFDCACLZZ"
-  					},
-  					"pageInfo": {
-  						"effectiveDate": "",
-  						"language": "en",
-  						"publishDate": "",
-  						"expiryDate": "",
-  						"publisher": "IBM Corporation",
-  						"version": "v18",
-  						"ibm": {
-  							"contentDelivery": "IBM Developer template",
-  							"contentProducer": "IBM Data and AI Learning",
-  							"country": "ZZ",
-                "contentArea": "IBM Data and AI Learning",
-  							"owner": "developerWorks Content/Raleigh/IBM",
-  							"siteID": "",
-  							"subject": "ZZ000",
-  							"type": "CT300",
-  							"contentId": "",
-  						},
-  						"keywords": "artificial intelligence, machine learning, vision, speech, empathy, natural language processing, knowledge discovery, virtual reality, deep learning",
-  						"description": "Learn how to build and train models, and create apps, with a trusted AI-infused platform."
-  					}
-  				}
-  			};
-
-        window._analytics = {
-          "coremetrics": false,
-          "optimizely": false,
-          "googleAddServices": false,
-          "addRoll": false,
-          "intercom": false,
-          "fullStory": false,
-          "hotjar": false,
-          "tealeaf": false,
-          "nps": false,
-          "segment_key": 'HU3dbkAG5wE0F1IkRf9S1RexlAqo3jby'
-        };
-  	</script>
--->
-  	<!-- Segment meta tag -->
-<!--  	<meta name="segment" property="developerWorks (developerWorks)" producttitle="developerWorks" value="Home English (developerWorks)">-->
-
-
-<!--    <link rel="alternate" type="application/rss+xml" title="IBM Developer » Artificial intelligence Category Feed" href="https://developer.ibm.com/technologies/artificial-intelligence/feed/">-->
-
-<!--
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/developer.ibm.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.2"}};
-			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
--->
-
-<!--	<script src="../src/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>-->
-<!--
-	<style type="text/css">
-		img.wp-smiley,
-		img.emoji {
-			display: inline !important;
-			border: none !important;
-			box-shadow: none !important;
-			height: 1em !important;
-			width: 1em !important;
-			margin: 0 .07em !important;
-			vertical-align: -0.1em !important;
-			background: none !important;
-			padding: 0 !important;
-		}
-	</style>
--->
 	<script type="text/javascript" src="src/jquery.js.download"></script>
 	<script type="text/javascript" src="src/jquery-migrate.min.js.download"></script>
-<!--
-	<script type="text/javascript">
-		/* <![CDATA[ */
-		var authLinkAction = {"ajax_url":"https:\/\/developer.ibm.com\/wp-admin\/admin-ajax.php","nonce":"1b6a63b90d"};
-		/* ]]> */
-	</script>
--->
 	<script type="text/javascript" src="src/authPageAccess.js.download"></script>
 	<script defer="" type="text/javascript" src="src/ibmcode.js.download"></script>
 	<script async="" type="text/javascript" src="src/carbon-components.min.js.download"></script>
-<!--	<script async="" type="text/javascript" src="../src/ida_stats.js.download"></script>-->
-
-<!--	<link rel="https://api.w.org/" href="https://developer.ibm.com/developerapi/">
-<!--	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/xmlrpc.php?rsd">-->
-<!--	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://developer.ibm.com/wp-includes/wlwmanifest.xml"> -->
 
 	
 <!--	<meta name="generator" content="WordPress 5.3.2">-->
@@ -268,35 +33,17 @@
 	<!-- InstanceBeginEditable name="head" -->
 	<!-- InstanceEndEditable -->
 <img width="1" height="1" src="src/genp=pageinit" alt="Page Initialize">
-<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_53" src="../src/utag.53.js.download"></script>-->
-<!--	<script type="text/javascript" async="" charset="utf-8" id="LOTCC_10026" src="../src/cc.js.download"></script>-->
-<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_45" src="../src/utag.45.js.download"></script>-->
-<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_16" src="../src/utag.16.js.download"></script>-->
-<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_19" src="../src/utag.19.js.download"></script>-->
-<!--	<script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_21" src="../src/utag.21.js.download"></script>-->
 	
 	<style type="text/css">
 		@media only screen and (max-width:480px){.truste_box_overlay{width: 100%!important;margin: 0px!important;max-width: 100%!important;box-shadow: rgb(0,0,0,0.2) 0px 0px 16px 2px!important;}}@media only screen and (min-width:481px){.truste_box_overlay{width: 80%!important;margin: 20px auto!important;max-width: 800px!important;box-shadow: rgb(0,0,0,0.2) 0px 0px 16px 2px!important;}}
 	</style>
 	
-<!--
-	<script language="javascript" type="text/javascript" src="../src/50200000.js.download"></script>
-	<script language="javascript" type="text/javascript" src="../src/52640000.js.download"></script>
-	<script language="javascript" type="text/javascript" src="../src/rules_50200000.js.download"></script>
-	<script language="javascript" type="text/javascript" src="../src/rules_52640000.js.download"></script>
-	<script language="javascript" type="text/javascript" src="../src/dispatcher-v3.js.download"></script>
-	<script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_45main" src="../src/016568942310001294ec944f086d0307300e606b00978"></script>
-	<script src="../src/yahoo-min.js.download" type="text/javascript"></script>
-	<script src="../src/cp-v3.js.download" type="text/javascript"></script>
-	<script src="../src/json-min.js.download" type="text/javascript"></script>
-	<script async="" src="../src/modules.9ad849c74ae56ab50f63.js.download" charset="utf-8"></script>
--->
 	
 	<style type="text/css">
 		iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}
 	</style>
 	
-<!--	<script src="../src/f(1).txt"></script>-->
+
 	<style type="text/css">.truste_cookie_prefs,#teconsent{display:none !important}</style>
 </head>
 
@@ -308,13 +55,13 @@
 	<div class="bx--header--website-wrap">
 		<div class="code_content__wrap">
 			<header aria-label="IBM Platform Name" class="bx--header" role="banner">
-				<a class="bx--skip-to-content" href="https://developer.ibm.com/technologies/artificial-intelligence/#main-content" tabindex="0">Skip to main content</a>
-				<button aria-label="Open menu" id="developer-burger" class="bx--header__action--menu bx--header__action bx--header__menu-trigger bx--header__menu-toggle" title="Open menu" type="button">
+<!--				<a class="bx--skip-to-content" href="https://developer.ibm.com/technologies/artificial-intelligence/#main-content" tabindex="0">Skip to main content</a>-->
+<!--				<button aria-label="Open menu" id="developer-burger" class="bx--header__action--menu bx--header__action bx--header__menu-trigger bx--header__menu-toggle" title="Open menu" type="button">-->
 					<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="will-change: transform;">
 						<path d="M2 14.8h16V16H2zm0-3.6h16v1.2H2zm0-3.6h16v1.2H2zM2 4h16v1.2H2z">
 						</path>
 					</svg>
-				</button>
+<!--				</button>-->
 				<a class="bx--header__name-old" href="https://ibm.com/ai"><span class="bx--header__name--prefix">IBM</span>&nbsp;Data and AI Learning
 				</a>
 				
@@ -337,58 +84,9 @@
 <!--				Top Menu Bar-->
 				<ul class="bx--header__menu-bar" role="menubar">
 
-		<!--			Topics Menu-->
-				<!--
-					<li id="topics" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item menu-item-type-custom menu-item-object-custom menu-item-has-mega">
-						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="https://developer.ibm.com/technologies/artificial-intelligence/#">Topics
-							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" class="bx--header__menu-arrow">
-								<path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z">
-								</path>
-							</svg>
-						</a>
-						<div class="mega-menu bx--header__menu sub-menu" role="menu">
-							<div class="mega-menu-inner">
-								<div class="code_content__wrap">
-									<ul>
-									  <li><h4>Technologies</h4></li>
-									  <li><a href="https://developer.ibm.com/technologies/analytics/">Analytics</a></li>
-									  <li><a href="https://developer.ibm.com/technologies/artificial-intelligence/">Artificial Intelligence</a></li>
-									  <li><a href="https://developer.ibm.com/technologies/blockchain/">Blockchain</a></li>
-									  <li><a href="https://developer.ibm.com/technologies/containers/">Containers</a></li>
-									  <li><a href="https://developer.ibm.com/technologies/java/">Java</a></li>
-									  <li><a href="https://developer.ibm.com/technologies/">See all</a></li>
-									</ul>
-									<ul>
-									  <li><h4>Industries</h4></li>
-									  <li><a href="https://developer.ibm.com/industries/gaming/">Gaming</a></li>
-									  <li><a href="https://developer.ibm.com/industries/finance/">Finance</a></li>
-									  <li><a href="https://developer.ibm.com/industries/retail/">Retail</a></li>
-									  <li><a href="https://developer.ibm.com/industries/">See all</a></li>
-									</ul>
-									<ul>
-									  <li><h4>Deployment Models</h4></li>
-									  <li><a href="https://developer.ibm.com/depmodels/cloud/">Cloud</a></li>
-									  <li><a href="https://developer.ibm.com/depmodels/hybrid/">Hybrid Cloud</a></li>
-									  <li><a href="https://developer.ibm.com/depmodels/edge-computing/">Edge Computing</a></li>
-									  <li><a href="https://developer.ibm.com/depmodels/offline/">Offline</a></li>
-									  <li><a href="https://developer.ibm.com/depmodels/on-prem/">On Premises</a></li>
-									  <li><a href="https://developer.ibm.com/depmodels/">See all</a></li>
-									</ul>
-									<ul>
-									  <li><h4>Solutions</h4></li>
-									  <li><a href="https://developer.ibm.com/solutions/ai-development/">Artificial Intelligence</a></li>
-									  <li><a href="https://developer.ibm.com/solutions/blockchain-app-development/">Blockchain</a></li>
-									  <li><a href="https://developer.ibm.com/solutions/container-orchestration-and-deployment/">Containers &amp; Microservices</a></li>
-									  <li><a href="https://developer.ibm.com/solutions/mobile-app-development/">Mobile Development</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</li>
--->
 		<!--			Products and Services Menu-->
 					<li id="products_&amp;_services" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item menu-item-type-custom menu-item-object-custom menu-item-has-mega">
-						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="https://developer.ibm.com/technologies/artificial-intelligence/#">Products &amp; Services
+						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="">Products &amp; Services
 							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" class="bx--header__menu-arrow">
 								<path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z">
 								</path>
@@ -420,7 +118,7 @@
 					</li>
 		<!--			Community Menu-->
 					<li id="community" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item menu-item-type-custom menu-item-object-custom menu-item-has-mega">
-						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="https://developer.ibm.com/technologies/artificial-intelligence/#">Community
+						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="https://community.ibm.com/community/user/ailearning/home">Community
 							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" class="bx--header__menu-arrow">
 								<path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z">
 								</path>
@@ -440,35 +138,7 @@
 						</div>
 					</li>
 		<!--			Open Source Menu-->
-		<!--
-					<li id="open_source_at_ibm" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item menu-item-type-custom menu-item-object-custom menu-item-has-mega">
-						<a aria-haspopup="menu" aria-expanded="false" role="menuitem" class="bx--header__menu-item bx--header__menu-title" href="https://developer.ibm.com/technologies/artificial-intelligence/#">Open source at IBM
-							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" class="bx--header__menu-arrow">
-								<path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z">
-								</path>
-							</svg>
-						</a>
--->
-<!--
-						<div class="mega-menu bx--header__menu sub-menu" role="menu">
-							<div class="mega-menu-inner">
-								<div class="code_content__wrap">
-									<ul>
-									  <li><a href="https://developer.ibm.com/open/">Home</a></li>
-									  <li><a href="https://developer.ibm.com/open/code/">Code</a></li>
-									  <li><a href="https://developer.ibm.com/open/community/">Communities</a></li>
-									  <li><a href="https://developer.ibm.com/open/culture/">Open enterprise</a></li>
-									  <li><a href="https://developer.ibm.com/open/projects/">Open projects</a></li>
-									  <li><a href="https://developer.ibm.com/collections/open-stories/">Open stories</a></li>
-									  <li><a href="https://developer.ibm.com/exchanges/models/">Model Asset eXchange</a></li>
-									  <li><a href="https://developer.ibm.com/exchanges/data/">Data Asset eXchange</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
 
-					</li>
--->
 				</ul>
 				</nav>
 				<div class="bx--header__global">
@@ -522,357 +192,7 @@
 	
 	<div class="side-nav-click-to-close side-nav-click-to-close__closed" id="code--side-nav-cover">
 	</div>
-	<!-- Navigation wrapper for accessibility -->
-	<nav class="bx--side-nav__navigation bx--side-nav bx--side-nav--expanded bx--side-nav--website bx--side-nav--website--dark bx--side-nav--ux" aria-label="Side navigation" id="code--side-nav-old">
-	<!--nav class="bx--side-nav__navigation bx--side-nav bx--side-nav--ux bx--side-nav--website--dark" role="navigation" aria-label="Navigation" id="code--side-nav"-->
-  	<!-- <header class="bx--side-nav__header"></header> -->
-  	<!-- Renders all of our navigation items -->
-	<ul class="bx--side-nav__items" id="developerNavTriggersMobile">
-		<li data-level="0" class="bx--side-nav__item ">
-			<a href="https://developer.ibm.com/" class="bx--side-nav__link" role="menuitem">
-				<span class="bx--side-nav__link-text">Home</span>
-			</a>
-		</li>
-		<hr class="bx--side-nav__divider">
-<!--		Topics Menu-->
-		<li data-level="0" class="megasection bx--side-nav__item">
-			<button aria-haspopup="true" aria-expanded="true" class="noclick bx--side-nav__submenu" type="button">
-				<span class="bx--side-nav__submenu-title">Topics</span>
-			</button>
-			<ul class="bx--side-nav__menu" role="menu">
-				<li data-level="1" class="bx--side-nav__menu-item">
-					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
-						<span class="bx--side-nav__submenu-title">Technologies</span>
-						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
-							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
-								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z">
-								</path>
-							</svg>
-						</div>
-					</button>
-					<ul class="bx--side-nav__menu" role="menu">
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/technologies/analytics" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Analytics</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/technologies/artificial-intelligence" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Artificial Intelligence</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/technologies/blockchain" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Blockchain</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/technologies/containers" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Containers</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/technologies/java" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Java</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/technologies/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">See all</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li data-level="1" class="bx--side-nav__menu-item">
-					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
-						<span class="bx--side-nav__submenu-title">Industries</span>
-						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
-							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
-								 <path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
-							</svg>
-						</div>
-					</button>
-					<ul class="bx--side-nav__menu" role="menu">
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/industries/gaming/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Gaming</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/industries/finance/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Finance</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/industries/retail/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Retail</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/industries/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">See all</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li data-level="1" class="bx--side-nav__menu-item">
-					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
-						<span class="bx--side-nav__submenu-title">Deployment models</span>
-						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
-							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
-								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
-							</svg>
-						</div>
-					</button>
-					<ul class="bx--side-nav__menu" role="menu">
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/depmodels/cloud/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Cloud</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/depmodels/hybrid/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Hybrid</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/depmodels/edge-computing/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Edge computing</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/depmodels/offline/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Offline</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/depmodels/on-prem/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">On Premises</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/depmodels/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">See all</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li data-level="1" class="bx--side-nav__menu-item">
-					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
-						<span class="bx--side-nav__submenu-title">Solutions</span>
-						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
-							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
-								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
-							</svg>
-						</div>
-					</button>
-					<ul class="bx--side-nav__menu" role="menu">
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/solutions/ai-development/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Artificial Intelligence</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/solutions/blockchain-app-development/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Blockchain</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/solutions/container-orchestration-and-deployment/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Containers &amp; Microservices</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/solutions/mobile-app-development/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Mobile Development</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		<hr class="bx--side-nav__divider">
-<!--		Product and Services Menu-->
-		<li data-level="0" class="megasection bx--side-nav__item">
-			<button aria-haspopup="true" aria-expanded="true" class="noclick bx--side-nav__submenu" type="button">
-				<span class="bx--side-nav__submenu-title">Products &amp; Services</span>
-            </button>
-			<ul class="bx--side-nav__menu" role="menu">
-				<li data-level="1" class="bx--side-nav__menu-item">
-					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
-						<span class="bx--side-nav__submenu-title">Open Source</span>
-						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
-							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
-								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
-							</svg>
-						</div>
-					</button>
-					<ul class="bx--side-nav__menu" role="menu">
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/kubernetes/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Kubernetes</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/node-red/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Node-RED</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/istio/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Istio</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/tensorflow/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">TensorFlow</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/open-liberty/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Open Liberty</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">See all</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li data-level="1" class="bx--side-nav__menu-item">
-					<button aria-haspopup="true" aria-expanded="false" class="bx--side-nav__submenu" type="button">
-						<span class="bx--side-nav__submenu-title">IBM Product &amp; Services</span>
-						<div class="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron">
-							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;">
-								<path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path>
-							</svg>
-						</div>
-					</button>
-					<ul class="bx--side-nav__menu" role="menu">
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/cloud-pak-for-applications/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">IBM Cloud Pak for Applications</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/cloud-pak-for-data/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">IBM Cloud Pak for Data</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/redhat-openshift-ibm-cloud/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">Red Hat OpenShift on IBM Cloud</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/cloud-pak-for-data/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">IBM Cloud Pak for Data</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/sterling/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">IBM Sterling</span>
-							</a>
-						</li>
-						<li data-level="2" class="bx--side-nav__menu-item">
-							<a href="https://developer.ibm.com/components/" class="bx--side-nav__link" role="menuitem">
-								<span class="bx--side-nav__link-text">See all</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		<hr class="bx--side-nav__divider">
-<!--		Community Menu-->
-		<li data-level="0" class="megasection bx--side-nav__item">
-			<button aria-haspopup="true" aria-expanded="true" class="noclick bx--side-nav__submenu" type="button">
-				<span class="bx--side-nav__submenu-title">Community</span>
-			</button>
-			<ul class="bx--side-nav__menu" role="menu">
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/community/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Home</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/blogs/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Blog posts</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/events/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Events</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/cities/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Cities</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/newsletters/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Newsletters</span>
-					</a>
-				</li>
-			</ul>
-		</li>
-		<hr class="bx--side-nav__divider">
-<!--		Opensource at IBM Menu-->
-		<li data-level="0" class="megasection bx--side-nav__item">
-			<button aria-haspopup="true" aria-expanded="true" class="noclick bx--side-nav__submenu" type="button">
-				<span class="bx--side-nav__submenu-title">Opensource at IBM</span>
-			</button>
-			<ul class="bx--side-nav__menu" role="menu">
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/open/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Home</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/open/code/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Code</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/open/community" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Community</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/open/culture/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Open enterprise</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/open/projects/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Projects</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/collections/open-stories" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Open stories</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/exchanges/models/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Model asset exchange</span>
-					</a>
-				</li>
-				<li data-level="2" class="bx--side-nav__menu-item">
-					<a href="https://developer.ibm.com/exchanges/data/" class="bx--side-nav__link" role="menuitem">
-						<span class="bx--side-nav__link-text">Data asset exchange</span>
-					</a>
-				</li>
-			</ul>
-		</li>
-		
-		<hr class="bx--side-nav__divider">
-		
-	</ul>  <!-- Renders the button to collapse or expand the side nav -->
-  <!-- <footer class="bx--side-nav__footer"></footer> -->
-	</nav>
+	
 
 <!--	Banner below menu, above content-->
 	<div class="code--taxonomy__banner">
@@ -923,6 +243,7 @@
 							<ul id="menu-content-catalog" class="">
 								<li><h4>Data and AI Learning Catalog:</h4></li>
 								<li><a href="fullcatalog_function.html">By Product/Function</a></li>
+								<li><a href="fullcatalog_ailadder.html">By AI Ladder</a></li>
 								<li><a href="fullcatalog_role.html">By Role</a></li>
 								<li><a href="fullcatalog_badges.html">Badges</a></li>
 							</ul>
@@ -954,34 +275,7 @@
 								<li><a href="testing.html" target="_blank">&nbsp;&nbsp;</a></li>
 							</ul>
 						</nav>
-<!-- Disable unused menuitems
-						<nav> 
-							<h4>Related topics:</h4>
-							<ul>
-								<li><a href="https://developer.ibm.com/technologies/conversation/">Conversation</a></li>
-								<li><a href="https://developer.ibm.com/technologies/data-science/">Data science</a></li>
-								<li><a href="https://developer.ibm.com/technologies/deep-learning/">Deep learning</a></li>
-								<li><a href="https://developer.ibm.com/technologies/machine-learning/">Machine learning</a></li>
-								
-								<ul>
-									<li><a href="https://developer.ibm.com/technologies/natural-language-processing/">Natural language processing</a></li>
-									<li><a href="https://developer.ibm.com/technologies/speech-and-empathy/">Speech &amp; empathy</a></li>
-									<li><a href="https://developer.ibm.com/technologies/vision/">Visual recognition</a></li>
-								</ul>
-							</ul>
-						</nav>
 
-							
-						<nav>
-							<h4>More resources:</h4>
-							<ul>
-								<li><a href="https://www.ibm.com/cloud/garage/architectures/dataAnalyticsArchitecture" target="_blank">Data and analytics architecture</a></li>
-								<li><a href="https://www.ibm.com/cloud/garage/architectures/dataAnalyticsArchitecture/alldataanalyticssolutions" target="_blank">Data and analytics solutions</a></li>
-								<li><a href="https://www.ibm.com/artificial-intelligence">IBM AI</a></li>
-								<li><a href="https://developer.ibm.com/newsletters/artificial-intelligence/">Newsletter</a></li>
-							</ul>
-						</nav>
--->						
 						<div class="code_aside_mobilenav_close">
 							<button id="code_aside__navtoggle_close">
 								<i>Close</i>
@@ -1152,7 +446,7 @@
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
 										<path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
-									<div class="bx--accordion__title">Cloud Pak for Data</div>
+									<div class="bx--accordion__title">Cloud Pak for Data<div id="cloudpakfordatacatalogcount" class="course_counter"></div></div>
 								</button>
 								<div id="pane2" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
@@ -1168,7 +462,7 @@
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane7">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
-									<div class="bx--accordion__title">AI Learning (non product specific AI focused learning)</div>
+									<div class="bx--accordion__title">AI Learning (non product specific AI focused learning)<div id="ailearningcatalogcount" class="course_counter"></div></div>
 								</button>
 								<div id="pane7" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
@@ -1185,7 +479,7 @@
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane3">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
-									<div class="bx--accordion__title">IBM Watson (Product training)</div>
+									<div class="bx--accordion__title">IBM Watson (Product training)<div id="watsoncatalogcount" class="course_counter"></div></div>
 								</button>
 								<div id="pane3" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
@@ -1202,7 +496,7 @@
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
 										<path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
-									<div class="bx--accordion__title">Data Science (Cognos, SPSS, etc)</div>
+									<div class="bx--accordion__title">Data Science (Cognos, SPSS, etc)<div id="datasciencecatalogcount" class="course_counter"></div></div>
 								</button>
 								<div id="pane1" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
@@ -1218,7 +512,7 @@
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane4">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
-									<div class="bx--accordion__title">Hybrid Data Management</div>
+									<div class="bx--accordion__title">Hybrid Data Management<div id="hdmcatalogcount" class="course_counter"></div></div>
 								</button>
 								<div id="pane4" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
@@ -1234,7 +528,7 @@
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane5">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
-									<div class="bx--accordion__title">Unified Governance and Integration</div>
+									<div class="bx--accordion__title">Unified Governance and Integration<div id="ugicatalogcount" class="course_counter"></div></div>
 								</button>
 								<div id="pane5" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
@@ -1250,7 +544,7 @@
 								<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane6">
 									<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"></path>
 									</svg>
-									<div class="bx--accordion__title">Watson Financial API Development Service</div>
+									<div class="bx--accordion__title">Watson Financial API Development Service<div id="wfsscatalogcount" class="course_counter"></div></div>
 								</button>
 								<div id="pane6" class="bx--accordion__content">
 									<div class="bx--row bx--no-gutter--right">
