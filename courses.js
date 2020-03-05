@@ -32,6 +32,22 @@ function create_ladder_card(json_file, cardlocation, card_type, card_group){
 	insert_ai_card(json_file, cardlocation);
 }
 
+function create_role_card(json_file, cardlocation, card_type, card_group){
+	
+	display_type = card_type;
+	ladder_val = card_group;
+	
+	insert_role_card(json_file, cardlocation);
+}
+
+function create_skill_card(json_file, cardlocation, card_type, card_group){
+	
+	display_type = card_type;
+	ladder_val = card_group;
+	
+	insert_skill_card(json_file, cardlocation);
+}
+
 
 function insert_course_card(json_file, cardlocation){
 	$.getJSON(json_file, function(data){
@@ -92,6 +108,67 @@ function insert_ai_card(json_file, cardlocation){
 //		console.log(course_count);
 	});
 }
+
+function insert_role_card(json_file, cardlocation){
+	$.getJSON(json_file, function(data){
+		
+		var block_to_insert ;
+		var container_block ;
+		var course_count = '0';
+		
+		$.each(data, function(key, value){
+			if (value.role.includes(ladder_val)){
+				block_to_insert = document.createElement( 'div' );
+				block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4';
+				block_to_insert.id = 'cardContainer'+counter;
+
+				container_block = document.getElementById( cardlocation );
+				container_block.appendChild( block_to_insert );
+				{
+					populate_card(value);
+					counter++;
+					course_count++;
+				}	
+			}
+		
+	});
+		validElement = document.getElementById(cardlocation+'count')
+		if (validElement != null){
+			document.getElementById(cardlocation+'count').innerHTML = "(Catalog count: "+course_count+") ";}
+//		console.log(course_count);
+	});
+}
+
+function insert_skill_card(json_file, cardlocation){
+	$.getJSON(json_file, function(data){
+		
+		var block_to_insert ;
+		var container_block ;
+		var course_count = '0';
+		
+		$.each(data, function(key, value){
+			if (value.skill == ladder_val){
+				block_to_insert = document.createElement( 'div' );
+				block_to_insert.className = 'bx--col-sm-4 bx--col-lg-4';
+				block_to_insert.id = 'cardContainer'+counter;
+
+				container_block = document.getElementById( cardlocation );
+				container_block.appendChild( block_to_insert );
+				{
+					populate_card(value);
+					counter++;
+					course_count++;
+				}	
+			}
+		
+	});
+		validElement = document.getElementById(cardlocation+'count')
+		if (validElement != null){
+			document.getElementById(cardlocation+'count').innerHTML = "(Catalog count: "+course_count+") ";}
+//		console.log(course_count);
+	});
+}
+
 
 
 function populate_card(value){

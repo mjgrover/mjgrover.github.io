@@ -32,7 +32,7 @@
 	<meta property="og:locale" content="en-US">
 	<!-- TemplateBeginEditable name="head" -->
 	<!-- TemplateEndEditable -->
-<img width="1" height="1" src="../src/genp=pageinit" alt="Page Initialize">
+<!--<img width="1" height="1" src="../src/genp=pageinit" alt="Page Initialize">-->
 	
 	<style type="text/css">
 		@media only screen and (max-width:480px){.truste_box_overlay{width: 100%!important;margin: 0px!important;max-width: 100%!important;box-shadow: rgb(0,0,0,0.2) 0px 0px 16px 2px!important;}}@media only screen and (min-width:481px){.truste_box_overlay{width: 80%!important;margin: 20px auto!important;max-width: 800px!important;box-shadow: rgb(0,0,0,0.2) 0px 0px 16px 2px!important;}}
@@ -234,7 +234,7 @@
 						<div class="code_leftnav_header">
 							<h3><a href="https://developer.ibm.com/technologies/artificial-intelligence/">Artificial intelligence</a></h3>
 						</div>
-						<nav role="navigation" aria-label="Content portlet">
+						<nav role="navigation" aria-label="Home Page">
 							<ul id="menu-content-nav" class="">
 								<li><a href="../index.html"><strong>Data and AI Learning: Home</strong></a></li>
 							</ul>
@@ -245,10 +245,11 @@
 								<li><a href="../fullcatalog_function.html">By Product/Function</a></li>
 								<li><a href="../fullcatalog_ailadder.html">By AI Ladder</a></li>
 								<li><a href="../fullcatalog_role.html">By Role</a></li>
+								<li><a href="../fullcatalog_skill.html">By Skill</a></li>
 								<li><a href="../fullcatalog_badges.html">Badges</a></li>
 							</ul>
 						</nav>
-						<nav role="navigation" aria-label="Community portlet">
+						<nav role="navigation" aria-label="Developer portlet">
 							<h4>For Developers:</h4>
 							<ul id="menu-content-developerlinks" class="">
 								<li><a href="https://developer.ibm.com/technologies/artificial-intelligence/data/" target="_blank">Datasets</a></li>
@@ -267,7 +268,7 @@
 							</ul>
 						</nav>
 						
-						<nav role="navigation" aria-label="Community portlet">
+						<nav role="navigation" aria-label="IBMer Menu Options">
 							<h4>For IBMers:</h4>
 							<ul id="menu-ibmers-nav" class="">
 								<li><a href="https://w3.ibm.com/w3publisher/daell-enablement/enablement" target="_blank">Internal Enablement (W3 required)</a></li>
@@ -341,14 +342,14 @@
 	
 <script>
     var getCssValuePrefix = function(){
-      var rtrnVal = '';//default to standard syntax
+      var rtrnVal = '';// Comment: default to standard syntax
       var prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
-      // Create a temporary DOM object for testing
+      // Comment: Create a temporary DOM object for testing
       var dom = document.createElement('div');
       for (var i = 0; i < prefixes.length; i++){
-          // Attempt to set the style
+          // Comment: Attempt to set the style
           dom.style.background = prefixes[i] + 'linear-gradient(#000000, #ffffff)';
-          // Detect if the style was successfully set
+          // Comment: Detect if the style was successfully set
           if (dom.style.background){
               rtrnVal = prefixes[i];
           }
@@ -361,8 +362,8 @@
     var hubOnReady = function(){
       $featuredBlocks = document.getElementById('hubFeatured');
       $hubHeader = document.getElementById('hubHeader');
-      //$thirdCard = $featuredBlocks.querySelector('#f3');
-      //$cardImageHeight = $thirdCard.querySelector('.developer--card__image');
+      //commented: $thirdCard = $featuredBlocks.querySelector('#f3');
+      //commented: $cardImageHeight = $thirdCard.querySelector('.developer--card__image');
       $cardRow = document.querySelector('#featuredSecondRow .developer--card');
       $cardImage = document.querySelector('#featuredSecondRow .developer--card__image');
 
@@ -471,6 +472,7 @@
   
 
 
+<!--
 <style>
 	#modal-k7naq0vevup .bx--modal-container, 
 	#challengeModal  .bx--modal-container{
@@ -493,7 +495,9 @@
 		height:100%;
 	}
 </style>
+-->
 
+<!--
 <div id="challengeModal">
   <div id="challengeIframeWrap">
     <div class="challenge--modal-header">
@@ -509,6 +513,7 @@
     </div>
   </div>
 </div>
+-->
 
 <!-- #page -->
 
@@ -517,251 +522,254 @@
 <script type="text/javascript" src="../src/wp-embed.min.js.download"></script>
 
 <!-- Embedded Script -->
-<script>
+<!--<script>
 
-	var $searchTrigger = document.getElementById('header-search-module'),
-      $modalInstance = undefined,
-      $developerBurger = document.getElementById('developer-burger'),
-      $codeSideNav = document.getElementById('developerNavTriggersMobile'),
-      $codeSideNavCover = document.getElementById('code--side-nav-cover'),
-      $announcementClose = document.getElementById('announcement_close');
-
-
-  if($announcementClose != null){
-    $announcementClose.addEventListener('click', function(event) {
-      $elm = document.getElementById('code_announcement');
-      $elm.parentNode.removeChild($elm);
-      document.body.classList.remove('no-fixed-menu');
-      ibmcode.setCookie('Code_Annouce_Closed','true',0);
-    });
-  }
-
-	if($searchTrigger != null){ //this can be way more efficient
-		$searchTrigger.addEventListener('click', function(event) {
-      $btn = ibmcode.getClosest(event.target, 'button');
-      if( $btn && $btn.classList.contains('GlobalSearch-module--search-button--search') ){
-        if($searchTrigger.querySelector('input[type="text"]').value.trim() != "" && !($searchTrigger.classList.contains('GlobalSearch-module--hidden')) ){
-          $searchTrigger.querySelector('form').submit();
-        }
-        $searchTrigger.classList.remove('GlobalSearch-module--hidden');
-        $searchTrigger.querySelector('input[type="text"]').focus();
-        $searchTrigger.querySelector('.GlobalSearch-module--search-button--close').classList.remove('GlobalSearch-module--hidden');
-      }else if( $btn && $btn.classList.contains('GlobalSearch-module--search-button--close') ){
-        $searchTrigger.classList.add('GlobalSearch-module--hidden');
-        $searchTrigger.querySelector('input[type="text"]').value= "";
-        $searchTrigger.querySelector('.GlobalSearch-module--search-button--close').classList.add('GlobalSearch-module--hidden');
-      }
-			// window.location.href = 'https://developer.ibm.com?s=';
-		});
-	}
-
-  if($developerBurger != null){
-		$developerBurger.addEventListener('click', function(event) {
-      //bx--side-nav--expanded
-      if( document.body.classList.contains('bx--side-nav--opened') ){
-        document.body.classList.remove('bx--side-nav--opened');
-      }else{
-        document.body.classList.add('bx--side-nav--opened');
-      }
-		});
-    $codeSideNavCover.addEventListener('click', function(event) {
-      //bx--side-nav--expanded
-      if( document.body.classList.contains('bx--side-nav--opened') ){
-        document.body.classList.remove('bx--side-nav--opened');
-      }else{
-        document.body.classList.add('bx--side-nav--opened');
-      }
-		});
-    $codeSideNav.addEventListener('click', function(event) {
-      //bx--side-nav--expanded
-      $letsFix = event.target.closest('.bx--side-nav__submenu');
-      if($letsFix){
-        if($letsFix.classList.contains('noclick')){
-          return;
-        }
-        if($letsFix.getAttribute("aria-expanded") === 'false'){
-          $letsFix.setAttribute("aria-expanded", "true");
-        }else{
-          $letsFix.setAttribute("aria-expanded", "false");
-        }
-      }
-		});
-	}
-
-
-	$codeLeftNav = document.getElementById('code--side-nav');
-	if($codeLeftNav != null){
-		$codeLeftNav.addEventListener('click', function(event) {
-      event.preventDefault();
-			var menuDropDown = event.target.closest('button.bx--side-nav__submenu');
-      if(menuDropDown){
-        if(menuDropDown.classList.contains('noclick')){
-          return;
-        }
-        if(menuDropDown.getAttribute("aria-expanded") === 'false'){
-          menuDropDown.setAttribute("aria-expanded", "true");
-        }else{
-          menuDropDown.setAttribute("aria-expanded", "false");
-        }
-      }
-		});
-	}
-  var openMenuItem = null;
-  var openSearch = null;
-	document.addEventListener('click', function (event) {
-    //we need a click event here to close the search if its open and there is a
-    if(openMenuItem != event.target){
-      if(openMenuItem != null){
-        openMenuItem.setAttribute("aria-expanded", "false");
-        openMenuItem = null;
-      }
-    }
-
-    // console.info(event);
-		if ( event.target.classList.contains('bx--snippet__icon') ) {
-			// Get the parent with the `.accordion` class
-			var parentBtn = ibmcode.getClosest(event.target, '.bx--snippet-button');
-			var codeBlock = parentBtn.previousElementSibling.querySelectorAll('code');
-			if(codeBlock[0]){
-				ibmcode.copyText(codeBlock[0]);
-			}
-		}
-    if ( ibmcode.getClosest(event.target, '.bx--header__menu-title') ) {
-      event.preventDefault();
-      var newTarg = ibmcode.getClosest(event.target, '.bx--header__menu-title');
-      if(newTarg === openMenuItem && openMenuItem != null){
-        openMenuItem.setAttribute("aria-expanded", "false");
-        openMenuItem = null;
-        return
-      }
-      openMenuItem = newTarg;
-      openMenuItem.setAttribute("aria-expanded", "true");
-    }
-
-    if ( ibmcode.getClosest(event.target, '.GlobalLogin-module--container') ) {
-      if(event.target.className === 'bx--header__menu-item'){
-        return;
-      }
-      event.preventDefault();
-      var newTarg = ibmcode.getClosest(event.target, '.GlobalLogin-module--container');
-      if(newTarg === openMenuItem && openMenuItem != null){
-        openMenuItem.setAttribute("aria-expanded", "false");
-        openMenuItem = null;
-        return;
-      }
-      openMenuItem = newTarg;
-      openMenuItem.setAttribute("aria-expanded", "true");
-    }
-
-
-
-    if(event.target.id === "challengeModal" || event.target.classList.contains('challenge--modal-close') || event.target.closest('.challenge--modal-close')){
-      toggleChallengeModal('',true);
-      return;
-    }
-    //we clicked on a challenge and we need to trigger the modal for taking it
-    if ( event.target.closest('.developer--card.ibmcode_challenges.loggedin') ) {
-      event.preventDefault();
-      $challengeURL = event.target.closest('.developer--card.ibmcode_challenges.loggedin').querySelector('.developer--card__block_link').href;
-      toggleChallengeModal($challengeURL);
-		}
-	}, false);
-
-
-  function set_size($size){
-    document.querySelector('#challengeIframeWrap .challenge--modal-content').style.height = $size;
-  }
-
-  function toggleChallengeModal($challengeURL,$close,$completedChallenge){
-    if($close === true){
-      document.body.classList.remove("showing-modal");
-      $iFrame = document.getElementById('challengeIframe');
-      $iFrame.src = 'about:blank';
-    }else{
-      $challengeModal = document.getElementById('challengeModal');
-      $iFrame = document.getElementById('challengeIframe');
-      // $iFrameHeight = $iFrame.contentWindow.document.body.offsetHeight;
-      $iFrame.src = $challengeURL;
-      document.body.classList.add("showing-modal");
-    }
-    if(typeof($completedChallenge) === "string"){
-      var completedChallengeCards = document.querySelectorAll('a[href="/challenges/'+$completedChallenge+'/"]');
-      for (var i = 0; i < completedChallengeCards.length; i++) {
-        completedChallengeCards[i].classList.add('completed');
-      }
-    }
-  }
-
-
-  var domReadyCallback = function(){
-    // Handler when the DOM is fully loaded
-    //handling the loazy loading of images in the content body and beyond.
-    var lazyloadCardImages,
-        lazyloadContentImages;
-
-    if ("IntersectionObserver" in window) {
-      //this will handle the card background images styled by css
-      lazyloadCardImages = document.querySelectorAll(".lazycards");
-      var imageCardObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            var image = entry.target;
-            image.classList.remove("lazycards");
-            imageCardObserver.unobserve(image);
-          }
-        });
-      });
-      lazyloadCardImages.forEach(function(image) {
-        imageCardObserver.observe(image);
-      });
+//	var $searchTrigger = document.getElementById('header-search-module'),
+//      $modalInstance = undefined,
+//      $developerBurger = document.getElementById('developer-burger'),
+//      $codeSideNav = document.getElementById('developerNavTriggersMobile'),
+//      $codeSideNavCover = document.getElementById('code--side-nav-cover'),
+//      $announcementClose = document.getElementById('announcement_close');
+//
+//
+//  if($announcementClose != null){
+//    $announcementClose.addEventListener('click', function(event) {
+//      $elm = document.getElementById('code_announcement');
+//      $elm.parentNode.removeChild($elm);
+//      document.body.classList.remove('no-fixed-menu');
+//      ibmcode.setCookie('Code_Annouce_Closed','true',0);
+//    });
+//  }
+//
+//	if($searchTrigger != null){ //this can be way more efficient
+//		$searchTrigger.addEventListener('click', function(event) {
+//      $btn = ibmcode.getClosest(event.target, 'button');
+//      if( $btn && $btn.classList.contains('GlobalSearch-module--search-button--search') ){
+//        if($searchTrigger.querySelector('input[type="text"]').value.trim() != "" && !($searchTrigger.classList.contains('GlobalSearch-module--hidden')) ){
+//          $searchTrigger.querySelector('form').submit();
+//        }
+//        $searchTrigger.classList.remove('GlobalSearch-module--hidden');
+//        $searchTrigger.querySelector('input[type="text"]').focus();
+//        $searchTrigger.querySelector('.GlobalSearch-module--search-button--close').classList.remove('GlobalSearch-module--hidden');
+//      }else if( $btn && $btn.classList.contains('GlobalSearch-module--search-button--close') ){
+//        $searchTrigger.classList.add('GlobalSearch-module--hidden');
+//        $searchTrigger.querySelector('input[type="text"]').value= "";
+//        $searchTrigger.querySelector('.GlobalSearch-module--search-button--close').classList.add('GlobalSearch-module--hidden');
+//      }
+//			// window.location.href = 'https://developer.ibm.com?s=';
+//		});
+//	}
+//
+//  if($developerBurger != null){
+//		$developerBurger.addEventListener('click', function(event) {
+//      //bx--side-nav--expanded
+//      if( document.body.classList.contains('bx--side-nav--opened') ){
+//        document.body.classList.remove('bx--side-nav--opened');
+//      }else{
+//        document.body.classList.add('bx--side-nav--opened');
+//      }
+//		});
+//    $codeSideNavCover.addEventListener('click', function(event) {
+//      //bx--side-nav--expanded
+//      if( document.body.classList.contains('bx--side-nav--opened') ){
+//        document.body.classList.remove('bx--side-nav--opened');
+//      }else{
+//        document.body.classList.add('bx--side-nav--opened');
+//      }
+//		});
+//    $codeSideNav.addEventListener('click', function(event) {
+//      //bx--side-nav--expanded
+//      $letsFix = event.target.closest('.bx--side-nav__submenu');
+//      if($letsFix){
+//        if($letsFix.classList.contains('noclick')){
+//          return;
+//        }
+//        if($letsFix.getAttribute("aria-expanded") === 'false'){
+//          $letsFix.setAttribute("aria-expanded", "true");
+//        }else{
+//          $letsFix.setAttribute("aria-expanded", "false");
+//        }
+//      }
+//		});
+//	}
+//
+//
+//	$codeLeftNav = document.getElementById('code--side-nav');
+//	if($codeLeftNav != null){
+//		$codeLeftNav.addEventListener('click', function(event) {
+//      event.preventDefault();
+//			var menuDropDown = event.target.closest('button.bx--side-nav__submenu');
+//      if(menuDropDown){
+//        if(menuDropDown.classList.contains('noclick')){
+//          return;
+//        }
+//        if(menuDropDown.getAttribute("aria-expanded") === 'false'){
+//          menuDropDown.setAttribute("aria-expanded", "true");
+//        }else{
+//          menuDropDown.setAttribute("aria-expanded", "false");
+//        }
+//      }
+//		});
+//	}
+//  var openMenuItem = null;
+//  var openSearch = null;
+//	document.addEventListener('click', function (event) {
+//    //we need a click event here to close the search if its open and there is a
+//    if(openMenuItem != event.target){
+//      if(openMenuItem != null){
+//        openMenuItem.setAttribute("aria-expanded", "false");
+//        openMenuItem = null;
+//      }
+//    }
+//
+//    // console.info(event);
+//		if ( event.target.classList.contains('bx--snippet__icon') ) {
+//			// Get the parent with the `.accordion` class
+//			var parentBtn = ibmcode.getClosest(event.target, '.bx--snippet-button');
+//			var codeBlock = parentBtn.previousElementSibling.querySelectorAll('code');
+//			if(codeBlock[0]){
+//				ibmcode.copyText(codeBlock[0]);
+//			}
+//		}
+//    if ( ibmcode.getClosest(event.target, '.bx--header__menu-title') ) {
+//      event.preventDefault();
+//      var newTarg = ibmcode.getClosest(event.target, '.bx--header__menu-title');
+//      if(newTarg === openMenuItem && openMenuItem != null){
+//        openMenuItem.setAttribute("aria-expanded", "false");
+//        openMenuItem = null;
+//        return
+//      }
+//      openMenuItem = newTarg;
+//      openMenuItem.setAttribute("aria-expanded", "true");
+//    }
+//
+//    if ( ibmcode.getClosest(event.target, '.GlobalLogin-module--container') ) {
+//      if(event.target.className === 'bx--header__menu-item'){
+//        return;
+//      }
+//      event.preventDefault();
+//      var newTarg = ibmcode.getClosest(event.target, '.GlobalLogin-module--container');
+//      if(newTarg === openMenuItem && openMenuItem != null){
+//        openMenuItem.setAttribute("aria-expanded", "false");
+//        openMenuItem = null;
+//        return;
+//      }
+//      openMenuItem = newTarg;
+//      openMenuItem.setAttribute("aria-expanded", "true");
+//    }
+//
+//
+//
+//    if(event.target.id === "challengeModal" || event.target.classList.contains('challenge--modal-close') || event.target.closest('.challenge--modal-close')){
+//      toggleChallengeModal('',true);
+//      return;
+//    }
+//    //we clicked on a challenge and we need to trigger the modal for taking it
+//    if ( event.target.closest('.developer--card.ibmcode_challenges.loggedin') ) {
+//      event.preventDefault();
+//      $challengeURL = event.target.closest('.developer--card.ibmcode_challenges.loggedin').querySelector('.developer--card__block_link').href;
+//      toggleChallengeModal($challengeURL);
+//		}
+//	}, false);
+//
+//
+//  function set_size($size){
+//    document.querySelector('#challengeIframeWrap .challenge--modal-content').style.height = $size;
+//  }
+//
+//  function toggleChallengeModal($challengeURL,$close,$completedChallenge){
+//    if($close === true){
+//      document.body.classList.remove("showing-modal");
+//      $iFrame = document.getElementById('challengeIframe');
+//      $iFrame.src = 'about:blank';
+//    }else{
+//      $challengeModal = document.getElementById('challengeModal');
+//      $iFrame = document.getElementById('challengeIframe');
+//      // $iFrameHeight = $iFrame.contentWindow.document.body.offsetHeight;
+//      $iFrame.src = $challengeURL;
+//      document.body.classList.add("showing-modal");
+//    }
+//    if(typeof($completedChallenge) === "string"){
+//      var completedChallengeCards = document.querySelectorAll('a[href="/challenges/'+$completedChallenge+'/"]');
+//      for (var i = 0; i < completedChallengeCards.length; i++) {
+//        completedChallengeCards[i].classList.add('completed');
+//      }
+//    }
+//  }
+//
+//
+//  var domReadyCallback = function(){
+//    // Handler when the DOM is fully loaded
+//    //handling the loazy loading of images in the content body and beyond.
+//    var lazyloadCardImages,
+//        lazyloadContentImages;
+//
+//    if ("IntersectionObserver" in window) {
+//      //this will handle the card background images styled by css
+//      lazyloadCardImages = document.querySelectorAll(".lazycards");
+//      var imageCardObserver = new IntersectionObserver(function(entries, observer) {
+//        entries.forEach(function(entry) {
+//          if (entry.isIntersecting) {
+//            var image = entry.target;
+//            image.classList.remove("lazycards");
+//            imageCardObserver.unobserve(image);
+//          }
+//        });
+//      });
+//      lazyloadCardImages.forEach(function(image) {
+//        imageCardObserver.observe(image);
+//      });
       //this will handle the images used in the body of our content types
-      lazyloadContentImages = document.querySelectorAll(".lazycontent");
-      var imageContentObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            var image = entry.target;
-            image.src = image.dataset.src;
-            image.classList.remove("lazycontent");
-            imageContentObserver.unobserve(image);
-          }
-        });
-      });
-
-      lazyloadContentImages.forEach(function(image) {
-        imageContentObserver.observe(image);
-      });
-    }
-
-    //function that runs to set the same height of card elements
-
-    setTimeout(function() {
-      $sameHeightWidgets = document.querySelectorAll('[data-widget="setsameheight"]');
-      ibmcode.widgetSetSameHeight($sameHeightWidgets,true);
-    }, 250);
-    var resizeTimer;
-    ibmcode.addEvent(window,'resize',function(){
-      clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-          ibmcode.widgetSetSameHeight($sameHeightWidgets,true);
-        }, 250);
-    });
-  };
-
-  if ( document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll) ) {
-    domReadyCallback();
-  } else {
-    document.addEventListener("DOMContentLoaded", domReadyCallback);
-  }
-
+//      lazyloadContentImages = document.querySelectorAll(".lazycontent");
+//      var imageContentObserver = new IntersectionObserver(function(entries, observer) {
+//        entries.forEach(function(entry) {
+//          if (entry.isIntersecting) {
+//            var image = entry.target;
+//            image.src = image.dataset.src;
+//            image.classList.remove("lazycontent");
+//            imageContentObserver.unobserve(image);
+//          }
+//        });
+//      });
+//
+//      lazyloadContentImages.forEach(function(image) {
+//        imageContentObserver.observe(image);
+//      });
+//    }
+//
+//    //function that runs to set the same height of card elements
+//
+//    setTimeout(function() {
+//      $sameHeightWidgets = document.querySelectorAll('[data-widget="setsameheight"]');
+//      ibmcode.widgetSetSameHeight($sameHeightWidgets,true);
+//    }, 250);
+//    var resizeTimer;
+//    ibmcode.addEvent(window,'resize',function(){
+//      clearTimeout(resizeTimer);
+//        resizeTimer = setTimeout(function() {
+//          ibmcode.widgetSetSameHeight($sameHeightWidgets,true);
+//        }, 250);
+//    });
+//  };
+//
+//  if ( document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll) ) {
+//    domReadyCallback();
+//  } else {
+//    document.addEventListener("DOMContentLoaded", domReadyCallback);
+//  }
+//
 </script>
 
+<!--
 
 <div id="teconsent" class="truste_cookie_prefs" style="position: fixed; display: none; height: 40px; background-color: #ffffff; z-index: 9999999999; bottom: 0; right: 0; margin: 0; padding: 0 16px; line-height: 40px; vertical-align: middle; box-shadow:0 0 10px 3px rgba(0,0,0,.1)" consent="undefined">
 	<script type="text/javascript" src="../src/notice" id="truste_0.22970594237886544"></script>
 	<script async="async" type="text/javascript" crossorigin="" src="../src/v1.7-30"></script>
 	<a id="icon-id03625086806430968" tabindex="0" role="button" lang="en" style="cursor: pointer; font-family: ibm-plex-sans; font-size: 12pt; color: #3d3d3d; text-decoration: none">Cookie Preferences</a>
 </div>
-<script async="" src="../src/js(2)" id="mm_pp_background"></script>
+-->
+<!--<script async="" src="../src/js(2)" id="mm_pp_background"></script>-->
+<!--
 <iframe id="LOTCCFrame_1580751671012" src="../src/rt=ifr.html" title="empty" tabindex="-1" role="presentation" aria-hidden="true" style="border: 0px; width: 0px; height: 0px; display: block;"></iframe>
 <iframe name="trustarc_notice" id="trustarcNoticeFrame" src="../src/get.html" style="display: none;"></iframe>
 <div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.030159681698396446">
@@ -769,6 +777,7 @@
 </div>
 <iframe src="../src/iframe.html" id="mm_sync_back_ground" style="visibility: hidden; display: none;"></iframe>
 <iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="../src/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+-->
 
 </body>
 </html>
