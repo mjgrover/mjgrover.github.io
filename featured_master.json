@@ -1,11 +1,14 @@
 [
   {
     "learning_type": "WBT",
-    "segment": "Watson",
-    "course_code": "W68003T",
-    "wrapper": "n",
-    "course_url": "learn.ibm.com/course/view.php?id=4327",
-    "course_title": "Artificial Intelligence Concepts",
-    "description": "Terms and concepts related to artificial intelligence (AI), including augmented intelligence, machine learning, deep learning, neural networks, and natural language processing, can be confusing at first glance. This course explains common AI concepts used at IBM and how these concepts relate to Watson technologies. This course is free. (Requires login using IBM id)"
+    "segment": "Cloud Pak for Data",
+    "course_code": "6X236G",
+    "wrapper": "y",
+    "ladder": "Modernize",
+    "role": "Business Analyst, Data Scientist, Developer - Software, Systems Administrator",
+    "skill": "Basic",
+    "course_url": "www.ibm.com/services/learning/course/6X236G",
+    "course_title": "IBM Cloud Pak for Data (V2.5.x): Foundations - eLearning",
+    "description": "This learning offering will tell a holistic story of Cloud Pak for Data including collaboration across an organization, which is key in this platform. Applicable to all personas. Multiple use cases will provide understanding of how organizations can benefit from Cloud Pak for Data. A variety of features will also be explored, providing students with the insight on how to use the platform. This learning is relevant for Cloud Pak for Data and Cloud Pak for Data System."
   }
 ]
