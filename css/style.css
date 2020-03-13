@@ -272,6 +272,12 @@ code {
 	color: #8c8c8c;
 	font-size: 1rem;
 }
+.ladder_description {
+	color:gray;
+	padding-left: 1em;
+}
+
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
